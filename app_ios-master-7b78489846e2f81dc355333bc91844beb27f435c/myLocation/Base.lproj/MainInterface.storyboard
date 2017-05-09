@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="myLocation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="PanicBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBR-OK-vUt">
+                                <rect key="frame" x="47" y="50" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="8Bh-pW-bqf"/>
+                                    <constraint firstAttribute="width" constant="100" id="vBg-Kv-Fcz"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="GPS_ALERT-01.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="alertaCreada:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="fxU-Bq-r22"/>
+                                    <action selector="panicButtonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="bF3-sn-IKj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="MedicBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKu-co-Owm">
+                                <rect key="frame" x="173" y="50" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="FSy-Fq-gN1"/>
+                                    <constraint firstAttribute="height" constant="100" id="XiK-Jb-yMA"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="MEDICAL_ALERT2-01.png"/>
+                                <connections>
+                                    <action selector="medicalButtonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="bc5-C7-k1K"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.36765063650000002" green="0.65829476070000004" blue="0.87585263319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="dKu-co-Owm" secondAttribute="trailing" constant="31" id="Cia-Ff-UIR"/>
+                            <constraint firstItem="vBR-OK-vUt" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="31" id="ReR-u1-DuN"/>
+                            <constraint firstItem="dKu-co-Owm" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="WFm-L0-yVA"/>
+                            <constraint firstItem="vBR-OK-vUt" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="ZtJ-99-sUP"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="200"/>
+                    <connections>
+                        <outlet property="accidentAlertView" destination="dKu-co-Owm" id="beg-9o-TFE"/>
+                        <outlet property="panicButtonView" destination="vBR-OK-vUt" id="8hr-HI-6oQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.59999999999999" y="138.53073463268368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="GPS_ALERT-01.png" width="285" height="284"/>
+        <image name="MEDICAL_ALERT2-01.png" width="711" height="711"/>
+    </resources>
+</document>

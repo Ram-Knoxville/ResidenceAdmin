@@ -1,0 +1,1022 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		210403D11E92BCE700BBF232 /* permisoDeAccesos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210403D01E92BCE700BBF232 /* permisoDeAccesos.swift */; };
+		210403D31E92D73200BBF232 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 210403D21E92D73200BBF232 /* Localizable.strings */; };
+		210404171E96EC1E00BBF232 /* LocationManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210404161E96EC1E00BBF232 /* LocationManagerVC.swift */; };
+		2104041B1E96F8E700BBF232 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2104041A1E96F8E700BBF232 /* MapKit.framework */; };
+		2104041D1E96F9EA00BBF232 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2104041C1E96F9EA00BBF232 /* CoreLocation.framework */; };
+		2104041F1E98318900BBF232 /* vehiclesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2104041E1E98318900BBF232 /* vehiclesListVC.swift */; };
+		210ACA731E5F3FDC0097A652 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ACA721E5F3FDC0097A652 /* AppDelegate.swift */; };
+		210ACA7D1E5F3FDC0097A652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210ACA7B1E5F3FDC0097A652 /* LaunchScreen.storyboard */; };
+		210ACA851E5F42900097A652 /* logoGateguard.png in Resources */ = {isa = PBXBuildFile; fileRef = 210ACA841E5F42900097A652 /* logoGateguard.png */; };
+		210ACA931E5F4FF60097A652 /* topView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ACA921E5F4FF60097A652 /* topView.swift */; };
+		210ACA951E5F53510097A652 /* roundedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ACA941E5F53510097A652 /* roundedImages.swift */; };
+		210ACA971E5F53E00097A652 /* rafa.png in Resources */ = {isa = PBXBuildFile; fileRef = 210ACA961E5F53E00097A652 /* rafa.png */; };
+		210ACA991E5F57E90097A652 /* BlockSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ACA981E5F57E90097A652 /* BlockSelectorVC.swift */; };
+		210ACA9B1E5F60590097A652 /* ForgotPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ACA9A1E5F60590097A652 /* ForgotPassVC.swift */; };
+		210ACA9D1E5F676A0097A652 /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ACA9C1E5F676A0097A652 /* SegueFromLeft.swift */; };
+		210ACAA41E62036A0097A652 /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ACAA31E62036A0097A652 /* LandingVC.swift */; };
+		210ACAAA1E620A2D0097A652 /* menuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ACAA91E620A2D0097A652 /* menuVC.swift */; };
+		210FC7821E8B18C10096490D /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 210FC7811E8B18C10096490D /* loading.gif */; };
+		210FC7841E8D6A180096490D /* noAccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FC7831E8D6A180096490D /* noAccessVC.swift */; };
+		21151CD41E67305E00A3BEB5 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21151CD31E67305E00A3BEB5 /* Media.xcassets */; };
+		21151CF21E67753D00A3BEB5 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21151CF11E67753D00A3BEB5 /* NotificationCenter.framework */; };
+		21151CF51E67753D00A3BEB5 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21151CF41E67753D00A3BEB5 /* TodayViewController.swift */; };
+		21151CF81E67753D00A3BEB5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21151CF61E67753D00A3BEB5 /* MainInterface.storyboard */; };
+		21151CFC1E67753D00A3BEB5 /* myLocation.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21151CF01E67753D00A3BEB5 /* myLocation.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		21151D031E6776E800A3BEB5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ACA741E5F3FDC0097A652 /* LoginVC.swift */; };
+		2119A06B1E6F215F0000ED19 /* blocksListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2119A06A1E6F215F0000ED19 /* blocksListVC.swift */; };
+		2119A06D1E6F218D0000ED19 /* newBlockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2119A06C1E6F218D0000ED19 /* newBlockVC.swift */; };
+		211E4D761E85964D00CAC7AD /* serverRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211E4D751E85964D00CAC7AD /* serverRequests.swift */; };
+		211E4D781E85C44700CAC7AD /* streammingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211E4D771E85C44700CAC7AD /* streammingVC.swift */; };
+		211E4D7A1E86CA7400CAC7AD /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211E4D791E86CA7400CAC7AD /* ARVC.swift */; };
+		213D10F91EAFE7E500BAFE36 /* OpenGateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213D10F81EAFE7E500BAFE36 /* OpenGateVC.swift */; };
+		2164C1E71EB8D8EE005B9F21 /* Alertas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2164C1E61EB8D8EE005B9F21 /* Alertas.swift */; };
+		2192A5851E70807700D53957 /* DS-DIGI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 21E4254C1E70742600DB13E4 /* DS-DIGI.TTF */; };
+		2192A5871E70841400D53957 /* telemetryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5861E70841400D53957 /* telemetryListVC.swift */; };
+		2192A58B1E70A1D200D53957 /* Rooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A58A1E70A1D200D53957 /* Rooms.swift */; };
+		2192A58E1E70A4C500D53957 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A58D1E70A4C500D53957 /* RoomCell.swift */; };
+		2192A5901E71ED3E00D53957 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A58F1E71ED3E00D53957 /* Users.swift */; };
+		2192A5921E71F04A00D53957 /* Blocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5911E71F04A00D53957 /* Blocks.swift */; };
+		2192A5941E71F26300D53957 /* Guards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5931E71F26300D53957 /* Guards.swift */; };
+		2192A5961E71F4B400D53957 /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5951E71F4B400D53957 /* Profiles.swift */; };
+		2192A5981E71F51D00D53957 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5971E71F51D00D53957 /* Services.swift */; };
+		2192A59A1E71F5AE00D53957 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5991E71F5AE00D53957 /* Categories.swift */; };
+		2192A59C1E71F66500D53957 /* Brands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A59B1E71F66500D53957 /* Brands.swift */; };
+		2192A59E1E71F6D600D53957 /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A59D1E71F6D600D53957 /* Vehicles.swift */; };
+		2192A5A01E71FAAB00D53957 /* AlarmPanels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A59F1E71FAAB00D53957 /* AlarmPanels.swift */; };
+		2192A5A21E71FFA800D53957 /* VideoServers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5A11E71FFA800D53957 /* VideoServers.swift */; };
+		2192A5A41E72018F00D53957 /* AutomationDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5A31E72018F00D53957 /* AutomationDevices.swift */; };
+		2192A5A61E7202DD00D53957 /* GPSMyHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5A51E7202DD00D53957 /* GPSMyHouse.swift */; };
+		2192A5A81E72062100D53957 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5A71E72062100D53957 /* UserCell.swift */; };
+		2192A5AA1E72079200D53957 /* BlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5A91E72079200D53957 /* BlockCell.swift */; };
+		2192A5AC1E720C5200D53957 /* GuardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5AB1E720C5200D53957 /* GuardsCell.swift */; };
+		2192A5AE1E7213BC00D53957 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5AD1E7213BC00D53957 /* ProfileCell.swift */; };
+		2192A5B01E7213F000D53957 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5AF1E7213F000D53957 /* ServiceCell.swift */; };
+		2192A5B21E72144A00D53957 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5B11E72144A00D53957 /* CategoryCell.swift */; };
+		2192A5B41E72147400D53957 /* BrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5B31E72147400D53957 /* BrandCell.swift */; };
+		2192A5B61E7215AE00D53957 /* VehicleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5B51E7215AE00D53957 /* VehicleCell.swift */; };
+		2192A5B81E72EF8700D53957 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5B71E72EF8700D53957 /* SWRevealViewController.m */; };
+		2192A5BA1E7350B300D53957 /* security.png in Resources */ = {isa = PBXBuildFile; fileRef = 2192A5B91E7350B300D53957 /* security.png */; };
+		2192A5BC1E73738000D53957 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5BB1E73738000D53957 /* Constants.swift */; };
+		2192A5BE1E746A0E00D53957 /* userDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5BD1E746A0E00D53957 /* userDetailVC.swift */; };
+		2192A5C01E74710C00D53957 /* guardDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5BF1E74710C00D53957 /* guardDetailVC.swift */; };
+		2192A5C21E74779900D53957 /* blockDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5C11E74779900D53957 /* blockDetailVC.swift */; };
+		21AB1BB21E9BEEC600E1B47D /* GuestsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB1BB11E9BEEC600E1B47D /* GuestsVC.swift */; };
+		21AB1BB41E9C193400E1B47D /* guestDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB1BB31E9C193400E1B47D /* guestDetail.swift */; };
+		21AB1BB61E9C2CEC00E1B47D /* Guests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB1BB51E9C2CEC00E1B47D /* Guests.swift */; };
+		21AB1BB81E9EBB3A00E1B47D /* sendInviteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB1BB71E9EBB3900E1B47D /* sendInviteVC.swift */; };
+		21AB1BBA1E9EBFA400E1B47D /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB1BB91E9EBFA400E1B47D /* customCell.swift */; };
+		21AB1BBC1E9EC16400E1B47D /* calendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB1BBB1E9EC16400E1B47D /* calendarVC.swift */; };
+		21ABB6F51E69BC0900106238 /* GPS_ALERT-01-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 21ABB6F31E69BC0900106238 /* GPS_ALERT-01-01.png */; };
+		21ABB6F61E69BC0900106238 /* GPS_ALERT-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 21ABB6F41E69BC0900106238 /* GPS_ALERT-01.png */; };
+		21ABB6FD1E6A225E00106238 /* MEDICAL_ALERT2-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 21ABB6FC1E6A225E00106238 /* MEDICAL_ALERT2-01.png */; };
+		21ABB6FF1E6A38A000106238 /* usersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ABB6FE1E6A38A000106238 /* usersListVC.swift */; };
+		21ABB7011E6A3A9400106238 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 21ABB7001E6A3A9400106238 /* avatar.png */; };
+		21ABB7031E6B10FC00106238 /* newUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ABB7021E6B10FC00106238 /* newUserVC.swift */; };
+		21ABB7041E6B1C4700106238 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210ACA761E5F3FDC0097A652 /* Main.storyboard */; };
+		21B0EE001EA7DBEC00CEDF73 /* alarmRegistryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B0EDFF1EA7DBEC00CEDF73 /* alarmRegistryVC.swift */; };
+		21B0EE021EA7EFA900CEDF73 /* AlarmRegistryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B0EE011EA7EFA900CEDF73 /* AlarmRegistryCell.swift */; };
+		21B0EE041EA90C5000CEDF73 /* alarmRegistryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B0EE031EA90C5000CEDF73 /* alarmRegistryDetailVC.swift */; };
+		21B0EE061EA9241100CEDF73 /* AccessReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B0EE051EA9241100CEDF73 /* AccessReportVC.swift */; };
+		21B0EE081EA95AA900CEDF73 /* accessReportFiltersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B0EE071EA95AA900CEDF73 /* accessReportFiltersVC.swift */; };
+		21E4254B1E6F67B100DB13E4 /* alarmPanelsPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4254A1E6F67B100DB13E4 /* alarmPanelsPickerVC.swift */; };
+		21E425511E7077CD00DB13E4 /* telemetryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E425501E7077CD00DB13E4 /* telemetryVC.swift */; };
+		21E425521E707B5600DB13E4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 210ACA7E1E5F3FDC0097A652 /* Info.plist */; };
+		21F98A8A1E6F29D300F36B95 /* guardsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F98A891E6F29D300F36B95 /* guardsListVC.swift */; };
+		21F98A8C1E6F29E900F36B95 /* newGuardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F98A8B1E6F29E900F36B95 /* newGuardVC.swift */; };
+		21F98A8E1E6F4C4A00F36B95 /* profilesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F98A8D1E6F4C4A00F36B95 /* profilesListVC.swift */; };
+		21F98A901E6F4C6300F36B95 /* newProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F98A8F1E6F4C6300F36B95 /* newProfileVC.swift */; };
+		21F98A921E6F5FC000F36B95 /* servicesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F98A911E6F5FC000F36B95 /* servicesListVC.swift */; };
+		21F98A941E6F5FD700F36B95 /* categoriesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F98A931E6F5FD700F36B95 /* categoriesListVC.swift */; };
+		21F98A961E6F5FED00F36B95 /* newServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F98A951E6F5FED00F36B95 /* newServiceVC.swift */; };
+		21F98A981E6F5FFE00F36B95 /* newCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F98A971E6F5FFE00F36B95 /* newCategoryVC.swift */; };
+		21F9CA6A1EA008E000E5C02A /* InvitationsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9CA691EA008E000E5C02A /* InvitationsListVC.swift */; };
+		21F9CA6E1EA02C1900E5C02A /* InvitationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9CA6D1EA02C1900E5C02A /* InvitationsCell.swift */; };
+		21F9CA701EA02CB500E5C02A /* Invitations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9CA6F1EA02CB500E5C02A /* Invitations.swift */; };
+		21F9CA721EA18DCE00E5C02A /* invitationEditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9CA711EA18DCE00E5C02A /* invitationEditionVC.swift */; };
+		21F9CA741EA5062F00E5C02A /* AlarmEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9CA731EA5062F00E5C02A /* AlarmEvents.swift */; };
+		21F9CA761EA5073500E5C02A /* alarmEventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9CA751EA5073500E5C02A /* alarmEventsVC.swift */; };
+		21FA73561E9FC16B0050B507 /* secondCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA73551E9FC16B0050B507 /* secondCalendarVC.swift */; };
+		53B45FC4F2D03DF6A5315626 /* Pods_myLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8601723FCEC728C67CCA530E /* Pods_myLocation.framework */; };
+		6AF8FA9F01C771871A4B94E0 /* Pods_Gate_Guard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2710A399D73E2A5839853F /* Pods_Gate_Guard.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		21151CFA1E67753D00A3BEB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 210ACA671E5F3FDC0097A652 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21151CEF1E67753D00A3BEB5;
+			remoteInfo = myLocation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		21151D001E67753D00A3BEB5 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				21151CFC1E67753D00A3BEB5 /* myLocation.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		211DA73B1E688F11009B5E98 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1D04333EEF611021BEF925BB /* Pods-myLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myLocation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myLocation/Pods-myLocation.debug.xcconfig"; sourceTree = "<group>"; };
+		210403D01E92BCE700BBF232 /* permisoDeAccesos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = permisoDeAccesos.swift; sourceTree = "<group>"; };
+		210403D21E92D73200BBF232 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		210404161E96EC1E00BBF232 /* LocationManagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerVC.swift; sourceTree = "<group>"; };
+		2104041A1E96F8E700BBF232 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2104041C1E96F9EA00BBF232 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2104041E1E98318900BBF232 /* vehiclesListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = vehiclesListVC.swift; sourceTree = "<group>"; };
+		210ACA6F1E5F3FDC0097A652 /* Gate Guard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gate Guard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		210ACA721E5F3FDC0097A652 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		210ACA741E5F3FDC0097A652 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		210ACA771E5F3FDC0097A652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		210ACA7C1E5F3FDC0097A652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		210ACA7E1E5F3FDC0097A652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		210ACA841E5F42900097A652 /* logoGateguard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoGateguard.png; sourceTree = "<group>"; };
+		210ACA8E1E5F4E070097A652 /* Gate Guard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gate Guard-Bridging-Header.h"; sourceTree = "<group>"; };
+		210ACA921E5F4FF60097A652 /* topView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = topView.swift; sourceTree = "<group>"; };
+		210ACA941E5F53510097A652 /* roundedImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundedImages.swift; sourceTree = "<group>"; };
+		210ACA961E5F53E00097A652 /* rafa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rafa.png; sourceTree = "<group>"; };
+		210ACA981E5F57E90097A652 /* BlockSelectorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockSelectorVC.swift; sourceTree = "<group>"; };
+		210ACA9A1E5F60590097A652 /* ForgotPassVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassVC.swift; sourceTree = "<group>"; };
+		210ACA9C1E5F676A0097A652 /* SegueFromLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueFromLeft.swift; sourceTree = "<group>"; };
+		210ACAA31E62036A0097A652 /* LandingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
+		210ACAA91E620A2D0097A652 /* menuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuVC.swift; sourceTree = "<group>"; };
+		210ACAAE1E64842A0097A652 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		210FC7811E8B18C10096490D /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		210FC7831E8D6A180096490D /* noAccessVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = noAccessVC.swift; sourceTree = "<group>"; };
+		21151CD31E67305E00A3BEB5 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		21151CDA1E67696300A3BEB5 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		21151CDC1E67696300A3BEB5 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		21151CF01E67753D00A3BEB5 /* myLocation.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = myLocation.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		21151CF11E67753D00A3BEB5 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		21151CF41E67753D00A3BEB5 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		21151CF71E67753D00A3BEB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		21151CF91E67753D00A3BEB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2119A06A1E6F215F0000ED19 /* blocksListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = blocksListVC.swift; sourceTree = "<group>"; };
+		2119A06C1E6F218D0000ED19 /* newBlockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newBlockVC.swift; sourceTree = "<group>"; };
+		211E4D751E85964D00CAC7AD /* serverRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = serverRequests.swift; sourceTree = "<group>"; };
+		211E4D771E85C44700CAC7AD /* streammingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = streammingVC.swift; sourceTree = "<group>"; };
+		211E4D791E86CA7400CAC7AD /* ARVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARVC.swift; sourceTree = "<group>"; };
+		213D10F81EAFE7E500BAFE36 /* OpenGateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenGateVC.swift; sourceTree = "<group>"; };
+		21440E7A1E68D64C006BA19F /* Gate Guard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Gate Guard.entitlements"; sourceTree = "<group>"; };
+		21440E7B1E68D65F006BA19F /* myLocation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = myLocation.entitlements; sourceTree = "<group>"; };
+		2164C1E61EB8D8EE005B9F21 /* Alertas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alertas.swift; sourceTree = "<group>"; };
+		2192A5861E70841400D53957 /* telemetryListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = telemetryListVC.swift; sourceTree = "<group>"; };
+		2192A58A1E70A1D200D53957 /* Rooms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
+		2192A58D1E70A4C500D53957 /* RoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
+		2192A58F1E71ED3E00D53957 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		2192A5911E71F04A00D53957 /* Blocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blocks.swift; sourceTree = "<group>"; };
+		2192A5931E71F26300D53957 /* Guards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guards.swift; sourceTree = "<group>"; };
+		2192A5951E71F4B400D53957 /* Profiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profiles.swift; sourceTree = "<group>"; };
+		2192A5971E71F51D00D53957 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		2192A5991E71F5AE00D53957 /* Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		2192A59B1E71F66500D53957 /* Brands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brands.swift; sourceTree = "<group>"; };
+		2192A59D1E71F6D600D53957 /* Vehicles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
+		2192A59F1E71FAAB00D53957 /* AlarmPanels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmPanels.swift; sourceTree = "<group>"; };
+		2192A5A11E71FFA800D53957 /* VideoServers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoServers.swift; sourceTree = "<group>"; };
+		2192A5A31E72018F00D53957 /* AutomationDevices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomationDevices.swift; sourceTree = "<group>"; };
+		2192A5A51E7202DD00D53957 /* GPSMyHouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSMyHouse.swift; sourceTree = "<group>"; };
+		2192A5A71E72062100D53957 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		2192A5A91E72079200D53957 /* BlockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockCell.swift; sourceTree = "<group>"; };
+		2192A5AB1E720C5200D53957 /* GuardsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuardsCell.swift; sourceTree = "<group>"; };
+		2192A5AD1E7213BC00D53957 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		2192A5AF1E7213F000D53957 /* ServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
+		2192A5B11E72144A00D53957 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		2192A5B31E72147400D53957 /* BrandCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandCell.swift; sourceTree = "<group>"; };
+		2192A5B51E7215AE00D53957 /* VehicleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleCell.swift; sourceTree = "<group>"; };
+		2192A5B71E72EF8700D53957 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		2192A5B91E7350B300D53957 /* security.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = security.png; sourceTree = "<group>"; };
+		2192A5BB1E73738000D53957 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2192A5BD1E746A0E00D53957 /* userDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userDetailVC.swift; sourceTree = "<group>"; };
+		2192A5BF1E74710C00D53957 /* guardDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guardDetailVC.swift; sourceTree = "<group>"; };
+		2192A5C11E74779900D53957 /* blockDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = blockDetailVC.swift; sourceTree = "<group>"; };
+		21AB1BB11E9BEEC600E1B47D /* GuestsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestsVC.swift; sourceTree = "<group>"; };
+		21AB1BB31E9C193400E1B47D /* guestDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guestDetail.swift; sourceTree = "<group>"; };
+		21AB1BB51E9C2CEC00E1B47D /* Guests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guests.swift; sourceTree = "<group>"; };
+		21AB1BB71E9EBB3900E1B47D /* sendInviteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sendInviteVC.swift; sourceTree = "<group>"; };
+		21AB1BB91E9EBFA400E1B47D /* customCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
+		21AB1BBB1E9EC16400E1B47D /* calendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = calendarVC.swift; sourceTree = "<group>"; };
+		21ABB6F31E69BC0900106238 /* GPS_ALERT-01-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GPS_ALERT-01-01.png"; sourceTree = "<group>"; };
+		21ABB6F41E69BC0900106238 /* GPS_ALERT-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GPS_ALERT-01.png"; sourceTree = "<group>"; };
+		21ABB6FC1E6A225E00106238 /* MEDICAL_ALERT2-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MEDICAL_ALERT2-01.png"; sourceTree = "<group>"; };
+		21ABB6FE1E6A38A000106238 /* usersListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = usersListVC.swift; sourceTree = "<group>"; };
+		21ABB7001E6A3A9400106238 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
+		21ABB7021E6B10FC00106238 /* newUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newUserVC.swift; sourceTree = "<group>"; };
+		21B0EDFF1EA7DBEC00CEDF73 /* alarmRegistryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alarmRegistryVC.swift; sourceTree = "<group>"; };
+		21B0EE011EA7EFA900CEDF73 /* AlarmRegistryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmRegistryCell.swift; sourceTree = "<group>"; };
+		21B0EE031EA90C5000CEDF73 /* alarmRegistryDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alarmRegistryDetailVC.swift; sourceTree = "<group>"; };
+		21B0EE051EA9241100CEDF73 /* AccessReportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessReportVC.swift; sourceTree = "<group>"; };
+		21B0EE071EA95AA900CEDF73 /* accessReportFiltersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accessReportFiltersVC.swift; sourceTree = "<group>"; };
+		21E4254A1E6F67B100DB13E4 /* alarmPanelsPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alarmPanelsPickerVC.swift; sourceTree = "<group>"; };
+		21E4254C1E70742600DB13E4 /* DS-DIGI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGI.TTF"; sourceTree = "<group>"; };
+		21E425501E7077CD00DB13E4 /* telemetryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = telemetryVC.swift; sourceTree = "<group>"; };
+		21F98A891E6F29D300F36B95 /* guardsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guardsListVC.swift; sourceTree = "<group>"; };
+		21F98A8B1E6F29E900F36B95 /* newGuardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newGuardVC.swift; sourceTree = "<group>"; };
+		21F98A8D1E6F4C4A00F36B95 /* profilesListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profilesListVC.swift; sourceTree = "<group>"; };
+		21F98A8F1E6F4C6300F36B95 /* newProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newProfileVC.swift; sourceTree = "<group>"; };
+		21F98A911E6F5FC000F36B95 /* servicesListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = servicesListVC.swift; sourceTree = "<group>"; };
+		21F98A931E6F5FD700F36B95 /* categoriesListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoriesListVC.swift; sourceTree = "<group>"; };
+		21F98A951E6F5FED00F36B95 /* newServiceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newServiceVC.swift; sourceTree = "<group>"; };
+		21F98A971E6F5FFE00F36B95 /* newCategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newCategoryVC.swift; sourceTree = "<group>"; };
+		21F9CA691EA008E000E5C02A /* InvitationsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationsListVC.swift; sourceTree = "<group>"; };
+		21F9CA6D1EA02C1900E5C02A /* InvitationsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationsCell.swift; sourceTree = "<group>"; };
+		21F9CA6F1EA02CB500E5C02A /* Invitations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invitations.swift; sourceTree = "<group>"; };
+		21F9CA711EA18DCE00E5C02A /* invitationEditionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = invitationEditionVC.swift; sourceTree = "<group>"; };
+		21F9CA731EA5062F00E5C02A /* AlarmEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmEvents.swift; sourceTree = "<group>"; };
+		21F9CA751EA5073500E5C02A /* alarmEventsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alarmEventsVC.swift; sourceTree = "<group>"; };
+		21FA73551E9FC16B0050B507 /* secondCalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondCalendarVC.swift; sourceTree = "<group>"; };
+		8601723FCEC728C67CCA530E /* Pods_myLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5AAD2A755DC5749A7FB685D /* Pods-myLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-myLocation/Pods-myLocation.release.xcconfig"; sourceTree = "<group>"; };
+		FE2710A399D73E2A5839853F /* Pods_Gate_Guard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gate_Guard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEA7DAED61FA293276DC5773 /* Pods-Gate Guard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gate Guard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gate Guard/Pods-Gate Guard.debug.xcconfig"; sourceTree = "<group>"; };
+		FF5D3C09FCBCA7789C3642D1 /* Pods-Gate Guard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gate Guard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gate Guard/Pods-Gate Guard.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		210ACA6C1E5F3FDC0097A652 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2104041D1E96F9EA00BBF232 /* CoreLocation.framework in Frameworks */,
+				2104041B1E96F8E700BBF232 /* MapKit.framework in Frameworks */,
+				6AF8FA9F01C771871A4B94E0 /* Pods_Gate_Guard.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21151CED1E67753D00A3BEB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21151CF21E67753D00A3BEB5 /* NotificationCenter.framework in Frameworks */,
+				53B45FC4F2D03DF6A5315626 /* Pods_myLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		210ACA661E5F3FDC0097A652 = {
+			isa = PBXGroup;
+			children = (
+				210ACA711E5F3FDC0097A652 /* Gate Guard */,
+				21151CF31E67753D00A3BEB5 /* myLocation */,
+				210ACA701E5F3FDC0097A652 /* Products */,
+				D9F003092433E83FF65A3CB1 /* Pods */,
+				A06C0F0FB4EB3375111167D5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		210ACA701E5F3FDC0097A652 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				210ACA6F1E5F3FDC0097A652 /* Gate Guard.app */,
+				21151CF01E67753D00A3BEB5 /* myLocation.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		210ACA711E5F3FDC0097A652 /* Gate Guard */ = {
+			isa = PBXGroup;
+			children = (
+				21440E7A1E68D64C006BA19F /* Gate Guard.entitlements */,
+				2192A5BB1E73738000D53957 /* Constants.swift */,
+				2192A5881E70A13800D53957 /* Model */,
+				2192A58C1E70A49300D53957 /* View */,
+				2192A5891E70A19000D53957 /* Controller */,
+				210ACA721E5F3FDC0097A652 /* AppDelegate.swift */,
+				21E4254C1E70742600DB13E4 /* DS-DIGI.TTF */,
+				210ACA8E1E5F4E070097A652 /* Gate Guard-Bridging-Header.h */,
+				2192A5B71E72EF8700D53957 /* SWRevealViewController.m */,
+				210ACAAE1E64842A0097A652 /* SWRevealViewController.h */,
+				21151CD31E67305E00A3BEB5 /* Media.xcassets */,
+				210ACA761E5F3FDC0097A652 /* Main.storyboard */,
+				210ACA941E5F53510097A652 /* roundedImages.swift */,
+				210ACA921E5F4FF60097A652 /* topView.swift */,
+				210ACA9C1E5F676A0097A652 /* SegueFromLeft.swift */,
+				210FC7811E8B18C10096490D /* loading.gif */,
+				2192A5B91E7350B300D53957 /* security.png */,
+				210ACA961E5F53E00097A652 /* rafa.png */,
+				21ABB7001E6A3A9400106238 /* avatar.png */,
+				210ACA841E5F42900097A652 /* logoGateguard.png */,
+				210ACA7B1E5F3FDC0097A652 /* LaunchScreen.storyboard */,
+				210ACA7E1E5F3FDC0097A652 /* Info.plist */,
+				210403D21E92D73200BBF232 /* Localizable.strings */,
+			);
+			path = "Gate Guard";
+			sourceTree = "<group>";
+		};
+		21151CF31E67753D00A3BEB5 /* myLocation */ = {
+			isa = PBXGroup;
+			children = (
+				21440E7B1E68D65F006BA19F /* myLocation.entitlements */,
+				21151CF41E67753D00A3BEB5 /* TodayViewController.swift */,
+				21ABB6FC1E6A225E00106238 /* MEDICAL_ALERT2-01.png */,
+				21ABB6F31E69BC0900106238 /* GPS_ALERT-01-01.png */,
+				21ABB6F41E69BC0900106238 /* GPS_ALERT-01.png */,
+				21151CF61E67753D00A3BEB5 /* MainInterface.storyboard */,
+				21151CF91E67753D00A3BEB5 /* Info.plist */,
+			);
+			path = myLocation;
+			sourceTree = "<group>";
+		};
+		2192A5881E70A13800D53957 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2192A58A1E70A1D200D53957 /* Rooms.swift */,
+				2192A58F1E71ED3E00D53957 /* Users.swift */,
+				2192A5911E71F04A00D53957 /* Blocks.swift */,
+				2192A5931E71F26300D53957 /* Guards.swift */,
+				2192A5951E71F4B400D53957 /* Profiles.swift */,
+				2192A5971E71F51D00D53957 /* Services.swift */,
+				2192A5991E71F5AE00D53957 /* Categories.swift */,
+				2192A59B1E71F66500D53957 /* Brands.swift */,
+				2192A59D1E71F6D600D53957 /* Vehicles.swift */,
+				2192A59F1E71FAAB00D53957 /* AlarmPanels.swift */,
+				2192A5A11E71FFA800D53957 /* VideoServers.swift */,
+				2192A5A31E72018F00D53957 /* AutomationDevices.swift */,
+				2192A5A51E7202DD00D53957 /* GPSMyHouse.swift */,
+				211E4D751E85964D00CAC7AD /* serverRequests.swift */,
+				21AB1BB51E9C2CEC00E1B47D /* Guests.swift */,
+				21F9CA6F1EA02CB500E5C02A /* Invitations.swift */,
+				21F9CA731EA5062F00E5C02A /* AlarmEvents.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2192A5891E70A19000D53957 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				210ACA741E5F3FDC0097A652 /* LoginVC.swift */,
+				210ACA981E5F57E90097A652 /* BlockSelectorVC.swift */,
+				210ACA9A1E5F60590097A652 /* ForgotPassVC.swift */,
+				210ACAA31E62036A0097A652 /* LandingVC.swift */,
+				210ACAA91E620A2D0097A652 /* menuVC.swift */,
+				21ABB6FE1E6A38A000106238 /* usersListVC.swift */,
+				2192A5BD1E746A0E00D53957 /* userDetailVC.swift */,
+				21ABB7021E6B10FC00106238 /* newUserVC.swift */,
+				2119A06A1E6F215F0000ED19 /* blocksListVC.swift */,
+				2192A5C11E74779900D53957 /* blockDetailVC.swift */,
+				2119A06C1E6F218D0000ED19 /* newBlockVC.swift */,
+				21F98A891E6F29D300F36B95 /* guardsListVC.swift */,
+				2192A5BF1E74710C00D53957 /* guardDetailVC.swift */,
+				21F98A8B1E6F29E900F36B95 /* newGuardVC.swift */,
+				21F98A8D1E6F4C4A00F36B95 /* profilesListVC.swift */,
+				21F98A8F1E6F4C6300F36B95 /* newProfileVC.swift */,
+				21F98A911E6F5FC000F36B95 /* servicesListVC.swift */,
+				21F98A931E6F5FD700F36B95 /* categoriesListVC.swift */,
+				21F98A951E6F5FED00F36B95 /* newServiceVC.swift */,
+				21F98A971E6F5FFE00F36B95 /* newCategoryVC.swift */,
+				21E4254A1E6F67B100DB13E4 /* alarmPanelsPickerVC.swift */,
+				2192A5861E70841400D53957 /* telemetryListVC.swift */,
+				21E425501E7077CD00DB13E4 /* telemetryVC.swift */,
+				211E4D771E85C44700CAC7AD /* streammingVC.swift */,
+				211E4D791E86CA7400CAC7AD /* ARVC.swift */,
+				210FC7831E8D6A180096490D /* noAccessVC.swift */,
+				210403D01E92BCE700BBF232 /* permisoDeAccesos.swift */,
+				210404161E96EC1E00BBF232 /* LocationManagerVC.swift */,
+				2104041E1E98318900BBF232 /* vehiclesListVC.swift */,
+				21AB1BB11E9BEEC600E1B47D /* GuestsVC.swift */,
+				21AB1BB31E9C193400E1B47D /* guestDetail.swift */,
+				21AB1BB71E9EBB3900E1B47D /* sendInviteVC.swift */,
+				21AB1BBB1E9EC16400E1B47D /* calendarVC.swift */,
+				21FA73551E9FC16B0050B507 /* secondCalendarVC.swift */,
+				21F9CA691EA008E000E5C02A /* InvitationsListVC.swift */,
+				21F9CA711EA18DCE00E5C02A /* invitationEditionVC.swift */,
+				21F9CA751EA5073500E5C02A /* alarmEventsVC.swift */,
+				21B0EDFF1EA7DBEC00CEDF73 /* alarmRegistryVC.swift */,
+				21B0EE031EA90C5000CEDF73 /* alarmRegistryDetailVC.swift */,
+				21B0EE051EA9241100CEDF73 /* AccessReportVC.swift */,
+				21B0EE071EA95AA900CEDF73 /* accessReportFiltersVC.swift */,
+				213D10F81EAFE7E500BAFE36 /* OpenGateVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2192A58C1E70A49300D53957 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2192A58D1E70A4C500D53957 /* RoomCell.swift */,
+				2192A5A71E72062100D53957 /* UserCell.swift */,
+				2192A5A91E72079200D53957 /* BlockCell.swift */,
+				2192A5AB1E720C5200D53957 /* GuardsCell.swift */,
+				2192A5AD1E7213BC00D53957 /* ProfileCell.swift */,
+				2192A5AF1E7213F000D53957 /* ServiceCell.swift */,
+				2192A5B11E72144A00D53957 /* CategoryCell.swift */,
+				2192A5B31E72147400D53957 /* BrandCell.swift */,
+				2192A5B51E7215AE00D53957 /* VehicleCell.swift */,
+				21AB1BB91E9EBFA400E1B47D /* customCell.swift */,
+				21F9CA6D1EA02C1900E5C02A /* InvitationsCell.swift */,
+				21B0EE011EA7EFA900CEDF73 /* AlarmRegistryCell.swift */,
+				2164C1E61EB8D8EE005B9F21 /* Alertas.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A06C0F0FB4EB3375111167D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2104041C1E96F9EA00BBF232 /* CoreLocation.framework */,
+				2104041A1E96F8E700BBF232 /* MapKit.framework */,
+				FE2710A399D73E2A5839853F /* Pods_Gate_Guard.framework */,
+				21151CDA1E67696300A3BEB5 /* UserNotifications.framework */,
+				21151CDC1E67696300A3BEB5 /* UserNotificationsUI.framework */,
+				21151CF11E67753D00A3BEB5 /* NotificationCenter.framework */,
+				8601723FCEC728C67CCA530E /* Pods_myLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9F003092433E83FF65A3CB1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FEA7DAED61FA293276DC5773 /* Pods-Gate Guard.debug.xcconfig */,
+				FF5D3C09FCBCA7789C3642D1 /* Pods-Gate Guard.release.xcconfig */,
+				1D04333EEF611021BEF925BB /* Pods-myLocation.debug.xcconfig */,
+				B5AAD2A755DC5749A7FB685D /* Pods-myLocation.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		210ACA6E1E5F3FDC0097A652 /* Gate Guard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 210ACA811E5F3FDC0097A652 /* Build configuration list for PBXNativeTarget "Gate Guard" */;
+			buildPhases = (
+				5C552FCEB5561F718BDA56C8 /* [CP] Check Pods Manifest.lock */,
+				210ACA6B1E5F3FDC0097A652 /* Sources */,
+				210ACA6C1E5F3FDC0097A652 /* Frameworks */,
+				210ACA6D1E5F3FDC0097A652 /* Resources */,
+				FCF62CBD68E8D4C7FA17DBC7 /* [CP] Embed Pods Frameworks */,
+				2DD8D1F910C75AD9DB7C5A00 /* [CP] Copy Pods Resources */,
+				21151D001E67753D00A3BEB5 /* Embed App Extensions */,
+				211DA73B1E688F11009B5E98 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21151CFB1E67753D00A3BEB5 /* PBXTargetDependency */,
+			);
+			name = "Gate Guard";
+			productName = "Gate Guard";
+			productReference = 210ACA6F1E5F3FDC0097A652 /* Gate Guard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		21151CEF1E67753D00A3BEB5 /* myLocation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21151CFD1E67753D00A3BEB5 /* Build configuration list for PBXNativeTarget "myLocation" */;
+			buildPhases = (
+				B7917AFBDDD325839976E8A8 /* [CP] Check Pods Manifest.lock */,
+				21151CEC1E67753D00A3BEB5 /* Sources */,
+				21151CED1E67753D00A3BEB5 /* Frameworks */,
+				21151CEE1E67753D00A3BEB5 /* Resources */,
+				902D0735CBD777DCFB166062 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = myLocation;
+			productName = myLocation;
+			productReference = 21151CF01E67753D00A3BEB5 /* myLocation.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		210ACA671E5F3FDC0097A652 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Ram;
+				TargetAttributes = {
+					210ACA6E1E5F3FDC0097A652 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = S4V28N4MSW;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					21151CEF1E67753D00A3BEB5 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = S4V28N4MSW;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 210ACA6A1E5F3FDC0097A652 /* Build configuration list for PBXProject "Gate Guard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 210ACA661E5F3FDC0097A652;
+			productRefGroup = 210ACA701E5F3FDC0097A652 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				210ACA6E1E5F3FDC0097A652 /* Gate Guard */,
+				21151CEF1E67753D00A3BEB5 /* myLocation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		210ACA6D1E5F3FDC0097A652 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2192A5851E70807700D53957 /* DS-DIGI.TTF in Resources */,
+				21ABB7011E6A3A9400106238 /* avatar.png in Resources */,
+				21151CD41E67305E00A3BEB5 /* Media.xcassets in Resources */,
+				210ACA7D1E5F3FDC0097A652 /* LaunchScreen.storyboard in Resources */,
+				21ABB7041E6B1C4700106238 /* Main.storyboard in Resources */,
+				210ACA971E5F53E00097A652 /* rafa.png in Resources */,
+				210ACA851E5F42900097A652 /* logoGateguard.png in Resources */,
+				210FC7821E8B18C10096490D /* loading.gif in Resources */,
+				210403D31E92D73200BBF232 /* Localizable.strings in Resources */,
+				21E425521E707B5600DB13E4 /* Info.plist in Resources */,
+				2192A5BA1E7350B300D53957 /* security.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21151CEE1E67753D00A3BEB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21ABB6F61E69BC0900106238 /* GPS_ALERT-01.png in Resources */,
+				21151CF81E67753D00A3BEB5 /* MainInterface.storyboard in Resources */,
+				21ABB6FD1E6A225E00106238 /* MEDICAL_ALERT2-01.png in Resources */,
+				21ABB6F51E69BC0900106238 /* GPS_ALERT-01-01.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2DD8D1F910C75AD9DB7C5A00 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gate Guard/Pods-Gate Guard-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C552FCEB5561F718BDA56C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		902D0735CBD777DCFB166062 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myLocation/Pods-myLocation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7917AFBDDD325839976E8A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FCF62CBD68E8D4C7FA17DBC7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gate Guard/Pods-Gate Guard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		210ACA6B1E5F3FDC0097A652 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21FA73561E9FC16B0050B507 /* secondCalendarVC.swift in Sources */,
+				2192A59C1E71F66500D53957 /* Brands.swift in Sources */,
+				21F9CA761EA5073500E5C02A /* alarmEventsVC.swift in Sources */,
+				211E4D7A1E86CA7400CAC7AD /* ARVC.swift in Sources */,
+				2192A5871E70841400D53957 /* telemetryListVC.swift in Sources */,
+				21F98A961E6F5FED00F36B95 /* newServiceVC.swift in Sources */,
+				21F98A921E6F5FC000F36B95 /* servicesListVC.swift in Sources */,
+				2104041F1E98318900BBF232 /* vehiclesListVC.swift in Sources */,
+				21151D031E6776E800A3BEB5 /* LoginVC.swift in Sources */,
+				21F98A8E1E6F4C4A00F36B95 /* profilesListVC.swift in Sources */,
+				210ACA931E5F4FF60097A652 /* topView.swift in Sources */,
+				21F98A901E6F4C6300F36B95 /* newProfileVC.swift in Sources */,
+				21ABB6FF1E6A38A000106238 /* usersListVC.swift in Sources */,
+				21AB1BB41E9C193400E1B47D /* guestDetail.swift in Sources */,
+				210ACA951E5F53510097A652 /* roundedImages.swift in Sources */,
+				21ABB7031E6B10FC00106238 /* newUserVC.swift in Sources */,
+				2192A5B81E72EF8700D53957 /* SWRevealViewController.m in Sources */,
+				210ACAAA1E620A2D0097A652 /* menuVC.swift in Sources */,
+				21B0EE021EA7EFA900CEDF73 /* AlarmRegistryCell.swift in Sources */,
+				2192A5A41E72018F00D53957 /* AutomationDevices.swift in Sources */,
+				2192A5B01E7213F000D53957 /* ServiceCell.swift in Sources */,
+				2192A5941E71F26300D53957 /* Guards.swift in Sources */,
+				2192A5B41E72147400D53957 /* BrandCell.swift in Sources */,
+				210ACA991E5F57E90097A652 /* BlockSelectorVC.swift in Sources */,
+				21F98A8C1E6F29E900F36B95 /* newGuardVC.swift in Sources */,
+				2192A58E1E70A4C500D53957 /* RoomCell.swift in Sources */,
+				211E4D781E85C44700CAC7AD /* streammingVC.swift in Sources */,
+				2192A5BE1E746A0E00D53957 /* userDetailVC.swift in Sources */,
+				2164C1E71EB8D8EE005B9F21 /* Alertas.swift in Sources */,
+				210404171E96EC1E00BBF232 /* LocationManagerVC.swift in Sources */,
+				2192A5981E71F51D00D53957 /* Services.swift in Sources */,
+				211E4D761E85964D00CAC7AD /* serverRequests.swift in Sources */,
+				2192A5B21E72144A00D53957 /* CategoryCell.swift in Sources */,
+				2192A5B61E7215AE00D53957 /* VehicleCell.swift in Sources */,
+				21F9CA721EA18DCE00E5C02A /* invitationEditionVC.swift in Sources */,
+				213D10F91EAFE7E500BAFE36 /* OpenGateVC.swift in Sources */,
+				21F9CA6E1EA02C1900E5C02A /* InvitationsCell.swift in Sources */,
+				21F9CA6A1EA008E000E5C02A /* InvitationsListVC.swift in Sources */,
+				2192A5C21E74779900D53957 /* blockDetailVC.swift in Sources */,
+				21AB1BB81E9EBB3A00E1B47D /* sendInviteVC.swift in Sources */,
+				2192A5BC1E73738000D53957 /* Constants.swift in Sources */,
+				21AB1BB21E9BEEC600E1B47D /* GuestsVC.swift in Sources */,
+				2192A5C01E74710C00D53957 /* guardDetailVC.swift in Sources */,
+				2192A5A81E72062100D53957 /* UserCell.swift in Sources */,
+				210FC7841E8D6A180096490D /* noAccessVC.swift in Sources */,
+				2119A06D1E6F218D0000ED19 /* newBlockVC.swift in Sources */,
+				2192A5A21E71FFA800D53957 /* VideoServers.swift in Sources */,
+				2192A5A01E71FAAB00D53957 /* AlarmPanels.swift in Sources */,
+				2192A5AE1E7213BC00D53957 /* ProfileCell.swift in Sources */,
+				210ACAA41E62036A0097A652 /* LandingVC.swift in Sources */,
+				21E425511E7077CD00DB13E4 /* telemetryVC.swift in Sources */,
+				2119A06B1E6F215F0000ED19 /* blocksListVC.swift in Sources */,
+				21B0EE061EA9241100CEDF73 /* AccessReportVC.swift in Sources */,
+				21F9CA741EA5062F00E5C02A /* AlarmEvents.swift in Sources */,
+				21AB1BBA1E9EBFA400E1B47D /* customCell.swift in Sources */,
+				2192A5AA1E72079200D53957 /* BlockCell.swift in Sources */,
+				2192A59A1E71F5AE00D53957 /* Categories.swift in Sources */,
+				21B0EE041EA90C5000CEDF73 /* alarmRegistryDetailVC.swift in Sources */,
+				2192A59E1E71F6D600D53957 /* Vehicles.swift in Sources */,
+				210403D11E92BCE700BBF232 /* permisoDeAccesos.swift in Sources */,
+				210ACA9B1E5F60590097A652 /* ForgotPassVC.swift in Sources */,
+				210ACA9D1E5F676A0097A652 /* SegueFromLeft.swift in Sources */,
+				2192A5901E71ED3E00D53957 /* Users.swift in Sources */,
+				21F98A941E6F5FD700F36B95 /* categoriesListVC.swift in Sources */,
+				2192A58B1E70A1D200D53957 /* Rooms.swift in Sources */,
+				210ACA731E5F3FDC0097A652 /* AppDelegate.swift in Sources */,
+				21F98A8A1E6F29D300F36B95 /* guardsListVC.swift in Sources */,
+				2192A5A61E7202DD00D53957 /* GPSMyHouse.swift in Sources */,
+				21B0EE081EA95AA900CEDF73 /* accessReportFiltersVC.swift in Sources */,
+				21F9CA701EA02CB500E5C02A /* Invitations.swift in Sources */,
+				2192A5921E71F04A00D53957 /* Blocks.swift in Sources */,
+				2192A5961E71F4B400D53957 /* Profiles.swift in Sources */,
+				2192A5AC1E720C5200D53957 /* GuardsCell.swift in Sources */,
+				21AB1BB61E9C2CEC00E1B47D /* Guests.swift in Sources */,
+				21E4254B1E6F67B100DB13E4 /* alarmPanelsPickerVC.swift in Sources */,
+				21AB1BBC1E9EC16400E1B47D /* calendarVC.swift in Sources */,
+				21F98A981E6F5FFE00F36B95 /* newCategoryVC.swift in Sources */,
+				21B0EE001EA7DBEC00CEDF73 /* alarmRegistryVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21151CEC1E67753D00A3BEB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21151CF51E67753D00A3BEB5 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		21151CFB1E67753D00A3BEB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21151CEF1E67753D00A3BEB5 /* myLocation */;
+			targetProxy = 21151CFA1E67753D00A3BEB5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		210ACA761E5F3FDC0097A652 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				210ACA771E5F3FDC0097A652 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		210ACA7B1E5F3FDC0097A652 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				210ACA7C1E5F3FDC0097A652 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		21151CF61E67753D00A3BEB5 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21151CF71E67753D00A3BEB5 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		210ACA7F1E5F3FDC0097A652 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cesar Martinez de los Santos (KDG2ZUR6QL)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		210ACA801E5F3FDC0097A652 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cesar Martinez de los Santos (KDG2ZUR6QL)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		210ACA821E5F3FDC0097A652 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEA7DAED61FA293276DC5773 /* Pods-Gate Guard.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Gate Guard/Gate Guard.entitlements";
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "Gate Guard/Gate Guard.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cesar Martinez de los Santos (KDG2ZUR6QL)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = S4V28N4MSW;
+				INFOPLIST_FILE = "Gate Guard/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mx.rowantechnologies.Gate-Guard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gate Guard/Gate Guard-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		210ACA831E5F3FDC0097A652 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF5D3C09FCBCA7789C3642D1 /* Pods-Gate Guard.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Gate Guard/Gate Guard.entitlements";
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "Gate Guard/Gate Guard.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cesar Martinez de los Santos (KDG2ZUR6QL)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = S4V28N4MSW;
+				INFOPLIST_FILE = "Gate Guard/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mx.rowantechnologies.Gate-Guard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gate Guard/Gate Guard-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		21151CFE1E67753D00A3BEB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D04333EEF611021BEF925BB /* Pods-myLocation.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = myLocation/myLocation.entitlements;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = myLocation/myLocation.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.mx.rowantechnologies.Gate-Guard.myLocation";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = S4V28N4MSW;
+				INFOPLIST_FILE = myLocation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mx.rowantechnologies.Gate-Guard.myLocation";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		21151CFF1E67753D00A3BEB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5AAD2A755DC5749A7FB685D /* Pods-myLocation.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = myLocation/myLocation.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.mx.rowantechnologies.Gate-Guard.myLocation";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = S4V28N4MSW;
+				INFOPLIST_FILE = myLocation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mx.rowantechnologies.Gate-Guard.myLocation";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		210ACA6A1E5F3FDC0097A652 /* Build configuration list for PBXProject "Gate Guard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				210ACA7F1E5F3FDC0097A652 /* Debug */,
+				210ACA801E5F3FDC0097A652 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		210ACA811E5F3FDC0097A652 /* Build configuration list for PBXNativeTarget "Gate Guard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				210ACA821E5F3FDC0097A652 /* Debug */,
+				210ACA831E5F3FDC0097A652 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21151CFD1E67753D00A3BEB5 /* Build configuration list for PBXNativeTarget "myLocation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21151CFE1E67753D00A3BEB5 /* Debug */,
+				21151CFF1E67753D00A3BEB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 210ACA671E5F3FDC0097A652 /* Project object */;
+}
