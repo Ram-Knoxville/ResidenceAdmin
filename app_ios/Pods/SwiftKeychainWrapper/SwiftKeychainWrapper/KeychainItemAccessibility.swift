@@ -104,13 +104,13 @@ public enum KeychainItemAccessibility {
 
 private let keychainItemAccessibilityLookup: [KeychainItemAccessibility:CFString] = {
     var lookup: [KeychainItemAccessibility:CFString] = [
-        .afterFirstUnlock: kSecAttrAccessibleAfterFirstUnlock,
-        .afterFirstUnlockThisDeviceOnly: kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly,
+        .afterFirstUnlock: kSecAttrAccessibleAlways,
+        .afterFirstUnlockThisDeviceOnly: kSecAttrAccessibleAlways,
         .always: kSecAttrAccessibleAlways,
-        .whenPasscodeSetThisDeviceOnly: kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly,
-        .alwaysThisDeviceOnly : kSecAttrAccessibleAlwaysThisDeviceOnly,
-        .whenUnlocked: kSecAttrAccessibleWhenUnlocked,
-        .whenUnlockedThisDeviceOnly: kSecAttrAccessibleWhenUnlockedThisDeviceOnly
+        .whenPasscodeSetThisDeviceOnly: kSecAttrAccessibleAlways,
+        .alwaysThisDeviceOnly : kSecAttrAccessibleAlways,
+        .whenUnlocked: kSecAttrAccessibleAlways,
+        .whenUnlockedThisDeviceOnly: kSecAttrAccessibleAlways
     ]
 
     return lookup

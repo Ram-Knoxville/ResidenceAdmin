@@ -143,7 +143,7 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
                     
                 }else {
                     
-                    manager.startUpdatingLocation(interval: 2, acceptableLocationAccuracy: 100)
+                    manager.startUpdatingLocation(interval: 60, acceptableLocationAccuracy: 100)
                     
                 }
 
@@ -522,7 +522,7 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
             let urlString = "http://api.gateguard.com.mx/api/doors/getDoorsBeacon"
             
             let parameters: Parameters = [
-                "accountUId": accountUid,
+                "accountUid": accountUid,
                 "beaconUid": beaconUid
             ]
             
