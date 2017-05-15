@@ -44,6 +44,7 @@ class usersListVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         self.usersListCollection.delegate = self
         self.usersListCollection.dataSource = self
+        
         self.userSearchBar.delegate = self
         
         self.userSearchBar.returnKeyType = UIReturnKeyType.done
@@ -57,8 +58,8 @@ class usersListVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         
 
-        let residenceUid = KeychainWrapper.standard.string(forKey: "ResidenceUid")!
-        let token = KeychainWrapper.standard.string(forKey: "token")!
+        let residenceUid = UserDefaults.standard.string(forKey: "ResidenceUid")!
+        let token = UserDefaults.standard.string(forKey: "token")!
         
         self.getUsers(residenceUid: residenceUid, token: token)
         
@@ -222,6 +223,8 @@ class usersListVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             usersListCollection.reloadData()
         }
     }
+    
+    // MARK: - Prepare for Segue 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "userListToDetail" {

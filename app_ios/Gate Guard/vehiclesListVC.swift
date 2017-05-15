@@ -49,9 +49,9 @@ class vehiclesListVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         
         
-        let residenceUid = KeychainWrapper.standard.string(forKey: "ResidenceUid")!
-        let token = KeychainWrapper.standard.string(forKey: "token")!
-        let suburbUid = KeychainWrapper.standard.string(forKey: "SuburbUid")!
+        let residenceUid = UserDefaults.standard.string(forKey: "ResidenceUid")!
+        let token = UserDefaults.standard.string(forKey: "token")!
+        let suburbUid = UserDefaults.standard.string(forKey: "SuburbUid")!
         
         self.getVehicles(residenceUid: residenceUid, token: token, suburbUid: suburbUid)
     }

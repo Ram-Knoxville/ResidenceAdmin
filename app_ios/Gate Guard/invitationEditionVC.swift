@@ -88,17 +88,17 @@ class invitationEditionVC: UIViewController {
     }
     
     func changeDateTitles() {
-        
-        if KeychainWrapper.standard.string(forKey: "startDate") != nil {
+//        KeychainWrapper.standard.string(forKey: "startDate")
+        if UserDefaults.standard.string(forKey: "startDate") != nil {
             
         }else{
             let date = Date()
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
-            let startDate = formatter.string(from: date)
+//            let startDate = formatter.string(from: date)
         }
-        
-        if KeychainWrapper.standard.string(forKey: "endDate") != nil {
+//        KeychainWrapper.standard.string(forKey: "endDate")
+        if UserDefaults.standard.string(forKey: "endDate") != nil {
             
         }else{
             
@@ -151,7 +151,7 @@ class invitationEditionVC: UIViewController {
         if invitationId != nil {
             //Send request to server
             
-            let token: String! = KeychainWrapper.standard.string(forKey: "token")!
+            let token: String! = UserDefaults.standard.string(forKey: "token")//KeychainWrapper.standard.string(forKey: "token")!
             
             
             let urlString = "http://api.gateguard.com.mx/api/myGuests/sendInvitation"
@@ -174,16 +174,20 @@ class invitationEditionVC: UIViewController {
                 
             }
             
-            KeychainWrapper.standard.removeObject(forKey: "startDate")
-            KeychainWrapper.standard.removeObject(forKey: "endDate")
+            
+            
+            UserDefaults.standard.removeObject(forKey: "startDate")
+            UserDefaults.standard.removeObject(forKey: "endDate")
+            
+            
             performSegue(withIdentifier: "goBackSegue", sender: nil)
             
         }else {
             //Send request to server
             
-            let token: String! = KeychainWrapper.standard.string(forKey: "token")!
-            let suburbUid: String! = KeychainWrapper.standard.string(forKey: "SuburbUid")!
-            let residenceUid: String! = KeychainWrapper.standard.string(forKey: "ResidenceUid")!
+            let token: String! = UserDefaults.standard.string(forKey: "token")!//KeychainWrapper.standard.string(forKey: "token")!
+            let suburbUid: String! = UserDefaults.standard.string(forKey: "SuburbUid")!//KeychainWrapper.standard.string(forKey: "SuburbUid")!
+            let residenceUid: String! = UserDefaults.standard.string(forKey: "ResidenceUid")!//KeychainWrapper.standard.string(forKey: "ResidenceUid")!
             var myGuest = ["id": "", "firstNames": "", "lastNames": "", "eMail": ""]
             print("Valores")
             print(self.guestId)
@@ -217,8 +221,8 @@ class invitationEditionVC: UIViewController {
                 
             }
             
-            KeychainWrapper.standard.removeObject(forKey: "startDate")
-            KeychainWrapper.standard.removeObject(forKey: "endDate")
+            UserDefaults.standard.removeObject(forKey: "startDate")
+            UserDefaults.standard.removeObject(forKey: "endDate")
             performSegue(withIdentifier: "goBackSegue", sender: nil)
         }
         

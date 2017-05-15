@@ -164,8 +164,9 @@ class sendInviteVC: UIViewController {
                 
             }
             
-            KeychainWrapper.standard.removeObject(forKey: "startDate")
-            KeychainWrapper.standard.removeObject(forKey: "endDate")
+            UserDefaults.standard.removeObject(forKey: "startDate")
+            UserDefaults.standard.removeObject(forKey: "endDate")
+            
             performSegue(withIdentifier: "goBackSegue", sender: nil)
 
         }else {
@@ -207,8 +208,10 @@ class sendInviteVC: UIViewController {
                 
             }
             
-            KeychainWrapper.standard.removeObject(forKey: "startDate")
-            KeychainWrapper.standard.removeObject(forKey: "endDate")
+            UserDefaults.standard.removeObject(forKey: "startDate")
+            UserDefaults.standard.removeObject(forKey: "endDate")
+            
+            
             performSegue(withIdentifier: "goBackSegue", sender: nil)
         }
         

@@ -27,6 +27,7 @@ class BlockSelectorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     var UserToken: String! = " "
     var profileId = [NSString]()
     var profileIdSelected: String!
+    let defaults = UserDefaults.standard
     
     // variables for push notification registration
     
@@ -35,16 +36,8 @@ class BlockSelectorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     
     override func viewWillAppear(_ animated: Bool) {
         
-        print("Username: ")
-        print(KeychainWrapper.standard.string(forKey: "username")!)
-        print("password: ")
-        print(KeychainWrapper.standard.string(forKey: "password")!)
-        print("Token: ")
-        print(KeychainWrapper.standard.string(forKey: "token")!)
-
-        
-        if KeychainWrapper.standard.string(forKey: "userPhoto") != nil {
-            let picture: String! = KeychainWrapper.standard.string(forKey: "userPhoto")!
+        if UserDefaults.standard.string(forKey: "userPhoto") != nil {
+            let picture: String! = UserDefaults.standard.string(forKey: "userPhoto")!
             
             let url = NSURL(string: "http://api.gateguard.com.mx/uploads/accounts/\(picture!)")!
             if let data = NSData(contentsOf: url as URL) {
@@ -55,12 +48,12 @@ class BlockSelectorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         }
         
         
-        if KeychainWrapper.standard.string(forKey: "userToken") != nil{
-            self.UserToken = KeychainWrapper.standard.string(forKey: "userToken")!
+        if UserDefaults.standard.string(forKey: "userToken") != nil{
+            self.UserToken = UserDefaults.standard.string(forKey: "userToken")!
         }
         
-        if KeychainWrapper.standard.string(forKey: "profile") != nil {
-            self.selectedProfile = KeychainWrapper.standard.string(forKey: "profile")
+        if UserDefaults.standard.string(forKey: "profile") != nil {
+            self.selectedProfile = UserDefaults.standard.string(forKey: "profile")!
             self.enterBtnPressed(self)
         }
         
@@ -80,7 +73,7 @@ class BlockSelectorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         
         //read from internal memory
         
-        UserToken = KeychainWrapper.standard.string(forKey: "token")!
+        UserToken = UserDefaults.standard.string(forKey: "token")!//KeychainWrapper.standard.string(forKey: "token")!
         
         if let testArray : AnyObject? = UserDefaults.standard.object(forKey: "perfiles") as AnyObject?? {
             let readArray : [NSString] = testArray! as! [NSString]
@@ -127,11 +120,15 @@ class BlockSelectorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         print("Este es el profileId que seleccionas \(profileIdSelected)")
         
         selectedProfile = valueSelected
-        KeychainWrapper.standard.set(selectedProfile, forKey: "selectedProfile")
         //Save usefull information on memory
-        let defaults = UserDefaults.standard
+        
+        defaults.set(selectedProfile, forKey: "selectedProfile")
         defaults.set(self.selectedProfile, forKey: "profileSelected")
         defaults.set(profileIdSelected, forKey: "profileIdSelected")
+        
+//        KeychainWrapper.standard.set(selectedProfile, forKey: "selectedProfile")
+        //Save usefull information on memory
+        
     }
 
     @IBAction func enterBtnPressed(_ sender: Any) {
@@ -155,7 +152,7 @@ class BlockSelectorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
             //Send request to server
             
             let profile: String! = profileIdSelected
-            let userToken: String! = KeychainWrapper.standard.string(forKey: "token")
+            let userToken: String! = UserDefaults.standard.string(forKey: "token")!//KeychainWrapper.standard.string(forKey: "token")
             print(profile)
             print(userToken)
             let urlString = "http://api.gateguard.com.mx/api/Accounts/login2"
@@ -187,7 +184,8 @@ class BlockSelectorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
                     }else if dict["status"] as? String  == "OK"{
                         
                         //Save Credentials on keychain Wrapper
-                        KeychainWrapper.standard.set(profile!, forKey: "profile")
+                        self.defaults.set(profile!, forKey: "profile")
+//                        KeychainWrapper.standard.set(profile!, forKey: "profile")
                         
                         let userToken: String! = self.UserToken
                         
@@ -265,21 +263,33 @@ class BlockSelectorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
                                     }
                                     
                                     let Logo: String! = profileLogo
-                                    KeychainWrapper.standard.set(Logo, forKey: "ProfileLogo")
+                                    self.defaults.set(Logo, forKey: "ProfileLogo")
+//                                    KeychainWrapper.standard.set(Logo, forKey: "ProfileLogo")
                                     let ProfileId: String! = profileProfileId
-                                    KeychainWrapper.standard.set(ProfileId, forKey: "ProfileId")
+                                    self.defaults.set(ProfileId, forKey: "ProfileId")
+//                                    KeychainWrapper.standard.set(ProfileId, forKey: "ProfileId")
+                                    
                                     let ProfileUid: String! = profileProfileUid
-                                    KeychainWrapper.standard.set(ProfileUid, forKey: "ProfileUid")
+                                    self.defaults.set(ProfileUid, forKey: "ProfileUid")
+//                                    KeychainWrapper.standard.set(ProfileUid, forKey: "ProfileUid")
+                                    
                                     let ResidenceUid: String! = profileResidenceUid
-                                    KeychainWrapper.standard.set(ResidenceUid, forKey: "ResidenceUid")
+                                    self.defaults.set(ResidenceUid, forKey: "ResidenceUid")
+//                                    KeychainWrapper.standard.set(ResidenceUid, forKey: "ResidenceUid")
+                                    
                                     let SuburbName: String! = profileSuburbName
-                                    KeychainWrapper.standard.set(SuburbName, forKey: "SuburbName")
+                                    self.defaults.set(SuburbName, forKey: "SuburbName")
+//                                    KeychainWrapper.standard.set(SuburbName, forKey: "SuburbName")
+                                    
                                     let SuburbUid: String! = profileSuburbUid
-                                    KeychainWrapper.standard.set(SuburbUid, forKey: "SuburbUid")
+                                    self.defaults.set(SuburbUid, forKey: "SuburbUid")
+//                                    KeychainWrapper.standard.set(SuburbUid, forKey: "SuburbUid")
                                     
                                     // Saved Roles
-                                    KeychainWrapper.standard.set(roleId, forKey: "roleId")
-                                    KeychainWrapper.standard.set(roleUid, forKey: "roleUid")
+                                    self.defaults.set(roleId, forKey: "roleId")
+                                    self.defaults.set(roleUid, forKey: "roleUid")
+//                                    KeychainWrapper.standard.set(roleId, forKey: "roleId")
+//                                    KeychainWrapper.standard.set(roleUid, forKey: "roleUid")
                                     
                                     var sessiondict = [Any]()
                                     
@@ -299,9 +309,11 @@ class BlockSelectorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
                                     
                                     
                                     let UserId: String! = userid
-                                    KeychainWrapper.standard.set(UserId, forKey: "userId")
+                                    self.defaults.set(UserId, forKey: "userId")
+//                                    KeychainWrapper.standard.set(UserId, forKey: "userId")
                                     let UserUid: String! = userUid
-                                    KeychainWrapper.standard.set(UserUid, forKey: "userUid")
+                                    self.defaults.set(UserUid, forKey: "userUid")
+//                                    KeychainWrapper.standard.set(UserUid, forKey: "userUid")
                                     
                                     var userDataDict = [Any]()
                                     
@@ -323,10 +335,15 @@ class BlockSelectorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
                                         }
                                     }
                                     
-                                    KeychainWrapper.standard.set(userEmail, forKey: "userEmail")
-                                    KeychainWrapper.standard.set(userfirstNames, forKey: "userFirstName")
-                                    KeychainWrapper.standard.set(userLastNames, forKey: "userLastName")
-                                    KeychainWrapper.standard.set(userPhoto, forKey: "userPhoto")
+                                    self.defaults.set(userEmail, forKey: "userEmail")
+                                    self.defaults.set(userfirstNames, forKey: "userFirstName")
+                                    self.defaults.set(userLastNames, forKey: "userLastName")
+                                    self.defaults.set(userPhoto, forKey: "userPhoto")
+                                    
+//                                    KeychainWrapper.standard.set(userEmail, forKey: "userEmail")
+//                                    KeychainWrapper.standard.set(userfirstNames, forKey: "userFirstName")
+//                                    KeychainWrapper.standard.set(userLastNames, forKey: "userLastName")
+//                                    KeychainWrapper.standard.set(userPhoto, forKey: "userPhoto")
                                     self.performSegue(withIdentifier: "pickerToLanding", sender: nil)
                                 }
 

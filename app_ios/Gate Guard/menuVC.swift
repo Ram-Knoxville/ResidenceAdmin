@@ -14,7 +14,7 @@ class menuVC: UIViewController, UITableViewDataSource {
     
     var expandedSections : NSMutableSet = []
     
-    var sectionData = ["Inicio",/* "Administración de Sistema", "Nuestra Colonia",*/ "Mi Casa"/*, "Control de Acceso", "Reportes", "Configuración de Colonia"*/]
+    var sectionData = ["Inicio",/* "Administración de Sistema", "Nuestra Colonia",*/ "Mi Casa", "Configuración"/*, "Control de Acceso", "Reportes", "Configuración de Colonia"*/]
     var row1 = ["Home"]
     var row2 = ["Usuarios", "Colonias", "Guardias", "Perfiles", "Servicios"]
     var row3 = ["Ingresos", "Gastos", "Facturas", "Encuestas y Votaciones", "Notificaciones", "Configuración", "Quejas y Sugerencias", "Monitoreo Paneles de Alarma"]
@@ -37,17 +37,41 @@ class menuVC: UIViewController, UITableViewDataSource {
     }
     
     func sectionTapped(_ sender: UIButton) {
-        //print("section Tapped")
-        let section = sender.tag
-        let shouldExpand = !expandedSections.contains(section)
-        if (shouldExpand) {
-            expandedSections.removeAllObjects()
-            expandedSections.add(section)
-        } else {
-            expandedSections.removeAllObjects()
+        
+        switch sender.tag {
+        case 0:
+            print("Home Section")
+            performSegue(withIdentifier: "menuAInicio", sender: nil)
+        case 1:
+            print("My House Section")
+            let section = sender.tag
+            let shouldExpand = !expandedSections.contains(section)
+            if (shouldExpand) {
+                expandedSections.removeAllObjects()
+                expandedSections.add(section)
+            } else {
+                expandedSections.removeAllObjects()
+                
+                
+            }
+        case 2:
+            print("Settings Section")
+            let section = sender.tag
+            let shouldExpand = !expandedSections.contains(section)
+            if (shouldExpand) {
+                expandedSections.removeAllObjects()
+                expandedSections.add(section)
+            } else {
+                expandedSections.removeAllObjects()
+                
+                
+            }
             
-            
+        default:
+            print("Do Nothing")
         }
+        
+        
         self.tableView.reloadData()
     }
 }
@@ -56,7 +80,7 @@ extension menuVC: UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -90,6 +114,8 @@ extension menuVC: UITableViewDelegate {
                 return row1.count
             case 1:
                 return row4.count
+            case 2:
+                return 1
             /*case 2:
                 return row4.count
             case 3:
@@ -117,6 +143,8 @@ extension menuVC: UITableViewDelegate {
             cell?.textLabel?.text = row1[indexPath.row]
         case 1:
             cell?.textLabel?.text = row4[indexPath.row]
+        case 2:
+            cell?.textLabel?.text = "Configuración General"
         /*case 2:
             cell?.textLabel?.text = row4[indexPath.row]
         case 3:
@@ -165,6 +193,8 @@ extension menuVC: UITableViewDelegate {
             }else if indexPath.row == 7 {
                 performSegue(withIdentifier: "menuToAccessRegistry", sender: nil)
             }
+        case 2:
+            performSegue(withIdentifier: "menuToSettings", sender: self)
             
         /*case 2:
             cell?.textLabel?.text = row3[indexPath.row]

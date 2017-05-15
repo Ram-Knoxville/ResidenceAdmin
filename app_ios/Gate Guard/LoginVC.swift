@@ -27,7 +27,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        if let username: String = KeychainWrapper.standard.string(forKey: "username"), let password: String = KeychainWrapper.standard.string(forKey: "password")
+        if let username: String = UserDefaults.standard.string(forKey: "username"), let password: String = UserDefaults.standard.string(forKey: "password")
         {
             self.emailTxt.text = username
             self.passwordTxt.text = password
@@ -197,6 +197,13 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                         
                         let fullName = firstName! + " " + lastName!
                         
+                        // Save credentials on keychain
+                        let usernameCredential: String! = self.emailTxt.text
+                        let passwordCredential: String! = self.passwordTxt.text
+                        
+                        print(usernameCredential!)
+                        print(passwordCredential!)
+                        
                         //Save usefull information on memory
                         let defaults = UserDefaults.standard
                         defaults.set(self.profiles, forKey: "perfiles")
@@ -205,21 +212,18 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                         defaults.set(userToken, forKey: "UserToken")
                         defaults.set(userUid, forKey: "userUid")
                         defaults.set(self.profileId, forKey: "profileId")
+                        defaults.set(usernameCredential!, forKey: "username")
+                        defaults.set(passwordCredential!, forKey: "password")
+                        defaults.set(userToken, forKey: "token")
+                        defaults.set(userPhoto, forKey: "userPhoto")
                         
-                        // Save credentials on keychain
-                        let usernameCredential: String! = self.emailTxt.text
-                        let passwordCredential: String! = self.passwordTxt.text
                         
-                        print(usernameCredential!)
-                        print(passwordCredential!)
                         
-                        KeychainWrapper.standard.set(usernameCredential!, forKey: "username")
-                        KeychainWrapper.standard.set(passwordCredential!, forKey: "password")
-                        KeychainWrapper.standard.set(userToken, forKey: "token")
-                        KeychainWrapper.standard.set(userPhoto, forKey: "userPhoto")
-                        print(KeychainWrapper.standard.string(forKey: "username")!)
-                        print(KeychainWrapper.standard.string(forKey: "password")!)
-                        print(KeychainWrapper.standard.string(forKey: "token")!)
+//                        KeychainWrapper.standard.set(usernameCredential!, forKey: "username")
+//                        KeychainWrapper.standard.set(passwordCredential!, forKey: "password")
+//                        KeychainWrapper.standard.set(userToken, forKey: "token")
+//                        KeychainWrapper.standard.set(userPhoto, forKey: "userPhoto")
+                        
                         // Stop Actvity Indicator
                         self.enterBtnStyle.isHidden = false
                         self.emailTxt.isHidden = false

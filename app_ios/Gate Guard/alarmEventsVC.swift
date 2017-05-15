@@ -137,7 +137,7 @@ class alarmEventsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     }
     
     func getAlarmClasifications() {
-        let token: String! = KeychainWrapper.standard.string(forKey: "token")
+        let token: String! = UserDefaults.standard.string(forKey: "token")!//KeychainWrapper.standard.string(forKey: "token")
         
         let urlString = "http://api.gateguard.com.mx/api/AlarmPanels/getAlarmClassificationsMobile"
         
@@ -176,7 +176,7 @@ class alarmEventsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     func getAlarmEvents(clasificationUid: String) {
         
-        let token: String! = KeychainWrapper.standard.string(forKey: "token")
+        let token: String! = UserDefaults.standard.string(forKey: "token")!//KeychainWrapper.standard.string(forKey: "token")
         
         let urlString = "http://api.gateguard.com.mx/api/AlarmPanels/getAlarmEventsDbMobile"
         

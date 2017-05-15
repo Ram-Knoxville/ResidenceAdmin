@@ -15,8 +15,8 @@ class AccessReportVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var accessRegistryTable: UITableView!
     
-    let token: String! = KeychainWrapper.standard.string(forKey: "token")!
-    let residenceUid: String! = KeychainWrapper.standard.string(forKey: "ResidenceUid")
+    let token: String! = UserDefaults.standard.string(forKey: "token")!//KeychainWrapper.standard.string(forKey: "token")!
+    let residenceUid: String! = UserDefaults.standard.string(forKey: "ResidenceUid")!//KeychainWrapper.standard.string(forKey: "ResidenceUid")
     
     override func viewDidLoad() {
         super.viewDidLoad()

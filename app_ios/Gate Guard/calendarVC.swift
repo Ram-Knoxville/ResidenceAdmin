@@ -17,6 +17,7 @@ class calendarVC: UIViewController {
     @IBOutlet weak var year: UILabel!
     @IBOutlet weak var month: UILabel!
     
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,7 +149,8 @@ extension calendarVC: JTAppleCalendarViewDelegate {
         formatter.dateFormat = "yyyy-MM-dd"
         let dateOnly = formatter.string(from: valueOfCell)
         print("Esta es la fecha \(dateOnly)")
-        KeychainWrapper.standard.set(dateOnly, forKey: "startDate")
+        defaults.set(dateOnly, forKey: "startDate")
+//        KeychainWrapper.standard.set(dateOnly, forKey: "startDate")
         
     }
     

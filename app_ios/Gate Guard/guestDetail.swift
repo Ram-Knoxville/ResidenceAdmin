@@ -89,10 +89,10 @@ class guestDetail: UIViewController, UITextFieldDelegate {
         lastNames = self.lastName.text
         email = self._email.text
         phone = self._phone.text
-        let token = KeychainWrapper.standard.string(forKey: "token")!
-        let uid = KeychainWrapper.standard.string(forKey: "userUid")!
-        let suburbUid = KeychainWrapper.standard.string(forKey: "SuburbUid")!
-        let residenceUid = KeychainWrapper.standard.string(forKey: "ResidenceUid")!
+        let token = UserDefaults.standard.string(forKey: "token")!//KeychainWrapper.standard.string(forKey: "token")!
+        let uid = UserDefaults.standard.string(forKey: "userUid")!//KeychainWrapper.standard.string(forKey: "userUid")!
+        let suburbUid = UserDefaults.standard.string(forKey: "SuburbUid")!//KeychainWrapper.standard.string(forKey: "SuburbUid")!
+        let residenceUid = UserDefaults.standard.string(forKey: "ResidenceUid")!//KeychainWrapper.standard.string(forKey: "ResidenceUid")!
         if guestId == nil {
             guestId = ""
         }

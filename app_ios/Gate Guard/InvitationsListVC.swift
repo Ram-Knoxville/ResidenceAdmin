@@ -38,8 +38,8 @@ class InvitationsListVC: UIViewController, UICollectionViewDelegate, UICollectio
     
     func getInvitations() {
         
-        let token: String! = KeychainWrapper.standard.string(forKey: "token")!
-        let residentUid: String! = KeychainWrapper.standard.string(forKey: "ResidenceUid")!
+        let token: String! = UserDefaults.standard.string(forKey: "token")!//KeychainWrapper.standard.string(forKey: "token")!
+        let residentUid: String! = UserDefaults.standard.string(forKey: "ResidenceUid")!//KeychainWrapper.standard.string(forKey: "ResidenceUid")!
         
          print("This is the residenceUid you're getting : \(residentUid!)")
         
@@ -228,7 +228,7 @@ class InvitationsListVC: UIViewController, UICollectionViewDelegate, UICollectio
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editInvitation" {
             if let detailVC = segue.destination as? sendInviteVC {
-                let invitation: String! = KeychainWrapper.standard.string(forKey: "invitationId")
+                let invitation: String! = UserDefaults.standard.string(forKey: "invitationId")!//KeychainWrapper.standard.string(forKey: "invitationId")
                 detailVC.invitation = invitation
             }
         }

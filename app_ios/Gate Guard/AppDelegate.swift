@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let requestIdentifier = "Aplicacion Cerrada"
     let center = UNUserNotificationCenter.current()
     let content = UNMutableNotificationContent()
+    let defaults = UserDefaults.standard
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -48,15 +49,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let deviceName = UIDevice.current.name
         print("This is the devices name : \(deviceName)")
         
-        KeychainWrapper.standard.set(deviceModel, forKey: "deviceModel")
+        defaults.set(deviceModel, forKey: "deviceModel")
+        defaults.set(deviceName, forKey: "deviceName")
+//        KeychainWrapper.standard.set(deviceModel, forKey: "deviceModel")
         
-        KeychainWrapper.standard.set(deviceName, forKey: "deviceName")
+//        KeychainWrapper.standard.set(deviceName, forKey: "deviceName")
         
         
-        if KeychainWrapper.standard.string(forKey: "username") != nil, KeychainWrapper.standard.string(forKey: "password") != nil {
+        if UserDefaults.standard.string(forKey: "username") != nil, UserDefaults.standard.string(forKey: "password") != nil {
 
-            let username = KeychainWrapper.standard.string(forKey: "username")!
-            let password = KeychainWrapper.standard.string(forKey: "password")!
+            let username = UserDefaults.standard.string(forKey: "username")!//KeychainWrapper.standard.string(forKey: "username")!
+            let password = UserDefaults.standard.string(forKey: "password")!//KeychainWrapper.standard.string(forKey: "password")!
             self.autoLoginOne(username: username, password: password)
         }else{
             let storyboard = UIStoryboard(name: "Main", bundle: nil);
@@ -96,10 +99,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 if dict["status"] as? String != "OK" {
                     
-                    KeychainWrapper.standard.removeObject(forKey: "username")
-                    KeychainWrapper.standard.removeObject(forKey: "password")
-                    KeychainWrapper.standard.removeObject(forKey: "profile")
-                    KeychainWrapper.standard.removeObject(forKey: "token")
+                    UserDefaults.standard.removeObject(forKey: "username")
+                    UserDefaults.standard.removeObject(forKey: "password")
+                    UserDefaults.standard.removeObject(forKey: "userToken")
+                    UserDefaults.standard.removeObject(forKey: "profile")
+                    UserDefaults.standard.removeObject(forKey: "token")
                     
                     // Access the storyboard and fetch an instance of the view controller
                     let storyboard = UIStoryboard(name: "Main", bundle: nil);
@@ -121,12 +125,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         
                     }
                     let userToken: String! = token
+                    self.defaults.set(userToken, forKey: "token")
+//                    KeychainWrapper.standard.set(userToken, forKey: "token")
                     
-                    KeychainWrapper.standard.set(userToken, forKey: "token")
                     
-                    
-                    if KeychainWrapper.standard.string(forKey: "profile") != nil {
-                        let profileCredential = KeychainWrapper.standard.string(forKey: "profile")!
+                    if UserDefaults.standard.string(forKey: "profile") != nil {
+                        let profileCredential = UserDefaults.standard.string(forKey: "profile")!//KeychainWrapper.standard.string(forKey: "profile")!
                         let userToken: String! = userToken
                         self.autoLogin2(token: userToken, profileSelected: profileCredential)
                         
@@ -194,8 +198,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        
-        
+        UIApplication.shared.beginBackgroundTask {
+            print("Estoy en Background")
+        }
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -285,8 +290,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Este es el token we !!! \(deviceTokenString)")
         
         let deviceToken2: String = deviceTokenString as String!
-        
-            KeychainWrapper.standard.set(deviceToken2, forKey: "deviceToken")
+            defaults.set(deviceToken2, forKey: "deviceToken")
+//            KeychainWrapper.standard.set(deviceToken2, forKey: "deviceToken")
         
         self.validateAccess(deviceToken: deviceToken2)
     }
@@ -310,10 +315,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         for i in userInfo["aps"] as! Dictionary<String, Any>{
             
             print("Esta es la llave:  \(i.key)")
+            print("Este es el valor: \(i.value)")
             if i.key == "link_url" {
-                if i.value as! String == "Permiso de Entrada" {
+                if i.value as? Int == 23 {
                     idToAuth = String(describing:i.value)
-                    KeychainWrapper.standard.set(idToAuth, forKey: "idToAuth")
+                    
+                    self.defaults.set(idToAuth, forKey: "idToAuth")
+//                    KeychainWrapper.standard.set(idToAuth, forKey: "idToAuth")
+                    
+                    
                     print("checate este mugrero : \(idToAuth)")
                     let sb = UIStoryboard(name: "Main", bundle: nil)
                     let otherVC = sb.instantiateViewController(withIdentifier: "permisoDeAccesos") as! permisoDeAccesos

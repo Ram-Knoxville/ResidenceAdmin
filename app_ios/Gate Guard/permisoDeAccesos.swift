@@ -18,7 +18,8 @@ class permisoDeAccesos: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        id = KeychainWrapper.standard.string(forKey: "idToAuth")!
+//        id = KeychainWrapper.standard.string(forKey: "idToAuth")!
+        id = UserDefaults.standard.string(forKey: "idToAuth")!
         
     }
     
@@ -29,8 +30,8 @@ class permisoDeAccesos: UIViewController {
         
         let urlString = "http://api.gateguard.com.mx/api/visitors/updateVisitorAccessMobile"
         
-        let accountId: String! = KeychainWrapper.standard.string(forKey: "userId")
-        let token: String! = KeychainWrapper.standard.string(forKey: "token")
+        let accountId: String! = UserDefaults.standard.string(forKey: "userId")!
+        let token: String! = UserDefaults.standard.string(forKey: "token")!
         
         let parameters: Parameters = [
             "id": self.id,
@@ -55,8 +56,8 @@ class permisoDeAccesos: UIViewController {
         
         let urlString = "http://api.gateguard.com.mx/api/visitors/updateVisitorAccessMobile"
         
-        let accountId: String! = KeychainWrapper.standard.string(forKey: "userId")
-        let token: String! = KeychainWrapper.standard.string(forKey: "token")
+        let accountId: String! = UserDefaults.standard.string(forKey: "userId")!
+        let token: String! = UserDefaults.standard.string(forKey: "token")!
         
         let parameters: Parameters = [
             "id": self.id,

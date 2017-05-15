@@ -20,8 +20,8 @@ class alarmRegistryVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     var filterTo: String!
     var clasification: String!
     var event: String!
-    let residenceUid: String! = KeychainWrapper.standard.string(forKey: "ResidenceUid")!
-    let token: String! = KeychainWrapper.standard.string(forKey: "token")
+    let residenceUid: String! = UserDefaults.standard.string(forKey: "ResidenceUid")!//KeychainWrapper.standard.string(forKey: "ResidenceUid")!
+    let token: String! = UserDefaults.standard.string(forKey: "token")//KeychainWrapper.standard.string(forKey: "token")
     
     var totalAlarms = [[String : Any]]()
     var alarms = [AlarmEvents]()

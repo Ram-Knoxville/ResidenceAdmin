@@ -58,54 +58,51 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
     var doorToken: String!
     var doorUid: String!
     
+    var validator: Bool!
+    var validatorValue: Bool! = false
+    
     override func viewWillAppear(_ animated: Bool) {
         self.askForTouchId()
+        if UserDefaults.standard.object(forKey: "ValidadorPermisoEntrada") != nil {
+            
+            if UserDefaults.standard.bool(forKey: "ValidadorPermisoEntrada") == true {
+                validatorValue = true
+            }else {
+                validatorValue = false
+            }
+            
+        }else {
+            validator = false
+        }
         
     }
+    
     
     
     // Starts viewdidload
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Username: ")
-        if KeychainWrapper.standard.string(forKey: "username") != nil {
-        print(KeychainWrapper.standard.string(forKey: "username")!)
-        }else {
-            print("noUser")
-        }
-        print("Password: ")
-        if KeychainWrapper.standard.string(forKey: "password") != nil {
-        print(KeychainWrapper.standard.string(forKey: "password")!)
-        }else {
-        print("noPassword")
-        }
-        print("Token: ")
-        if KeychainWrapper.standard.string(forKey: "token") != nil {
-        print(KeychainWrapper.standard.string(forKey: "token")!)
-        }else {
-        print("No Token")
-        }
-
-        
         menuBtn.target = SWRevealViewController()
         
         menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
         
+        
+        
         manager = APScheduledLocationManager(delegate: self)
         var logo: String! = ""
         // Suburb Logo Config Begins
-        if KeychainWrapper.standard.string(forKey: "ProfileLogo") == nil {
+        if UserDefaults.standard.string(forKey: "ProfileLogo") == nil {
             logo = ""
         }else {
-            logo = KeychainWrapper.standard.string(forKey: "ProfileLogo")!
+            logo = UserDefaults.standard.string(forKey: "ProfileLogo")!
         }
         
         
         print(logo)
         
         if logo != "" {
-            SuburbLogo = KeychainWrapper.standard.string(forKey: "ProfileLogo")!
+            SuburbLogo = UserDefaults.standard.string(forKey: "ProfileLogo")!
         }else {
             SuburbLogo = "gateguard_LOGO-1"
         }
@@ -156,15 +153,15 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
 
         //Read from memory
         
-        let firstName: String! = KeychainWrapper.standard.string(forKey: "userFirstName")!
-        let lastName: String! = KeychainWrapper.standard.string(forKey: "userLastName")!
+        let firstName: String! = UserDefaults.standard.string(forKey: "userFirstName")!//KeychainWrapper.standard.string(forKey: "userFirstName")!
+        let lastName: String! = UserDefaults.standard.string(forKey: "userLastName")!//KeychainWrapper.standard.string(forKey: "userLastName")!
         let fullName: String! = firstName + " " + lastName
         
-        self.profileSelected.text = KeychainWrapper.standard.string(forKey: "selectedProfile")!
+        self.profileSelected.text = UserDefaults.standard.string(forKey: "selectedProfile")!//KeychainWrapper.standard.string(forKey: "selectedProfile")!
         
         self.userFullName.text = fullName
         
-        self.deviceToken = KeychainWrapper.standard.string(forKey: "token")
+        self.deviceToken = UserDefaults.standard.string(forKey: "token")!//KeychainWrapper.standard.string(forKey: "token")
         
         if deviceToken == nil
         {
@@ -180,9 +177,7 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
         }else {
             self.registerToken()
         }
-        
-        
-        
+
         locationManager.delegate = self
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse) {
             locationManager.requestWhenInUseAuthorization()
@@ -219,40 +214,55 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
     
     //Beacons Region
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-        
-        let knownBeacons = beacons.filter{ $0.proximity != CLProximity.unknown }
-        if (knownBeacons.count > 0) {
-            let closestBeacon = knownBeacons[0] as CLBeacon
-            self.view.backgroundColor = self.colors[closestBeacon.minor.intValue]
-            if UIDevice.current.orientation.isLandscape {
-                beaconStatus = 0
-                print("landscape")
-            } else {
-                print("portrait")
-            }
-            if closestBeacon.minor.intValue == 38045 {
-                
-                if closestBeacon.proximity == CLProximity.unknown {
+        print(validatorValue)
+        if validatorValue == true {
+            
+            let knownBeacons = beacons.filter{ $0.proximity != CLProximity.unknown }
+            if (knownBeacons.count > 0) {
+                let closestBeacon = knownBeacons[0] as CLBeacon
+                self.view.backgroundColor = self.colors[closestBeacon.minor.intValue]
+                if UIDevice.current.orientation.isLandscape {
                     beaconStatus = 0
-                } else if closestBeacon.proximity == CLProximity.immediate {
                     
-                    beaconDetected = true
-                    pushNotificationState = pushNotificationState + 1
-                    print("Dato de estado = \(pushNotificationState)")
-                    self.abrePuerta()
+                    print("landscape")
+                } else {
+                    print("portrait")
+                }
+                if closestBeacon.minor.intValue == 38045 {
                     
-                } else if closestBeacon.proximity == CLProximity.near {
+                    if closestBeacon.proximity == CLProximity.unknown {
+                        beaconStatus = 0
+                    } else if closestBeacon.proximity == CLProximity.immediate {
+                        
+                        if beaconStatus == 0 {
+                            beaconDetected = true
+                            pushNotificationState = pushNotificationState + 1
+                            print("Dato de estado = \(pushNotificationState)")
+                            self.abrePuerta()
+                            beaconStatus = 1
+                        }else {
+                            
+                        }
+                        
+                    } else if closestBeacon.proximity == CLProximity.near {
+                        
+                        
+                        
+                    } else if closestBeacon.proximity == CLProximity.far {
+                        beaconStatus = 0
+                    }
                     
-                } else if closestBeacon.proximity == CLProximity.far {
+                }else{
+                    beaconDetected = false
+                    pushNotificationState = 0
                     beaconStatus = 0
                 }
                 
-            }else{
-                beaconDetected = false
-                pushNotificationState = 0
-                beaconStatus = 0
             }
+
             
+        }else if validatorValue == false {
+            print("Ain't nobody gave you permission for that hoe!")
         }
         
     }
@@ -260,27 +270,27 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
     //Ends beacons region
     
     func askForTouchId(){
-        let authenticationContext = LAContext()
-        var error: NSError?
-        
-        if authenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            authenticationContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Para continuar identifiquese por TouchID", reply: { (success: Bool, error: Error?) in
-                
-                if success {
-                    
-                } else {
-                    if let evaluateError = error as NSError? {
-                        let message = self.errorMessageForLAErrorCode(errorCode: evaluateError.code)
-                        self.showAlertViewAfterEvaluatingPolicyWithMessage(message: message)
-                    }
-                }
-                
-                
-            })
-        } else {
-            showAlertViewForNoBiometrics()
-            return
-        }
+//        let authenticationContext = LAContext()
+//        var error: NSError?
+//        
+//        if authenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+//            authenticationContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Para continuar identifiquese por TouchID", reply: { (success: Bool, error: Error?) in
+//                
+//                if success {
+//                    
+//                } else {
+//                    if let evaluateError = error as NSError? {
+//                        let message = self.errorMessageForLAErrorCode(errorCode: evaluateError.code)
+//                        self.showAlertViewAfterEvaluatingPolicyWithMessage(message: message)
+//                    }
+//                }
+//                
+//                
+//            })
+//        } else {
+//            showAlertViewForNoBiometrics()
+//            return
+//        }
 
     }
     
@@ -357,20 +367,20 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
     func registerToken() -> Void {
         
         //Send request to server
-        let token =             KeychainWrapper.standard.string(forKey: "token")!
-        let userUid =           KeychainWrapper.standard.string(forKey: "userUid")!
-        let accountId =         KeychainWrapper.standard.string(forKey: "userId")!
+        let token =             UserDefaults.standard.string(forKey: "token")!
+        let userUid =           UserDefaults.standard.string(forKey: "userUid")!
+        let accountId =         UserDefaults.standard.string(forKey: "userId")!
         let deviceToken: String!
-        let deviceModel =       KeychainWrapper.standard.string(forKey: "deviceModel")!
-        let identification =    KeychainWrapper.standard.string(forKey: "deviceName")!
-        let residenceId =       KeychainWrapper.standard.string(forKey: "ResidenceUid")!
-        let suburbId =          KeychainWrapper.standard.string(forKey: "SuburbUid")!
+        let deviceModel =       UserDefaults.standard.string(forKey: "deviceModel")!
+        let identification =    UserDefaults.standard.string(forKey: "deviceName")!
+        let residenceId =       UserDefaults.standard.string(forKey: "ResidenceUid")!
+        let suburbId =          UserDefaults.standard.string(forKey: "SuburbUid")!
         let accessGranted =     "1"
         let lastAccess =        " "
-        if KeychainWrapper.standard.string(forKey: "deviceToken") == nil {
+        if UserDefaults.standard.string(forKey: "deviceToken") == nil {
             return
         }else {
-            deviceToken =       KeychainWrapper.standard.string(forKey: "deviceToken")!
+            deviceToken =       UserDefaults.standard.string(forKey: "deviceToken")!
         }
         
         print("Token: \(token)")
@@ -415,10 +425,12 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
     
     func goBackToLogin() {
         self.performSegue(withIdentifier: "logOutBtn", sender: nil)
-        KeychainWrapper.standard.removeObject(forKey: "username")
-        KeychainWrapper.standard.removeObject(forKey: "password")
-        KeychainWrapper.standard.removeObject(forKey: "userToken")
-        KeychainWrapper.standard.removeObject(forKey: "profile")
+        UserDefaults.standard.removeObject(forKey: "username")
+        UserDefaults.standard.removeObject(forKey: "password")
+        UserDefaults.standard.removeObject(forKey: "userToken")
+        UserDefaults.standard.removeObject(forKey: "profile")
+        UserDefaults.standard.removeObject(forKey: "token")
+
     }
 
     @IBAction func logOutBtnPressed(_ sender: Any) {
@@ -449,7 +461,7 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
         
         print("Check this out: \r \(formatter.string(from: Date())) loc: \(l.coordinate.latitude), \(l.coordinate.longitude)")
         
-        let userUid = KeychainWrapper.standard.string(forKey: "userUid")!
+        let userUid = UserDefaults.standard.string(forKey: "userUid")!
         let latitude = l.coordinate.latitude
         let longitude = l.coordinate.longitude
         
@@ -516,7 +528,7 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
         
         if beaconStatus == 0 {
             //Send request to server
-            let accountUid: String! = KeychainWrapper.standard.string(forKey: "userUid")!
+            let accountUid: String! = UserDefaults.standard.string(forKey: "userUid")!
             let beaconUid: String! = "B9407F30-F5F8-466E-AFF9-25556B57FE6D"
             
             let urlString = "http://api.gateguard.com.mx/api/doors/getDoorsBeacon"

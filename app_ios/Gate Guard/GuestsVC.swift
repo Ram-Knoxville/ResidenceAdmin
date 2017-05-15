@@ -42,8 +42,8 @@ class GuestsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func getGuestsList(){
         //Send request to server
         
-        let token: String! = KeychainWrapper.standard.string(forKey: "token")!
-        let residenceUid: String! = KeychainWrapper.standard.string(forKey: "ResidenceUid")!
+        let token: String! = UserDefaults.standard.string(forKey: "token")!//KeychainWrapper.standard.string(forKey: "token")!
+        let residenceUid: String! = UserDefaults.standard.string(forKey: "ResidenceUid")!//KeychainWrapper.standard.string(forKey: "ResidenceUid")!
         
         
         let urlString = "http://api.gateguard.com.mx/api/myGuests/getGuestMobile"
@@ -159,11 +159,11 @@ class GuestsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             guest = self._guests[indexPath.row]
             
-            let token: String! = KeychainWrapper.standard.string(forKey: "token")!
+            let token: String! = UserDefaults.standard.string(forKey: "token")!//KeychainWrapper.standard.string(forKey: "token")!
             let guestUid: String! = guest.guestUid
-            let uid: String! = KeychainWrapper.standard.string(forKey: "userUid")!
-            let suburbUid: String! = KeychainWrapper.standard.string(forKey: "SuburbUid")!
-            let residenceUid: String! = KeychainWrapper.standard.string(forKey: "ResidenceUid")
+            let uid: String! = UserDefaults.standard.string(forKey: "userUid")!//KeychainWrapper.standard.string(forKey: "userUid")!
+            let suburbUid: String! = UserDefaults.standard.string(forKey: "SuburbUid")!//KeychainWrapper.standard.string(forKey: "SuburbUid")!
+            let residenceUid: String! = UserDefaults.standard.string(forKey: "ResidenceUid")!//KeychainWrapper.standard.string(forKey: "ResidenceUid")
             
             print("Empiezan parametros")
             print(token)

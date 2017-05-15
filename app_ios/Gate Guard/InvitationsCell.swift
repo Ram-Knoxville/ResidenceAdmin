@@ -64,7 +64,7 @@ class InvitationsCell: UICollectionViewCell {
     
     @IBAction func cancelBtnPressed(_ sender: Any) {
     
-        let token: String! = KeychainWrapper.standard.string(forKey: "token")!
+        let token: String! = UserDefaults.standard.string(forKey: "token")!//KeychainWrapper.standard.string(forKey: "token")!
         let id: String! = invitation.invitationUid
         
         let urlString = "http://api.gateguard.com.mx/api/myGuests/cancelInvitation"
@@ -84,7 +84,7 @@ class InvitationsCell: UICollectionViewCell {
     }
     
     @IBAction func resendBtnPressed(_ sender: Any) {
-        let token: String! = KeychainWrapper.standard.string(forKey: "token")!
+        let token: String! = UserDefaults.standard.string(forKey: "token")!//KeychainWrapper.standard.string(forKey: "token")!
         let id: String! = invitation.invitationUid
         
         let urlString = "http://api.gateguard.com.mx/api/myGuests/forwardSendInvitation"

@@ -21,8 +21,8 @@ class accessReportFiltersVC: UIViewController {
     
     @IBAction func getListBtnPressed(_ sender: Any) {
         
-        let token: String! = KeychainWrapper.standard.string(forKey: "token")
-        let residenceUid: String! = KeychainWrapper.standard.string(forKey: "ResidenceUid")
+        let token: String! = UserDefaults.standard.string(forKey: "token")!//KeychainWrapper.standard.string(forKey: "token")
+        let residenceUid: String! = UserDefaults.standard.string(forKey: "ResidenceUid")//KeychainWrapper.standard.string(forKey: "ResidenceUid")
         
         let urlString = "http://api.gateguard.com.mx/api/Access/getAccessToResidenceMobile"
         
