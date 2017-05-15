@@ -171,6 +171,10 @@ class vehiclesListVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         return CGSize(width: 105, height: 105)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToLocation", sender: nil)
+    }
+    
     // MARK: - Search Bar Functions
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

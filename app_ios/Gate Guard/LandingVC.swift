@@ -18,7 +18,7 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
 
     
     let locationManager = CLLocationManager()
-    let region = CLBeaconRegion(proximityUUID: UUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!, identifier: "Estimotes")
+    let region = CLBeaconRegion(proximityUUID: UUID(uuidString: "EB4081C9-EC31-8326-C6E3-6393BA30539E")!, identifier: "Estimotes")
     // Note: make sure you replace the keys here with your own beacons' Minor Values
     let colors = [
         38045: UIColor(red: 84/255, green: 77/255, blue: 160, alpha: 1),
@@ -228,30 +228,55 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
                 } else {
                     print("portrait")
                 }
-                if closestBeacon.minor.intValue == 38045 {
+                
+                //38045 - 47262
+//                if closestBeacon.minor.intValue == 38045 {
+//                    print(closestBeacon.proximity.rawValue)
+//                    if closestBeacon.proximity == CLProximity.far {
+//                        
+//                        if beaconStatus == 0 {
+//                            beaconDetected = true
+//                            pushNotificationState = pushNotificationState + 1
+//                            print("Dato de estado = \(pushNotificationState)")
+//                            self.abrePuerta(beaconUid: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")
+//                            beaconStatus = 1
+//                        }else {
+//                            
+//                        }
+//                        
+//                    } else {
+//                        beaconStatus = 0
+//                    }
+//                
+//                }
+                
+                if closestBeacon.minor.intValue == 45162 {
                     
                     if closestBeacon.proximity == CLProximity.unknown {
                         beaconStatus = 0
-                    } else if closestBeacon.proximity == CLProximity.immediate {
+                    } else if closestBeacon.proximity == CLProximity.far {
                         
                         if beaconStatus == 0 {
                             beaconDetected = true
                             pushNotificationState = pushNotificationState + 1
                             print("Dato de estado = \(pushNotificationState)")
-                            self.abrePuerta()
+                            self.abrePuerta(beaconUid: "EB4081C9-EC31-8326-C6E3-6393BA30539E")
                             beaconStatus = 1
                         }else {
                             
                         }
                         
-                    } else if closestBeacon.proximity == CLProximity.near {
+//                    } else if closestBeacon.proximity == CLProximity.near {
+//                        
+//                        
+//                    } else if closestBeacon.proximity == CLProximity.far {
+//
                         
                         
-                        
-                    } else if closestBeacon.proximity == CLProximity.far {
+                    }else {
                         beaconStatus = 0
                     }
-                    
+
                 }else{
                     beaconDetected = false
                     pushNotificationState = 0
@@ -259,7 +284,6 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
                 }
                 
             }
-
             
         }else if validatorValue == false {
             print("Ain't nobody gave you permission for that hoe!")
@@ -524,12 +548,12 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
         
     }
     
-    func abrePuerta() {
+    func abrePuerta(beaconUid: String) {
         
         if beaconStatus == 0 {
             //Send request to server
             let accountUid: String! = UserDefaults.standard.string(forKey: "userUid")!
-            let beaconUid: String! = "B9407F30-F5F8-466E-AFF9-25556B57FE6D"
+//            let beaconUid: String! = "B9407F30-F5F8-466E-AFF9-25556B57FE6D"
             
             let urlString = "http://api.gateguard.com.mx/api/doors/getDoorsBeacon"
             

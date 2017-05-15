@@ -88,6 +88,7 @@
 		21B0EE061EA9241100CEDF73 /* AccessReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B0EE051EA9241100CEDF73 /* AccessReportVC.swift */; };
 		21B0EE081EA95AA900CEDF73 /* accessReportFiltersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B0EE071EA95AA900CEDF73 /* accessReportFiltersVC.swift */; };
 		21C044BA1EC9ECA000C9BFE2 /* settingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C044B91EC9ECA000C9BFE2 /* settingsVC.swift */; };
+		21C044BC1ECA450000C9BFE2 /* VehiclesLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C044BB1ECA450000C9BFE2 /* VehiclesLocationVC.swift */; };
 		21E4254B1E6F67B100DB13E4 /* alarmPanelsPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4254A1E6F67B100DB13E4 /* alarmPanelsPickerVC.swift */; };
 		21E425511E7077CD00DB13E4 /* telemetryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E425501E7077CD00DB13E4 /* telemetryVC.swift */; };
 		21E425521E707B5600DB13E4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 210ACA7E1E5F3FDC0097A652 /* Info.plist */; };
@@ -235,6 +236,7 @@
 		21B0EE051EA9241100CEDF73 /* AccessReportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessReportVC.swift; sourceTree = "<group>"; };
 		21B0EE071EA95AA900CEDF73 /* accessReportFiltersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accessReportFiltersVC.swift; sourceTree = "<group>"; };
 		21C044B91EC9ECA000C9BFE2 /* settingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsVC.swift; sourceTree = "<group>"; };
+		21C044BB1ECA450000C9BFE2 /* VehiclesLocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehiclesLocationVC.swift; sourceTree = "<group>"; };
 		21E4254A1E6F67B100DB13E4 /* alarmPanelsPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alarmPanelsPickerVC.swift; sourceTree = "<group>"; };
 		21E4254C1E70742600DB13E4 /* DS-DIGI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGI.TTF"; sourceTree = "<group>"; };
 		21E425501E7077CD00DB13E4 /* telemetryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = telemetryVC.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 				21B0EE071EA95AA900CEDF73 /* accessReportFiltersVC.swift */,
 				213D10F81EAFE7E500BAFE36 /* OpenGateVC.swift */,
 				21C044B91EC9ECA000C9BFE2 /* settingsVC.swift */,
+				21C044BB1ECA450000C9BFE2 /* VehiclesLocationVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 				21F9CA6A1EA008E000E5C02A /* InvitationsListVC.swift in Sources */,
 				2192A5C21E74779900D53957 /* blockDetailVC.swift in Sources */,
 				21AB1BB81E9EBB3A00E1B47D /* sendInviteVC.swift in Sources */,
+				21C044BC1ECA450000C9BFE2 /* VehiclesLocationVC.swift in Sources */,
 				2192A5BC1E73738000D53957 /* Constants.swift in Sources */,
 				21AB1BB21E9BEEC600E1B47D /* GuestsVC.swift in Sources */,
 				2192A5C01E74710C00D53957 /* guardDetailVC.swift in Sources */,

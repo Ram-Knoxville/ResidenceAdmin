@@ -332,13 +332,13 @@
                                         <color key="textColor" red="0.78202331849999995" green="0.3065785842" blue="0.18777021229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rferreras@gmail.com" borderStyle="roundedRect" placeholder="Correo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mL8-Wb-bzr">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="cesar@rowantechnologies.com.mx" borderStyle="roundedRect" placeholder="Correo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mL8-Wb-bzr">
                                         <rect key="frame" x="0.0" y="138" width="333" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="polelo01" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r1C-10-s2z">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r1C-10-s2z">
                                         <rect key="frame" x="0.0" y="198" width="333" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -3500,11 +3500,75 @@
                         <outlet property="vehicleSearchBar" destination="IaN-cr-iFs" id="R38-aR-Uyi"/>
                         <outlet property="vehiclesList" destination="S41-7J-1hL" id="6hJ-re-D4c"/>
                         <segue destination="bYE-Ej-ZQ0" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="lNY-NK-Kvp"/>
+                        <segue destination="nvj-la-ton" kind="custom" identifier="goToLocation" customClass="SWRevealViewControllerSeguePushController" id="ohR-sK-6on"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4C-ds-hpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2916.8000000000002" y="8565.5172413793116"/>
+        </scene>
+        <!--Vehicles LocationVC-->
+        <scene sceneID="j19-ol-0DP">
+            <objects>
+                <viewController storyboardIdentifier="VehiclesLocationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nvj-la-ton" customClass="VehiclesLocationVC" customModule="Gate_Guard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4cy-zI-F0B"/>
+                        <viewControllerLayoutGuide type="bottom" id="xXR-kq-4HL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qSJ-Ma-jXa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DlO-M3-DEo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                <color key="backgroundColor" red="0.36765063650000002" green="0.65829476070000004" blue="0.87585263319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="j05-M6-S4B"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.36765063650000002" green="0.65829476070000004" blue="0.87585263319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Ubicación" id="jL8-s0-13B">
+                                        <barButtonItem key="leftBarButtonItem" title="MENU" id="9Cl-Md-kkE">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VPO-c5-NsH">
+                                <rect key="frame" x="0.0" y="55" width="375" height="612"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dZ-7S-9yf">
+                                <rect key="frame" x="0.0" y="55" width="375" height="612"/>
+                                <color key="backgroundColor" red="0.9351762820621432" green="0.9351762820621432" blue="0.9351762820621432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VPO-c5-NsH" firstAttribute="top" secondItem="DlO-M3-DEo" secondAttribute="bottom" id="0Aa-B4-fMf"/>
+                            <constraint firstAttribute="trailing" secondItem="DlO-M3-DEo" secondAttribute="trailing" id="E89-Xc-Trt"/>
+                            <constraint firstItem="VPO-c5-NsH" firstAttribute="leading" secondItem="qSJ-Ma-jXa" secondAttribute="leading" id="Wpc-iv-hmc"/>
+                            <constraint firstAttribute="trailing" secondItem="6dZ-7S-9yf" secondAttribute="trailing" id="cBF-Qs-Ckc"/>
+                            <constraint firstItem="DlO-M3-DEo" firstAttribute="leading" secondItem="qSJ-Ma-jXa" secondAttribute="leading" id="hdS-Ev-0Uz"/>
+                            <constraint firstItem="6dZ-7S-9yf" firstAttribute="top" secondItem="DlO-M3-DEo" secondAttribute="bottom" id="jZa-zH-j1e"/>
+                            <constraint firstItem="6dZ-7S-9yf" firstAttribute="leading" secondItem="qSJ-Ma-jXa" secondAttribute="leading" id="laX-jz-xfr"/>
+                            <constraint firstItem="DlO-M3-DEo" firstAttribute="top" secondItem="qSJ-Ma-jXa" secondAttribute="top" id="qph-7l-A74"/>
+                            <constraint firstItem="xXR-kq-4HL" firstAttribute="top" secondItem="6dZ-7S-9yf" secondAttribute="bottom" id="va8-3x-WFc"/>
+                            <constraint firstAttribute="trailing" secondItem="VPO-c5-NsH" secondAttribute="trailing" id="viS-fu-9CW"/>
+                            <constraint firstItem="xXR-kq-4HL" firstAttribute="top" secondItem="VPO-c5-NsH" secondAttribute="bottom" id="zNP-ej-IBT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="coverView" destination="6dZ-7S-9yf" id="tq0-MM-82a"/>
+                        <outlet property="locationMap" destination="VPO-c5-NsH" id="9Z1-xP-0TM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4kQ-hg-Cb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3711" y="8565"/>
         </scene>
         <!--ARVC-->
         <scene sceneID="P7n-1D-Nmp">
@@ -5437,7 +5501,7 @@
         <image name="uploadLogo" width="720" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gKf-1D-Ahg"/>
+        <segue reference="bAk-0w-SU1"/>
         <segue reference="nA5-6a-jLN"/>
         <segue reference="3RM-9M-m1p"/>
         <segue reference="PK2-6l-WOB"/>
