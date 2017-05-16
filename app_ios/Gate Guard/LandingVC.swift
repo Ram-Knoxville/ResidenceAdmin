@@ -18,6 +18,9 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
 
     
     let locationManager = CLLocationManager()
+    
+    var usersBeaconsUids = ["EB4081C9-EC31-8326-C6E3-6393BA30539E", "B9407F30-F5F8-466E-AFF9-25556B57FE6D"]
+    
     let region = CLBeaconRegion(proximityUUID: UUID(uuidString: "EB4081C9-EC31-8326-C6E3-6393BA30539E")!, identifier: "Estimotes")
     // Note: make sure you replace the keys here with your own beacons' Minor Values
     let colors = [
