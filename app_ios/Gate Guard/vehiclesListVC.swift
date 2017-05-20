@@ -172,7 +172,34 @@ class vehiclesListVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goToLocation", sender: nil)
+        
+        var vehicle: Vehicles!
+        
+        if inSearchMode {
+            vehicle = filteredVehicles[indexPath.row]
+        }else {
+            vehicle = vehicles[indexPath.row]
+        }
+        
+        performSegue(withIdentifier: "goToLocation", sender: vehicle)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToLocation" {
+            
+            if let vehiclesLocationVC = segue.destination as? VehiclesLocationVC {
+                
+                if let vehicle = sender as? Vehicles {
+                    
+                    vehiclesLocationVC.vehicleUid = vehicle.uid
+                    
+                }
+
+                
+            }
+            
+        }
     }
     
     // MARK: - Search Bar Functions

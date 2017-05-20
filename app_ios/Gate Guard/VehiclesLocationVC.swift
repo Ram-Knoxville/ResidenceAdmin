@@ -18,8 +18,13 @@ class VehiclesLocationVC: UIViewController, MKMapViewDelegate {
     
     let regionRadius: CLLocationDistance = 1000
     
+    
+    var vehicleUid: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(vehicleUid)
         
         menuBtn.target = SWRevealViewController()
         
@@ -67,13 +72,15 @@ class VehiclesLocationVC: UIViewController, MKMapViewDelegate {
         
         let token: String! = UserDefaults.standard.string(forKey: "token")
         
+        let uidFromVehicle: String! = vehicleUid
+        
         
         
         let parameters: Parameters = [
             "suburbUid": SuburbUid,
             "residenceUid": residenceUid,
             "token": token,
-            "uid": "9c392cec0fe5d00dfce8eca18b58c827"
+            "uid": uidFromVehicle
         ]
         
         Alamofire.request(urlString, method: .post, parameters:parameters).responseJSON { response in

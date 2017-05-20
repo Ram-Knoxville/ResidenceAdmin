@@ -252,12 +252,13 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
 //                    }
 //                
 //                }
-                
+                // 45162 beacon del lic
+                // 47262 beacon celeste
                 if closestBeacon.minor.intValue == 45162 {
                     
                     if closestBeacon.proximity == CLProximity.unknown {
                         beaconStatus = 0
-                    } else if closestBeacon.proximity == CLProximity.far {
+                    } else if closestBeacon.proximity == CLProximity.immediate {
                         
                         if beaconStatus == 0 {
                             beaconDetected = true
@@ -648,6 +649,7 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
                                         "doorUid": self.doorUid
                                     ]
                                     Alamofire.request(urlString, method: .post, parameters:parameters).responseJSON { response in
+                                        
                                         
                                         
                                         if let JSON = response.result.value {
