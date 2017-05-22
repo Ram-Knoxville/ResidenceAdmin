@@ -14,7 +14,7 @@ class menuVC: UIViewController, UITableViewDataSource {
     
     var expandedSections : NSMutableSet = []
     
-    var sectionData = ["Inicio",/* "Administración de Sistema", "Nuestra Colonia",*/ "Mi Casa", "Configuración"/*, "Control de Acceso", "Reportes", "Configuración de Colonia"*/]
+    var sectionData = ["Inicio",/* "Administración de Sistema", "Nuestra Colonia",*/ "Mi Casa", "Configuración", "Seguridad de Colonia"/*, "Control de Acceso", "Reportes", "Configuración de Colonia"*/]
     var row1 = ["Home"]
     var row2 = ["Usuarios", "Colonias", "Guardias", "Perfiles", "Servicios"]
     var row3 = ["Ingresos", "Gastos", "Facturas", "Encuestas y Votaciones", "Notificaciones", "Configuración", "Quejas y Sugerencias", "Monitoreo Paneles de Alarma"]
@@ -66,6 +66,18 @@ class menuVC: UIViewController, UITableViewDataSource {
                 
                 
             }
+        case 3:
+            print("Seccion de seguridad de colonia")
+            let section = sender.tag
+            let shouldExpand = !expandedSections.contains(section)
+            if (shouldExpand) {
+                expandedSections.removeAllObjects()
+                expandedSections.add(section)
+            } else {
+                expandedSections.removeAllObjects()
+                
+                
+            }
             
         default:
             print("Do Nothing")
@@ -80,7 +92,7 @@ extension menuVC: UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -116,6 +128,8 @@ extension menuVC: UITableViewDelegate {
                 return row4.count
             case 2:
                 return 1
+            case 3:
+                return 1
             /*case 2:
                 return row4.count
             case 3:
@@ -145,6 +159,8 @@ extension menuVC: UITableViewDelegate {
             cell?.textLabel?.text = row4[indexPath.row]
         case 2:
             cell?.textLabel?.text = "Configuración General"
+        case 3:
+            cell?.textLabel?.text = "Apertura de Puertas"
         /*case 2:
             cell?.textLabel?.text = row4[indexPath.row]
         case 3:
@@ -195,6 +211,10 @@ extension menuVC: UITableViewDelegate {
             }
         case 2:
             performSegue(withIdentifier: "menuToSettings", sender: self)
+        case 3:
+            if indexPath.row == 0 {
+                performSegue(withIdentifier: "menuToGateAccess", sender: nil)
+            }
             
         /*case 2:
             cell?.textLabel?.text = row3[indexPath.row]
