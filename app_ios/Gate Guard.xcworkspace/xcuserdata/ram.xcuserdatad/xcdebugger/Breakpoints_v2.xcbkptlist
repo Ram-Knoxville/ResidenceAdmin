@@ -40,7 +40,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "719"
-            endingLineNumber = "719">
+            endingLineNumber = "719"
+            landmarkName = "abrePuerta(beaconUid:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

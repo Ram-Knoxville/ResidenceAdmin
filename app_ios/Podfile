@@ -15,12 +15,12 @@ target 'Gate Guard' do
   pod 'SwiftKeychainWrapper'
   pod 'APScheduledLocationManager'
   pod 'JTAppleCalendar', '~> 7.0'
-  pod 'EstimoteSDK'
+ 
   #End of Dependencies
 end
 
-target 'myLocation' do
-  use_frameworks!
-        pod 'Alamofire', '~> 4.3'
-	pod 'SwiftKeychainWrapper'
-end
+# target 'myLocation' do
+#  use_frameworks!
+#        pod 'Alamofire', '~> 4.3'
+#	pod 'SwiftKeychainWrapper'
+# end

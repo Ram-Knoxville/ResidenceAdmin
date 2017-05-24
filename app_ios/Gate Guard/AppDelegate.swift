@@ -14,7 +14,7 @@ import SwiftKeychainWrapper
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate {
 
     var window: UIWindow?
     let requestIdentifier = "Aplicacion Cerrada"
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        
+        ESTConfig.setupAppID("proximity-content-for-mult-hbb", andAppToken: "f774239a2b7bf7c84a367b0651e27f78")
         
         // Override point for customization after application launch.
         UIApplication.shared.applicationIconBadgeNumber = 0

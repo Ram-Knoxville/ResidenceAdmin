@@ -14,14 +14,16 @@ import CoreLocation
 import LocalAuthentication
 import UserNotifications
 
-class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocationManagerDelegate {
 
+
+class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocationManagerDelegate, ProximityContentManagerDelegate {
+
+    var proximityContentManager: ProximityContentManager!
     
     let locationManager = CLLocationManager()
     
-    var usersBeaconsUids = ["EB4081C9-EC31-8326-C6E3-6393BA30539E", "B9407F30-F5F8-466E-AFF9-25556B57FE6D"]
+    //let region = CLBeaconRegion(proximityUUID: UUID(uuidString: "EB4081C9-EC31-8326-C6E3-6393BA30539E")!, identifier: "Estimotes")
     
-    let region = CLBeaconRegion(proximityUUID: UUID(uuidString: "EB4081C9-EC31-8326-C6E3-6393BA30539E")!, identifier: "Estimotes")
     // Note: make sure you replace the keys here with your own beacons' Minor Values
     let colors = [
         38045: UIColor(red: 84/255, green: 77/255, blue: 160, alpha: 1),
@@ -64,6 +66,12 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
     var validator: Bool!
     var validatorValue: Bool! = false
     
+    //Beacons variables !
+    
+    let beaconRegions = [CLBeaconRegion(proximityUUID: NSUUID(uuidString: "EB4081C9-EC31-8326-C6E3-6393BA30539E")! as UUID, identifier: "Lic"), CLBeaconRegion(proximityUUID: NSUUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")! as UUID, identifier: "Desarrollo")]
+    
+    //Ends Beacon Variables !!
+    
     override func viewWillAppear(_ animated: Bool) {
         self.askForTouchId()
         if UserDefaults.standard.object(forKey: "ValidadorPermisoEntrada") != nil {
@@ -80,8 +88,6 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
         
     }
     
-    
-    
     // Starts viewdidload
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +96,21 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
         
         menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
         
+        //BEACONS !!!
         
+        
+        self.proximityContentManager = ProximityContentManager(
+            beaconIDs: [
+                BeaconID(UUIDString: "EB4081C9-EC31-8326-C6E3-6393BA30539E", major: 14651, minor: 45162),
+                BeaconID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D", major: 64782, minor: 47262),
+                BeaconID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D", major: 53356, minor: 38045)
+            ],
+            beaconContentFactory: CachingContentFactory(beaconContentFactory: BeaconDetailsCloudFactory()))
+        self.proximityContentManager.delegate = self
+        self.proximityContentManager.startContentUpdates()
+        
+        
+        //END BEACONS !!!
         
         manager = APScheduledLocationManager(delegate: self)
         var logo: String! = ""
@@ -185,7 +205,7 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse) {
             locationManager.requestWhenInUseAuthorization()
         }
-        locationManager.startRangingBeacons(in: region)
+        //locationManager.startRangingBeacons(in: region)
         
         center.requestAuthorization(options: options) {
             (granted, error) in
@@ -216,14 +236,37 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
     // Ends ViewDidLoad
     
     //Beacons Region
+    
+    func proximityContentManager(_ proximityContentManager: ProximityContentManager, didUpdateContent content: AnyObject?) {
+
+        
+        
+        if let beaconDetails = content as? BeaconDetails {
+            self.view.backgroundColor = beaconDetails.backgroundColor
+            print("You're in \(beaconDetails.beaconName)'s range!")
+            
+            
+            beaconRegions.forEach(locationManager.startRangingBeacons(in:))
+            print("")
+            
+        } else {
+            self.view.backgroundColor = BeaconDetails.neutralColor
+            print("No beacons in range.")
+            
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         print(validatorValue)
         if validatorValue == true {
             
             let knownBeacons = beacons.filter{ $0.proximity != CLProximity.unknown }
+            
+            
+            
             if (knownBeacons.count > 0) {
                 let closestBeacon = knownBeacons[0] as CLBeacon
-                self.view.backgroundColor = self.colors[closestBeacon.minor.intValue]
+                //self.view.backgroundColor = self.colors[closestBeacon.minor.intValue]
                 if UIDevice.current.orientation.isLandscape {
                     beaconStatus = 0
                     
@@ -231,60 +274,42 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
                 } else {
                     print("portrait")
                 }
+
+                let beaconsUuid: String! = closestBeacon.proximityUUID.uuidString
                 
-                //38045 - 47262
-//                if closestBeacon.minor.intValue == 38045 {
-//                    print(closestBeacon.proximity.rawValue)
-//                    if closestBeacon.proximity == CLProximity.far {
-//                        
-//                        if beaconStatus == 0 {
-//                            beaconDetected = true
-//                            pushNotificationState = pushNotificationState + 1
-//                            print("Dato de estado = \(pushNotificationState)")
-//                            self.abrePuerta(beaconUid: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")
-//                            beaconStatus = 1
-//                        }else {
-//                            
-//                        }
-//                        
-//                    } else {
-//                        beaconStatus = 0
-//                    }
-//                
-//                }
-                // 45162 beacon del lic
-                // 47262 beacon celeste
-                if closestBeacon.minor.intValue == 45162 {
+                
+                if closestBeacon.proximity == CLProximity.unknown {
                     
-                    if closestBeacon.proximity == CLProximity.unknown {
-                        beaconStatus = 0
-                    } else if closestBeacon.proximity == CLProximity.immediate {
+                } else if closestBeacon.proximity == CLProximity.immediate {
+                    if beaconStatus == 0 {
+                        print("Este es el uid")
+                        print(beaconsUuid)
+                        print("Termina UUID")
                         
                         if beaconStatus == 0 {
                             beaconDetected = true
                             pushNotificationState = pushNotificationState + 1
                             print("Dato de estado = \(pushNotificationState)")
-                            self.abrePuerta(beaconUid: "EB4081C9-EC31-8326-C6E3-6393BA30539E")
+                            abrePuerta(beaconUid: beaconsUuid)
+                            
+                            
+                            
                             beaconStatus = 1
+                            
+                            
                         }else {
                             
                         }
-                        
-//                    } else if closestBeacon.proximity == CLProximity.near {
-//                        
-//                        
-//                    } else if closestBeacon.proximity == CLProximity.far {
-//
-                        
-                        
                     }else {
-                        beaconStatus = 0
+                        self.beaconStatus = 0
+                        print("beaconStatus es 1")
                     }
-
+                    
+                
                 }else{
                     beaconDetected = false
                     pushNotificationState = 0
-                    beaconStatus = 0
+                    
                 }
                 
             }
@@ -618,7 +643,7 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
                             
                             if (state == .background || state == .inactive) {
                                 
-                                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1.0, repeats: false)
+                                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.5, repeats: false)
                                 
                                         let content = UNMutableNotificationContent()
                                         content.title = "Punto de Acceso Detectado"
@@ -628,6 +653,8 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
                                 
                                         let request = UNNotificationRequest(identifier: "textNotification", content: content, trigger: trigger)
                                 
+                                        self.beaconStatus = 1
+                                
                                         UNUserNotificationCenter.current().delegate = self
                                         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                                         UNUserNotificationCenter.current().add(request) {(error) in
@@ -635,34 +662,49 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
                                                 print("Uh oh! We had an error: \(error)")
                                             }
                                         }
-                            
+                                sleep(8)
+                                
                             }else if state == .active {
-                                let refreshAlert = UIAlertController(title: "Alerta", message: "¿Desea Abrir \(doorName!)?", preferredStyle: UIAlertControllerStyle.alert)
-                                
-                                refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-                                    print("Handle Ok logic here")
+                                print(self.beaconStatus)
+                                if self.beaconStatus == 0 {
+                                    self.beaconStatus = 1
+                                    let refreshAlert = UIAlertController(title: "Alerta", message: "¿Desea Abrir \(doorName!)?", preferredStyle: UIAlertControllerStyle.alert)
                                     
-                                    let urlString = "http://api.gateguard.com.mx/api//doors/openDoorsBeacon"
-                                    
-                                    let parameters: Parameters = [
-                                        "token": self.doorToken,
-                                        "doorUid": self.doorUid
-                                    ]
-                                    Alamofire.request(urlString, method: .post, parameters:parameters).responseJSON { response in
+                                    refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                                        print("Handle Ok logic here")
                                         
+                                        let urlString = "http://api.gateguard.com.mx/api//doors/openDoorsBeacon"
                                         
+                                        let parameters: Parameters = [
+                                            "token": self.doorToken,
+                                            "doorUid": self.doorUid
+                                        ]
                                         
-                                        if let JSON = response.result.value {
-                                            print("JSON: \(JSON)")
+                                        Alamofire.request(urlString, method: .post, parameters:parameters).responseJSON { response in
+                                            
+                                            
+                                            
+                                            if let JSON = response.result.value {
+                                                print("JSON: \(JSON)")
+                                            }
                                         }
-                                    }
-                                }))
+                                        
+                                        
+                                    }))
+                                    
+                                    refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                                        print("Handle Cancel Logic here")
+                                        self.beaconStatus = 1
+                                    }))
+                                    
+                                    self.present(refreshAlert, animated: true, completion: nil)
+                                    
+                                    self.beaconStatus = 1
+                                    
+                                }else {
+                                    print("BeaconStatus = 1")
+                                }
                                 
-                                refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-                                    print("Handle Cancel Logic here")
-                                }))
-                                
-                                self.present(refreshAlert, animated: true, completion: nil)
                             }
 
                         }
@@ -673,7 +715,9 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
                     }
                     
                     
-                }
+        }else if beaconStatus == 1 {
+            print("BeaconStatus es 1")
+        }
     }
 }
 
@@ -696,7 +740,10 @@ extension LandingVC: UNUserNotificationCenterDelegate {
                     print("JSON: \(JSON)")
                 }
             }
-
+            
+            
         }
+        
+        
     }
 }

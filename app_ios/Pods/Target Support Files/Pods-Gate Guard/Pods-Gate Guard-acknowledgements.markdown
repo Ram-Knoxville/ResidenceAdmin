@@ -49,11 +49,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## EstimoteSDK
-
-Copyright 2017 Estimote, Inc. All rights reserved.
-
-
 ## HDAugmentedReality
 
 The MIT License (MIT)

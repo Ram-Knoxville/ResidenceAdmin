@@ -30,7 +30,6 @@
 		21151CF21E67753D00A3BEB5 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21151CF11E67753D00A3BEB5 /* NotificationCenter.framework */; };
 		21151CF51E67753D00A3BEB5 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21151CF41E67753D00A3BEB5 /* TodayViewController.swift */; };
 		21151CF81E67753D00A3BEB5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21151CF61E67753D00A3BEB5 /* MainInterface.storyboard */; };
-		21151CFC1E67753D00A3BEB5 /* myLocation.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21151CF01E67753D00A3BEB5 /* myLocation.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		21151D031E6776E800A3BEB5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ACA741E5F3FDC0097A652 /* LoginVC.swift */; };
 		2119A06B1E6F215F0000ED19 /* blocksListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2119A06A1E6F215F0000ED19 /* blocksListVC.swift */; };
 		2119A06D1E6F218D0000ED19 /* newBlockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2119A06C1E6F218D0000ED19 /* newBlockVC.swift */; };
@@ -38,6 +37,16 @@
 		211E4D781E85C44700CAC7AD /* streammingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211E4D771E85C44700CAC7AD /* streammingVC.swift */; };
 		211E4D7A1E86CA7400CAC7AD /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211E4D791E86CA7400CAC7AD /* ARVC.swift */; };
 		213D10F91EAFE7E500BAFE36 /* OpenGateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213D10F81EAFE7E500BAFE36 /* OpenGateVC.swift */; };
+		215ADBA01ED5EFFF00785170 /* Estimote in Resources */ = {isa = PBXBuildFile; fileRef = 215ADB9F1ED5EFFF00785170 /* Estimote */; };
+		215ADBA41ED5F3F600785170 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215ADBA31ED5F3F600785170 /* EstimoteSDK.framework */; };
+		215ADBAE1ED5F8C600785170 /* BeaconContentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBA61ED5F8C600785170 /* BeaconContentFactory.swift */; };
+		215ADBAF1ED5F8C600785170 /* BeaconDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBA71ED5F8C600785170 /* BeaconDetails.swift */; };
+		215ADBB01ED5F8C600785170 /* BeaconDetailsCloudFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBA81ED5F8C600785170 /* BeaconDetailsCloudFactory.swift */; };
+		215ADBB11ED5F8C600785170 /* BeaconDetailsStaticFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBA91ED5F8C600785170 /* BeaconDetailsStaticFactory.swift */; };
+		215ADBB21ED5F8C700785170 /* BeaconID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBAA1ED5F8C600785170 /* BeaconID.swift */; };
+		215ADBB31ED5F8C700785170 /* CachingContentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBAB1ED5F8C600785170 /* CachingContentFactory.swift */; };
+		215ADBB41ED5F8C700785170 /* NearestBeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBAC1ED5F8C600785170 /* NearestBeaconManager.swift */; };
+		215ADBB51ED5F8C700785170 /* ProximityContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBAD1ED5F8C600785170 /* ProximityContentManager.swift */; };
 		2164C1E71EB8D8EE005B9F21 /* Alertas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2164C1E61EB8D8EE005B9F21 /* Alertas.swift */; };
 		2192A5851E70807700D53957 /* DS-DIGI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 21E4254C1E70742600DB13E4 /* DS-DIGI.TTF */; };
 		2192A5871E70841400D53957 /* telemetryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5861E70841400D53957 /* telemetryListVC.swift */; };
@@ -110,19 +119,8 @@
 		21F9CA741EA5062F00E5C02A /* AlarmEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9CA731EA5062F00E5C02A /* AlarmEvents.swift */; };
 		21F9CA761EA5073500E5C02A /* alarmEventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9CA751EA5073500E5C02A /* alarmEventsVC.swift */; };
 		21FA73561E9FC16B0050B507 /* secondCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA73551E9FC16B0050B507 /* secondCalendarVC.swift */; };
-		53B45FC4F2D03DF6A5315626 /* Pods_myLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8601723FCEC728C67CCA530E /* Pods_myLocation.framework */; };
 		6AF8FA9F01C771871A4B94E0 /* Pods_Gate_Guard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2710A399D73E2A5839853F /* Pods_Gate_Guard.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		21151CFA1E67753D00A3BEB5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 210ACA671E5F3FDC0097A652 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 21151CEF1E67753D00A3BEB5;
-			remoteInfo = myLocation;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		21151D001E67753D00A3BEB5 /* Embed App Extensions */ = {
@@ -131,7 +129,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				21151CFC1E67753D00A3BEB5 /* myLocation.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,7 +146,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1D04333EEF611021BEF925BB /* Pods-myLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myLocation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myLocation/Pods-myLocation.debug.xcconfig"; sourceTree = "<group>"; };
 		210403D01E92BCE700BBF232 /* permisoDeAccesos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = permisoDeAccesos.swift; sourceTree = "<group>"; };
 		210403D21E92D73200BBF232 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		210404161E96EC1E00BBF232 /* LocationManagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerVC.swift; sourceTree = "<group>"; };
@@ -163,7 +159,7 @@
 		210ACA7C1E5F3FDC0097A652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		210ACA7E1E5F3FDC0097A652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		210ACA841E5F42900097A652 /* logoGateguard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoGateguard.png; sourceTree = "<group>"; };
-		210ACA8E1E5F4E070097A652 /* Gate Guard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gate Guard-Bridging-Header.h"; sourceTree = "<group>"; };
+		210ACA8E1E5F4E070097A652 /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
 		210ACA921E5F4FF60097A652 /* topView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = topView.swift; sourceTree = "<group>"; };
 		210ACA941E5F53510097A652 /* roundedImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundedImages.swift; sourceTree = "<group>"; };
 		210ACA961E5F53E00097A652 /* rafa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rafa.png; sourceTree = "<group>"; };
@@ -191,6 +187,17 @@
 		213D10F81EAFE7E500BAFE36 /* OpenGateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenGateVC.swift; sourceTree = "<group>"; };
 		21440E7A1E68D64C006BA19F /* Gate Guard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Gate Guard.entitlements"; sourceTree = "<group>"; };
 		21440E7B1E68D65F006BA19F /* myLocation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = myLocation.entitlements; sourceTree = "<group>"; };
+		215ADB9A1ED5EDED00785170 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EstimoteSDK.framework; path = "../../../iOS-SDK-master/EstimoteSDK/EstimoteSDK.framework"; sourceTree = "<group>"; };
+		215ADB9F1ED5EFFF00785170 /* Estimote */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Estimote; sourceTree = "<group>"; };
+		215ADBA31ED5F3F600785170 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EstimoteSDK.framework; path = "Gate Guard/Estimote/EstimoteSDK.framework"; sourceTree = "<group>"; };
+		215ADBA61ED5F8C600785170 /* BeaconContentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BeaconContentFactory.swift; path = "Gate Guard/Estimote/BeaconContentFactory.swift"; sourceTree = "<group>"; };
+		215ADBA71ED5F8C600785170 /* BeaconDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BeaconDetails.swift; path = "Gate Guard/Estimote/BeaconDetails.swift"; sourceTree = "<group>"; };
+		215ADBA81ED5F8C600785170 /* BeaconDetailsCloudFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BeaconDetailsCloudFactory.swift; path = "Gate Guard/Estimote/BeaconDetailsCloudFactory.swift"; sourceTree = "<group>"; };
+		215ADBA91ED5F8C600785170 /* BeaconDetailsStaticFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BeaconDetailsStaticFactory.swift; path = "Gate Guard/Estimote/BeaconDetailsStaticFactory.swift"; sourceTree = "<group>"; };
+		215ADBAA1ED5F8C600785170 /* BeaconID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BeaconID.swift; path = "Gate Guard/Estimote/BeaconID.swift"; sourceTree = "<group>"; };
+		215ADBAB1ED5F8C600785170 /* CachingContentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CachingContentFactory.swift; path = "Gate Guard/Estimote/CachingContentFactory.swift"; sourceTree = "<group>"; };
+		215ADBAC1ED5F8C600785170 /* NearestBeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NearestBeaconManager.swift; path = "Gate Guard/Estimote/NearestBeaconManager.swift"; sourceTree = "<group>"; };
+		215ADBAD1ED5F8C600785170 /* ProximityContentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProximityContentManager.swift; path = "Gate Guard/Estimote/ProximityContentManager.swift"; sourceTree = "<group>"; };
 		2164C1E61EB8D8EE005B9F21 /* Alertas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alertas.swift; sourceTree = "<group>"; };
 		2192A5861E70841400D53957 /* telemetryListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = telemetryListVC.swift; sourceTree = "<group>"; };
 		2192A58A1E70A1D200D53957 /* Rooms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
@@ -262,7 +269,6 @@
 		21F9CA751EA5073500E5C02A /* alarmEventsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alarmEventsVC.swift; sourceTree = "<group>"; };
 		21FA73551E9FC16B0050B507 /* secondCalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondCalendarVC.swift; sourceTree = "<group>"; };
 		8601723FCEC728C67CCA530E /* Pods_myLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5AAD2A755DC5749A7FB685D /* Pods-myLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-myLocation/Pods-myLocation.release.xcconfig"; sourceTree = "<group>"; };
 		FE2710A399D73E2A5839853F /* Pods_Gate_Guard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gate_Guard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA7DAED61FA293276DC5773 /* Pods-Gate Guard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gate Guard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gate Guard/Pods-Gate Guard.debug.xcconfig"; sourceTree = "<group>"; };
 		FF5D3C09FCBCA7789C3642D1 /* Pods-Gate Guard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gate Guard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gate Guard/Pods-Gate Guard.release.xcconfig"; sourceTree = "<group>"; };
@@ -273,6 +279,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				215ADBA41ED5F3F600785170 /* EstimoteSDK.framework in Frameworks */,
 				2104041D1E96F9EA00BBF232 /* CoreLocation.framework in Frameworks */,
 				2104041B1E96F8E700BBF232 /* MapKit.framework in Frameworks */,
 				6AF8FA9F01C771871A4B94E0 /* Pods_Gate_Guard.framework in Frameworks */,
@@ -284,7 +291,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				21151CF21E67753D00A3BEB5 /* NotificationCenter.framework in Frameworks */,
-				53B45FC4F2D03DF6A5315626 /* Pods_myLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +300,14 @@
 		210ACA661E5F3FDC0097A652 = {
 			isa = PBXGroup;
 			children = (
+				215ADBA61ED5F8C600785170 /* BeaconContentFactory.swift */,
+				215ADBA71ED5F8C600785170 /* BeaconDetails.swift */,
+				215ADBA81ED5F8C600785170 /* BeaconDetailsCloudFactory.swift */,
+				215ADBA91ED5F8C600785170 /* BeaconDetailsStaticFactory.swift */,
+				215ADBAA1ED5F8C600785170 /* BeaconID.swift */,
+				215ADBAB1ED5F8C600785170 /* CachingContentFactory.swift */,
+				215ADBAC1ED5F8C600785170 /* NearestBeaconManager.swift */,
+				215ADBAD1ED5F8C600785170 /* ProximityContentManager.swift */,
 				210ACA711E5F3FDC0097A652 /* Gate Guard */,
 				21151CF31E67753D00A3BEB5 /* myLocation */,
 				210ACA701E5F3FDC0097A652 /* Products */,
@@ -321,7 +335,7 @@
 				2192A5891E70A19000D53957 /* Controller */,
 				210ACA721E5F3FDC0097A652 /* AppDelegate.swift */,
 				21E4254C1E70742600DB13E4 /* DS-DIGI.TTF */,
-				210ACA8E1E5F4E070097A652 /* Gate Guard-Bridging-Header.h */,
+				210ACA8E1E5F4E070097A652 /* ObjCBridge.h */,
 				2192A5B71E72EF8700D53957 /* SWRevealViewController.m */,
 				210ACAAE1E64842A0097A652 /* SWRevealViewController.h */,
 				21151CD31E67305E00A3BEB5 /* Media.xcassets */,
@@ -337,6 +351,7 @@
 				210ACA7B1E5F3FDC0097A652 /* LaunchScreen.storyboard */,
 				210ACA7E1E5F3FDC0097A652 /* Info.plist */,
 				210403D21E92D73200BBF232 /* Localizable.strings */,
+				215ADB9F1ED5EFFF00785170 /* Estimote */,
 			);
 			path = "Gate Guard";
 			sourceTree = "<group>";
@@ -456,6 +471,8 @@
 		A06C0F0FB4EB3375111167D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				215ADBA31ED5F3F600785170 /* EstimoteSDK.framework */,
+				215ADB9A1ED5EDED00785170 /* EstimoteSDK.framework */,
 				2104041C1E96F9EA00BBF232 /* CoreLocation.framework */,
 				2104041A1E96F8E700BBF232 /* MapKit.framework */,
 				FE2710A399D73E2A5839853F /* Pods_Gate_Guard.framework */,
@@ -472,8 +489,6 @@
 			children = (
 				FEA7DAED61FA293276DC5773 /* Pods-Gate Guard.debug.xcconfig */,
 				FF5D3C09FCBCA7789C3642D1 /* Pods-Gate Guard.release.xcconfig */,
-				1D04333EEF611021BEF925BB /* Pods-myLocation.debug.xcconfig */,
-				B5AAD2A755DC5749A7FB685D /* Pods-myLocation.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -497,7 +512,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				21151CFB1E67753D00A3BEB5 /* PBXTargetDependency */,
 			);
 			name = "Gate Guard";
 			productName = "Gate Guard";
@@ -508,11 +522,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21151CFD1E67753D00A3BEB5 /* Build configuration list for PBXNativeTarget "myLocation" */;
 			buildPhases = (
-				B7917AFBDDD325839976E8A8 /* [CP] Check Pods Manifest.lock */,
 				21151CEC1E67753D00A3BEB5 /* Sources */,
 				21151CED1E67753D00A3BEB5 /* Frameworks */,
 				21151CEE1E67753D00A3BEB5 /* Resources */,
-				902D0735CBD777DCFB166062 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -592,6 +604,7 @@
 				210ACA7D1E5F3FDC0097A652 /* LaunchScreen.storyboard in Resources */,
 				21ABB7041E6B1C4700106238 /* Main.storyboard in Resources */,
 				210ACA971E5F53E00097A652 /* rafa.png in Resources */,
+				215ADBA01ED5EFFF00785170 /* Estimote in Resources */,
 				210ACA851E5F42900097A652 /* logoGateguard.png in Resources */,
 				210FC7821E8B18C10096490D /* loading.gif in Resources */,
 				210403D31E92D73200BBF232 /* Localizable.strings in Resources */,
@@ -644,36 +657,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		902D0735CBD777DCFB166062 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myLocation/Pods-myLocation-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B7917AFBDDD325839976E8A8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		FCF62CBD68E8D4C7FA17DBC7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -696,6 +679,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				215ADBAE1ED5F8C600785170 /* BeaconContentFactory.swift in Sources */,
+				215ADBAF1ED5F8C600785170 /* BeaconDetails.swift in Sources */,
+				215ADBB01ED5F8C600785170 /* BeaconDetailsCloudFactory.swift in Sources */,
+				215ADBB11ED5F8C600785170 /* BeaconDetailsStaticFactory.swift in Sources */,
+				215ADBB21ED5F8C700785170 /* BeaconID.swift in Sources */,
+				215ADBB31ED5F8C700785170 /* CachingContentFactory.swift in Sources */,
+				215ADBB41ED5F8C700785170 /* NearestBeaconManager.swift in Sources */,
+				215ADBB51ED5F8C700785170 /* ProximityContentManager.swift in Sources */,
 				21FA73561E9FC16B0050B507 /* secondCalendarVC.swift in Sources */,
 				2192A59C1E71F66500D53957 /* Brands.swift in Sources */,
 				21F9CA761EA5073500E5C02A /* alarmEventsVC.swift in Sources */,
@@ -792,14 +783,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		21151CFB1E67753D00A3BEB5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 21151CEF1E67753D00A3BEB5 /* myLocation */;
-			targetProxy = 21151CFA1E67753D00A3BEB5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		210ACA761E5F3FDC0097A652 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -876,6 +859,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -919,6 +903,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -936,12 +921,17 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Cesar Martinez de los Santos (KDG2ZUR6QL)";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = S4V28N4MSW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Gate\\ Guard",
+					"$(PROJECT_DIR)/Gate\\ Guard/Estimote",
+				);
 				INFOPLIST_FILE = "Gate Guard/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mx.rowantechnologies.Gate-Guard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Gate Guard/Gate Guard-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -960,12 +950,17 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Cesar Martinez de los Santos (KDG2ZUR6QL)";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = S4V28N4MSW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Gate\\ Guard",
+					"$(PROJECT_DIR)/Gate\\ Guard/Estimote",
+				);
 				INFOPLIST_FILE = "Gate Guard/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mx.rowantechnologies.Gate-Guard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Gate Guard/Gate Guard-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -973,7 +968,6 @@
 		};
 		21151CFE1E67753D00A3BEB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D04333EEF611021BEF925BB /* Pods-myLocation.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = myLocation/myLocation.entitlements;
 				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = myLocation/myLocation.entitlements;
@@ -985,13 +979,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mx.rowantechnologies.Gate-Guard.myLocation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		21151CFF1E67753D00A3BEB5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5AAD2A755DC5749A7FB685D /* Pods-myLocation.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = myLocation/myLocation.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.mx.rowantechnologies.Gate-Guard.myLocation";
@@ -1002,6 +996,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mx.rowantechnologies.Gate-Guard.myLocation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
