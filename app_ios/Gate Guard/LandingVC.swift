@@ -33,6 +33,9 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
     
     var pushNotificationState = 0
     
+    
+    var sleepStatus = 0
+    
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     
     @IBOutlet weak var userFullName: UILabel!
@@ -256,8 +259,19 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
         }
     }
     
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        sleepStatus = 0
+    }
+    
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+        
+        
         print(validatorValue)
+        
+        
+        
+        
+        
         if validatorValue == true {
             
             let knownBeacons = beacons.filter{ $0.proximity != CLProximity.unknown }
@@ -267,13 +281,19 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
             if (knownBeacons.count > 0) {
                 let closestBeacon = knownBeacons[0] as CLBeacon
                 //self.view.backgroundColor = self.colors[closestBeacon.minor.intValue]
-                if UIDevice.current.orientation.isLandscape {
-                    beaconStatus = 0
+                if sleepStatus == 0 {
+                    if UIDevice.current.orientation.isLandscape {
+                        beaconStatus = 0
+                        sleepStatus = 0
+                        print("landscape")
+                    } else {
+                        print("portrait")
+                    }
+                }else {
                     
-                    print("landscape")
-                } else {
-                    print("portrait")
                 }
+                
+                
 
                 let beaconsUuid: String! = closestBeacon.proximityUUID.uuidString
                 
@@ -305,17 +325,19 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
                         print("beaconStatus es 1")
                     }
                     
-                
-                }else{
-                    beaconDetected = false
-                    pushNotificationState = 0
                     
+                    print("Im immediate")
+                
+                }else if closestBeacon.proximity == CLProximity.near {
+                    
+                    sleepStatus = 0
+                    print("Im near")
                 }
                 
             }
             
         }else if validatorValue == false {
-            print("Ain't nobody gave you permission for that hoe!")
+            //print("Ain't nobody gave you permission for that hoe!")
         }
         
     }
@@ -578,83 +600,85 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
     }
     
     func abrePuerta(beaconUid: String) {
-        
-        if beaconStatus == 0 {
-            //Send request to server
-            let accountUid: String! = UserDefaults.standard.string(forKey: "userUid")!
-//            let beaconUid: String! = "B9407F30-F5F8-466E-AFF9-25556B57FE6D"
-            
-            let urlString = "http://api.gateguard.com.mx/api/doors/getDoorsBeacon"
-            
-            let parameters: Parameters = [
-                "accountUid": accountUid,
-                "beaconUid": beaconUid
-            ]
-            
-            Alamofire.request(urlString, method: .post, parameters:parameters).responseJSON { response in
+        if sleepStatus == 0 {
+            if beaconStatus == 0 {
+                //Send request to server
+                let accountUid: String! = UserDefaults.standard.string(forKey: "userUid")!
+                //            let beaconUid: String! = "B9407F30-F5F8-466E-AFF9-25556B57FE6D"
                 
+                let urlString = "http://api.gateguard.com.mx/api/doors/getDoorsBeacon"
                 
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                }
+                let parameters: Parameters = [
+                    "accountUid": accountUid,
+                    "beaconUid": beaconUid
+                ]
                 
-                let result = response.result
-                
-                var doorDirectionId: String!
-                var doorTypeId: String!
-                var doorName: String!
-                var isPedestrian: String!
-                
-                
-                if let dict = result.value as? Dictionary<String, AnyObject>{
+                Alamofire.request(urlString, method: .post, parameters:parameters).responseJSON { response in
                     
-                    print("Aqui empieza el diccionario \(dict)")
-                    if dict["data"]!["status"] as! Int == 1 {
+                    
+                    if let JSON = response.result.value {
+                        print("JSON: \(JSON)")
+                    }
+                    
+                    let result = response.result
+                    
+                    var doorDirectionId: String!
+                    var doorTypeId: String!
+                    var doorName: String!
+                    var isPedestrian: String!
+                    
+                    
+                    if let dict = result.value as? Dictionary<String, AnyObject>{
                         
-                        for i in dict["data"]!["dato"] as! NSDictionary{
+                        print("Aqui empieza el diccionario \(dict)")
+                        if dict["data"]!["status"] as! Int == 1 {
                             
-                            if i.key as! String == "token" {
-                                self.doorToken = i.value as! String
-                            }else if i.key as! String == "doorDirectionId" {
-                                doorDirectionId = i.value as! String
-                            }else if i.key as! String == "doorTypeId" {
-                                doorTypeId = i.value as! String
-                            }else if i.key as! String == "name" {
-                                doorName = i.value as! String
-                            }else if i.key as! String == "pedestrian" {
-                                isPedestrian = i.value as! String
-                            }else if i.key as! String == "uid" {
-                                self.doorUid = i.value as! String
+                            for i in dict["data"]!["dato"] as! NSDictionary{
+                                
+                                if i.key as! String == "token" {
+                                    self.doorToken = i.value as! String
+                                }else if i.key as! String == "doorDirectionId" {
+                                    doorDirectionId = i.value as! String
+                                }else if i.key as! String == "doorTypeId" {
+                                    doorTypeId = i.value as! String
+                                }else if i.key as! String == "name" {
+                                    doorName = i.value as! String
+                                }else if i.key as! String == "pedestrian" {
+                                    isPedestrian = i.value as! String
+                                }else if i.key as! String == "uid" {
+                                    self.doorUid = i.value as! String
+                                }
                             }
-                        }
-                        
-                        print("Inicio de valores capturados")
-                        print(self.doorToken)
-                        print(doorDirectionId)
-                        print(doorTypeId)
-                        print(doorName)
-                        print(isPedestrian)
-                        print(self.doorUid)
-                        print("Final de valores capturados")
-                        
-                        if self.doorToken != nil, self.doorUid != nil {
-                            let state: UIApplicationState = UIApplication.shared.applicationState
                             
+                            print("Inicio de valores capturados")
+                            print(self.doorToken)
+                            print(doorDirectionId)
+                            print(doorTypeId)
+                            print(doorName)
+                            print(isPedestrian)
+                            print(self.doorUid)
+                            print("Final de valores capturados")
                             
-                            if (state == .background || state == .inactive) {
+                            if self.doorToken != nil, self.doorUid != nil {
+                                let state: UIApplicationState = UIApplication.shared.applicationState
                                 
+                                
+                                if (state == .background || state == .inactive) {
+                                    
+                                    if self.sleepStatus == 0 {
+                                        
                                         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.5, repeats: false)
-                                
+                                        
                                         let content = UNMutableNotificationContent()
                                         content.title = "Punto de Acceso Detectado"
                                         content.body = "¿Desea Abrir \(doorName!)?"
                                         content.sound = UNNotificationSound.default()
                                         content.categoryIdentifier = "myCategory"
-                                
+                                        
                                         let request = UNNotificationRequest(identifier: "textNotification", content: content, trigger: trigger)
-                                
+                                        
                                         self.beaconStatus = 1
-                                
+                                        
                                         UNUserNotificationCenter.current().delegate = self
                                         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                                         UNUserNotificationCenter.current().add(request) {(error) in
@@ -662,62 +686,71 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
                                                 print("Uh oh! We had an error: \(error)")
                                             }
                                         }
-                                sleep(8)
-                                
-                            }else if state == .active {
-                                print(self.beaconStatus)
-                                if self.beaconStatus == 0 {
-                                    self.beaconStatus = 1
-                                    let refreshAlert = UIAlertController(title: "Alerta", message: "¿Desea Abrir \(doorName!)?", preferredStyle: UIAlertControllerStyle.alert)
+                                        self.sleepStatus = 1
+                                    }else {
+                                        print("Estoy dormido alv")
+                                    }
                                     
-                                    refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-                                        print("Handle Ok logic here")
-                                        
-                                        let urlString = "http://api.gateguard.com.mx/api//doors/openDoorsBeacon"
-                                        
-                                        let parameters: Parameters = [
-                                            "token": self.doorToken,
-                                            "doorUid": self.doorUid
-                                        ]
-                                        
-                                        Alamofire.request(urlString, method: .post, parameters:parameters).responseJSON { response in
-                                            
-                                            
-                                            
-                                            if let JSON = response.result.value {
-                                                print("JSON: \(JSON)")
-                                            }
-                                        }
-                                        
-                                        
-                                    }))
                                     
-                                    refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-                                        print("Handle Cancel Logic here")
+                                    
+                                }else if state == .active {
+                                    print(self.beaconStatus)
+                                    if self.beaconStatus == 0 {
                                         self.beaconStatus = 1
-                                    }))
+                                        let refreshAlert = UIAlertController(title: "Alerta", message: "¿Desea Abrir \(doorName!)?", preferredStyle: UIAlertControllerStyle.alert)
+                                        
+                                        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                                            print("Handle Ok logic here")
+                                            
+                                            let urlString = "http://api.gateguard.com.mx/api//doors/openDoorsBeacon"
+                                            
+                                            let parameters: Parameters = [
+                                                "token": self.doorToken,
+                                                "doorUid": self.doorUid
+                                            ]
+                                            
+                                            Alamofire.request(urlString, method: .post, parameters:parameters).responseJSON { response in
+                                                
+                                                
+                                                
+                                                if let JSON = response.result.value {
+                                                    print("JSON: \(JSON)")
+                                                }
+                                            }
+                                            
+                                            
+                                        }))
+                                        
+                                        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                                            print("Handle Cancel Logic here")
+                                            self.beaconStatus = 1
+                                        }))
+                                        
+                                        self.present(refreshAlert, animated: true, completion: nil)
+                                        
+                                        self.beaconStatus = 1
+                                        
+                                    }else {
+                                        print("BeaconStatus = 1")
+                                    }
                                     
-                                    self.present(refreshAlert, animated: true, completion: nil)
-                                    
-                                    self.beaconStatus = 1
-                                    
-                                }else {
-                                    print("BeaconStatus = 1")
                                 }
                                 
                             }
-
                         }
                     }
+                    self.beaconStatus = 1
+                    
                 }
-                self.beaconStatus = 1
-
-                    }
-                    
-                    
-        }else if beaconStatus == 1 {
-            print("BeaconStatus es 1")
+                
+                
+            }else if beaconStatus == 1 {
+                print("BeaconStatus es 1")
+            }
+        }else {
+            print("Soy un mensaje raro")
         }
+        
     }
 }
 

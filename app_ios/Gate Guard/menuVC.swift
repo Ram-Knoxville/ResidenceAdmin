@@ -18,7 +18,7 @@ class menuVC: UIViewController, UITableViewDataSource {
     var row1 = ["Home"]
     var row2 = ["Usuarios", "Colonias", "Guardias", "Perfiles", "Servicios"]
     var row3 = ["Ingresos", "Gastos", "Facturas", "Encuestas y Votaciones", "Notificaciones", "Configuración", "Quejas y Sugerencias", "Monitoreo Paneles de Alarma"]
-    var row4  = [/*"Streaming", "AR","Ubicación"*/"Invitados","Invitaciones", "Paneles de Alarma", /*"Servidores de Video",*/ "Usuarios de Residencia", "Mis Vehículos", "Telemetría", "Eventos de Alarma"/*, "Registro de Accesos"*/]
+    var row4  = [/*"Streaming", "AR","Ubicación"*/"Invitados","Invitaciones", "Paneles de Alarma", /*"Servidores de Video",*/ "Usuarios de Residencia", "Mis Vehículos", "Telemetría", "Eventos de Alarma", "Registro de Visitantes"/*, "Registro de Accesos"*/]
     var row5  = ["Monitor de Acceso", "Registro de Visitas (Vehiculos)", "Registro de Visitas (Peatones)"]
     var row6  = ["Reporte de Accesos"]
     var row7  = ["Residencias", "Grupo de Residencias", "Usuarios del Sistema", "Control de Asistencia"]
@@ -207,7 +207,9 @@ extension menuVC: UITableViewDelegate {
             }else if indexPath.row == 6 {
                 performSegue(withIdentifier: "menuAEventosAlarma", sender: nil)
             }else if indexPath.row == 7 {
-                performSegue(withIdentifier: "menuToAccessRegistry", sender: nil)
+                performSegue(withIdentifier: "menuToVisitorsRecords", sender: nil)
+            }else if indexPath.row == 8 {
+                print("do nothing bitch")
             }
         case 2:
             performSegue(withIdentifier: "menuToSettings", sender: self)

@@ -578,7 +578,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHw-vV-HvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1017" y="12322"/>
+            <point key="canvasLocation" x="-164" y="13805"/>
         </scene>
         <!--GuestsVC-->
         <scene sceneID="7Z5-5p-9Lk">
@@ -1421,6 +1421,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ym-dD-193" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2077.5999999999999" y="13127.586206896553"/>
+        </scene>
+        <!--Visitors RecordsVC-->
+        <scene sceneID="sKC-Qe-DDW">
+            <objects>
+                <viewController storyboardIdentifier="visitorsRecordsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SXt-wC-1o9" customClass="visitorsRecordsVC" customModule="Gate_Guard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sHo-l0-reb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xmd-VN-nWR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6DX-NG-zXq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VfV-kX-nKv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                <color key="backgroundColor" red="0.36765063650000002" green="0.65829476070000004" blue="0.87585263319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="SHd-UN-9bm"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.36765063650000002" green="0.65829476070000004" blue="0.87585263319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Registro de Visitas" id="SzI-lQ-nd6">
+                                        <barButtonItem key="leftBarButtonItem" title="MENU" id="TMH-y1-WFD">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vop-5a-3fE">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.36765063650000002" green="0.65829476070000004" blue="0.87585263319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PBp-1y-4G9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xmd-VN-nWR" firstAttribute="top" secondItem="Vop-5a-3fE" secondAttribute="bottom" id="1a8-ne-UrS"/>
+                            <constraint firstItem="VfV-kX-nKv" firstAttribute="leading" secondItem="6DX-NG-zXq" secondAttribute="leading" id="36W-kE-8tS"/>
+                            <constraint firstItem="Vop-5a-3fE" firstAttribute="leading" secondItem="6DX-NG-zXq" secondAttribute="leading" id="6ne-uf-Hch"/>
+                            <constraint firstAttribute="trailing" secondItem="Vop-5a-3fE" secondAttribute="trailing" id="DUr-C7-g1z"/>
+                            <constraint firstItem="VfV-kX-nKv" firstAttribute="top" secondItem="6DX-NG-zXq" secondAttribute="top" id="VlG-L4-vd1"/>
+                            <constraint firstAttribute="trailing" secondItem="VfV-kX-nKv" secondAttribute="trailing" id="oc5-1c-Cov"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="menuBtn" destination="TMH-y1-WFD" id="UFe-3y-1lb"/>
+                        <segue destination="bYE-Ej-ZQ0" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="jNu-da-syt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ujW-cA-9yk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2078" y="13846"/>
         </scene>
         <!--Access ReportVC-->
         <scene sceneID="7uh-N3-1V6">
@@ -3183,11 +3241,12 @@
                         <segue destination="uZS-AB-Yfu" kind="custom" identifier="menuToAccessRegistry" customClass="SWRevealViewControllerSeguePushController" id="sPx-Cv-Xbe"/>
                         <segue destination="tBK-bG-kNh" kind="custom" identifier="menuToSettings" customClass="SWRevealViewControllerSeguePushController" id="tSG-gp-EcF"/>
                         <segue destination="Afn-k0-ilH" kind="custom" identifier="menuToGateAccess" customClass="SWRevealViewControllerSeguePushController" id="zwl-Dq-b49"/>
+                        <segue destination="SXt-wC-1o9" kind="custom" identifier="menuToVisitorsRecords" customClass="SWRevealViewControllerSeguePushController" id="swA-Se-n3p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5SQ-MC-bbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-161" y="12322"/>
+            <point key="canvasLocation" x="761" y="13805"/>
         </scene>
         <!--Telemetry ListVC-->
         <scene sceneID="k6i-tv-GDS">
@@ -5631,12 +5690,12 @@
         <image name="uploadLogo" width="720" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ls0-XT-tn2"/>
-        <segue reference="IdZ-bg-UMs"/>
+        <segue reference="jNu-da-syt"/>
         <segue reference="nA5-6a-jLN"/>
         <segue reference="BPJ-Aq-SZY"/>
+        <segue reference="Ls0-XT-tn2"/>
+        <segue reference="3RM-9M-m1p"/>
         <segue reference="PK2-6l-WOB"/>
         <segue reference="SWb-oU-p2b"/>
-        <segue reference="3RM-9M-m1p"/>
     </inferredMetricsTieBreakers>
 </document>

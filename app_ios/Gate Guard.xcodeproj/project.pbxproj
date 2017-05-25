@@ -47,6 +47,7 @@
 		215ADBB31ED5F8C700785170 /* CachingContentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBAB1ED5F8C600785170 /* CachingContentFactory.swift */; };
 		215ADBB41ED5F8C700785170 /* NearestBeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBAC1ED5F8C600785170 /* NearestBeaconManager.swift */; };
 		215ADBB51ED5F8C700785170 /* ProximityContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBAD1ED5F8C600785170 /* ProximityContentManager.swift */; };
+		215ADBB71ED7416E00785170 /* visitorsRecordsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBB61ED7416E00785170 /* visitorsRecordsVC.swift */; };
 		2164C1E71EB8D8EE005B9F21 /* Alertas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2164C1E61EB8D8EE005B9F21 /* Alertas.swift */; };
 		2192A5851E70807700D53957 /* DS-DIGI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 21E4254C1E70742600DB13E4 /* DS-DIGI.TTF */; };
 		2192A5871E70841400D53957 /* telemetryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5861E70841400D53957 /* telemetryListVC.swift */; };
@@ -198,6 +199,7 @@
 		215ADBAB1ED5F8C600785170 /* CachingContentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CachingContentFactory.swift; path = "Gate Guard/Estimote/CachingContentFactory.swift"; sourceTree = "<group>"; };
 		215ADBAC1ED5F8C600785170 /* NearestBeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NearestBeaconManager.swift; path = "Gate Guard/Estimote/NearestBeaconManager.swift"; sourceTree = "<group>"; };
 		215ADBAD1ED5F8C600785170 /* ProximityContentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProximityContentManager.swift; path = "Gate Guard/Estimote/ProximityContentManager.swift"; sourceTree = "<group>"; };
+		215ADBB61ED7416E00785170 /* visitorsRecordsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = visitorsRecordsVC.swift; sourceTree = "<group>"; };
 		2164C1E61EB8D8EE005B9F21 /* Alertas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alertas.swift; sourceTree = "<group>"; };
 		2192A5861E70841400D53957 /* telemetryListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = telemetryListVC.swift; sourceTree = "<group>"; };
 		2192A58A1E70A1D200D53957 /* Rooms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 				21C044B91EC9ECA000C9BFE2 /* settingsVC.swift */,
 				21C044BB1ECA450000C9BFE2 /* VehiclesLocationVC.swift */,
 				21D11AA51ED33D0000E18BEC /* ManualGateAccessVC.swift */,
+				215ADBB61ED7416E00785170 /* visitorsRecordsVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -767,6 +770,7 @@
 				21AB1BB61E9C2CEC00E1B47D /* Guests.swift in Sources */,
 				21E4254B1E6F67B100DB13E4 /* alarmPanelsPickerVC.swift in Sources */,
 				21AB1BBC1E9EC16400E1B47D /* calendarVC.swift in Sources */,
+				215ADBB71ED7416E00785170 /* visitorsRecordsVC.swift in Sources */,
 				21F98A981E6F5FFE00F36B95 /* newCategoryVC.swift in Sources */,
 				21D11AA61ED33D0000E18BEC /* ManualGateAccessVC.swift in Sources */,
 				21B0EE001EA7DBEC00CEDF73 /* alarmRegistryVC.swift in Sources */,
