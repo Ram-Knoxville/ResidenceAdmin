@@ -1082,25 +1082,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFY-ct-Jte">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
-                                <color key="backgroundColor" red="0.36765063650000002" green="0.65829476070000004" blue="0.87585263319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="HSB-r1-jsg"/>
-                                </constraints>
-                                <color key="barTintColor" red="0.36765063650000002" green="0.65829476070000004" blue="0.87585263319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Reporte de Accesos" id="1tQ-sO-0UV">
-                                        <barButtonItem key="leftBarButtonItem" title="MENU" id="Vqi-A4-7ft">
-                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqh-El-Rsb">
                                 <rect key="frame" x="0.0" y="574" width="375" height="93"/>
                                 <subviews>
@@ -1129,25 +1110,147 @@
                                     <constraint firstItem="tIy-Dc-CF0" firstAttribute="leading" secondItem="uqh-El-Rsb" secondAttribute="leading" constant="16" id="rrG-Id-hEH"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufT-If-E12">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uqh-0P-o07" customClass="KeyboardDismissingView" customModule="Gate_Guard" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55" width="375" height="519"/>
-                            </scrollView>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30Y-ke-rku">
+                                        <rect key="frame" x="8" y="59.5" width="359" height="400"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESDE :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebs-pF-2M7">
+                                                <rect key="frame" x="8" y="8" width="343" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="Fpq-f6-a2p"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HASTA :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTh-zs-L03">
+                                                <rect key="frame" x="8" y="139" width="343" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="hv6-Y7-0o3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="F6J-rq-Th1">
+                                                <rect key="frame" x="8" y="51" width="343" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="UWu-fJ-OZF"/>
+                                                </constraints>
+                                                <date key="date" timeIntervalSinceReferenceDate="517510263.31077403">
+                                                    <!--2017-05-26 16:51:03 +0000-->
+                                                </date>
+                                                <locale key="locale" localeIdentifier="es_MX"/>
+                                            </datePicker>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="1kA-Gi-Raq">
+                                                <rect key="frame" x="8" y="183" width="343" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="dzw-6q-gl2"/>
+                                                </constraints>
+                                                <date key="date" timeIntervalSinceReferenceDate="517510263.31077403">
+                                                    <!--2017-05-26 16:51:03 +0000-->
+                                                </date>
+                                                <locale key="locale" localeIdentifier="es_MX"/>
+                                            </datePicker>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gnp-tE-LKf">
+                                                <rect key="frame" x="8" y="329" width="343" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="PRL-QG-MLj"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero de Placa" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bXZ-ma-ht0">
+                                                <rect key="frame" x="8" y="271" width="343" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Lar-bW-wUL"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.36765063650000002" green="0.65829476070000004" blue="0.87585263319999995" alpha="0.71784032534246578" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="CtO-wi-t8o"/>
+                                            <constraint firstItem="1kA-Gi-Raq" firstAttribute="leading" secondItem="30Y-ke-rku" secondAttribute="leading" constant="8" id="D7Q-h9-rfv"/>
+                                            <constraint firstAttribute="trailing" secondItem="F6J-rq-Th1" secondAttribute="trailing" constant="8" id="DIz-Mz-s5l"/>
+                                            <constraint firstAttribute="trailing" secondItem="ebs-pF-2M7" secondAttribute="trailing" constant="8" id="EP3-LZ-bpB"/>
+                                            <constraint firstItem="Gnp-tE-LKf" firstAttribute="top" secondItem="bXZ-ma-ht0" secondAttribute="bottom" constant="8" id="GME-fo-65Z"/>
+                                            <constraint firstItem="ebs-pF-2M7" firstAttribute="top" secondItem="30Y-ke-rku" secondAttribute="top" constant="8" id="HVr-xc-9HV"/>
+                                            <constraint firstItem="bXZ-ma-ht0" firstAttribute="top" secondItem="1kA-Gi-Raq" secondAttribute="bottom" constant="8" id="MNh-d2-xkp"/>
+                                            <constraint firstAttribute="trailing" secondItem="PTh-zs-L03" secondAttribute="trailing" constant="8" id="OHg-ul-pin"/>
+                                            <constraint firstItem="1kA-Gi-Raq" firstAttribute="top" secondItem="PTh-zs-L03" secondAttribute="bottom" constant="8" id="OUB-8m-D0T"/>
+                                            <constraint firstAttribute="trailing" secondItem="bXZ-ma-ht0" secondAttribute="trailing" constant="8" id="PY4-c0-9QA"/>
+                                            <constraint firstAttribute="trailing" secondItem="Gnp-tE-LKf" secondAttribute="trailing" constant="8" id="Sb4-YN-cQ5"/>
+                                            <constraint firstAttribute="trailing" secondItem="1kA-Gi-Raq" secondAttribute="trailing" constant="8" id="VaW-8y-jPZ"/>
+                                            <constraint firstItem="PTh-zs-L03" firstAttribute="top" secondItem="F6J-rq-Th1" secondAttribute="bottom" constant="8" id="WS8-RP-tqb"/>
+                                            <constraint firstItem="PTh-zs-L03" firstAttribute="leading" secondItem="30Y-ke-rku" secondAttribute="leading" constant="8" id="btb-P7-KFB"/>
+                                            <constraint firstItem="Gnp-tE-LKf" firstAttribute="leading" secondItem="30Y-ke-rku" secondAttribute="leading" constant="8" id="kZ0-A9-4Bh"/>
+                                            <constraint firstItem="F6J-rq-Th1" firstAttribute="top" secondItem="ebs-pF-2M7" secondAttribute="bottom" constant="8" id="sJr-hz-nKU"/>
+                                            <constraint firstItem="ebs-pF-2M7" firstAttribute="leading" secondItem="30Y-ke-rku" secondAttribute="leading" constant="8" id="tep-g5-wrb"/>
+                                            <constraint firstItem="bXZ-ma-ht0" firstAttribute="leading" secondItem="30Y-ke-rku" secondAttribute="leading" constant="8" id="u5O-JL-rBC"/>
+                                            <constraint firstItem="F6J-rq-Th1" firstAttribute="leading" secondItem="30Y-ke-rku" secondAttribute="leading" constant="8" id="utK-l7-yfq"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="30Y-ke-rku" firstAttribute="centerY" secondItem="Uqh-0P-o07" secondAttribute="centerY" id="Qs2-h0-D2v"/>
+                                    <constraint firstAttribute="trailing" secondItem="30Y-ke-rku" secondAttribute="trailing" constant="8" id="Tae-DO-TfG"/>
+                                    <constraint firstItem="30Y-ke-rku" firstAttribute="centerX" secondItem="Uqh-0P-o07" secondAttribute="centerX" id="gRo-qb-Cz4"/>
+                                    <constraint firstItem="30Y-ke-rku" firstAttribute="leading" secondItem="Uqh-0P-o07" secondAttribute="leading" constant="8" id="ukg-aK-RtT"/>
+                                </constraints>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFY-ct-Jte">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                <color key="backgroundColor" red="0.36765063650000002" green="0.65829476070000004" blue="0.87585263319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="HSB-r1-jsg"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.36765063650000002" green="0.65829476070000004" blue="0.87585263319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Reporte de Accesos" id="1tQ-sO-0UV">
+                                        <barButtonItem key="leftBarButtonItem" title="MENU" id="Vqi-A4-7ft">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bFY-ct-Jte" firstAttribute="top" secondItem="byQ-qZ-MQ7" secondAttribute="top" id="0MV-53-jXT"/>
+                            <constraint firstItem="uqh-El-Rsb" firstAttribute="top" secondItem="Uqh-0P-o07" secondAttribute="bottom" id="3TG-go-Se7"/>
                             <constraint firstAttribute="trailing" secondItem="uqh-El-Rsb" secondAttribute="trailing" id="3hE-tt-I7q"/>
+                            <constraint firstItem="Uqh-0P-o07" firstAttribute="leading" secondItem="byQ-qZ-MQ7" secondAttribute="leading" id="Nv9-vg-mSD"/>
                             <constraint firstItem="uqh-El-Rsb" firstAttribute="leading" secondItem="byQ-qZ-MQ7" secondAttribute="leading" id="OA9-xj-d4r"/>
                             <constraint firstItem="QqF-AI-yn6" firstAttribute="top" secondItem="uqh-El-Rsb" secondAttribute="bottom" id="OML-ds-8id"/>
-                            <constraint firstAttribute="trailing" secondItem="ufT-If-E12" secondAttribute="trailing" id="YCg-On-fUa"/>
-                            <constraint firstItem="ufT-If-E12" firstAttribute="leading" secondItem="byQ-qZ-MQ7" secondAttribute="leading" id="kRL-Hu-BxZ"/>
+                            <constraint firstItem="Uqh-0P-o07" firstAttribute="top" secondItem="bFY-ct-Jte" secondAttribute="bottom" id="Tev-Pg-a9a"/>
+                            <constraint firstAttribute="trailing" secondItem="Uqh-0P-o07" secondAttribute="trailing" id="X9J-r0-eou"/>
                             <constraint firstItem="bFY-ct-Jte" firstAttribute="leading" secondItem="byQ-qZ-MQ7" secondAttribute="leading" id="mBJ-Yy-c3W"/>
-                            <constraint firstItem="uqh-El-Rsb" firstAttribute="top" secondItem="ufT-If-E12" secondAttribute="bottom" id="nAb-N6-Rbi"/>
                             <constraint firstAttribute="trailing" secondItem="bFY-ct-Jte" secondAttribute="trailing" id="on2-1g-ElH"/>
-                            <constraint firstItem="ufT-If-E12" firstAttribute="top" secondItem="bFY-ct-Jte" secondAttribute="bottom" id="xkI-wA-b0h"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="avoidingView" destination="30Y-ke-rku" id="dzf-0V-IKK"/>
+                        <outlet property="dateFromPicker" destination="F6J-rq-Th1" id="Ye7-lg-jRL"/>
+                        <outlet property="dateToPicker" destination="1kA-Gi-Raq" id="vGi-ua-bgt"/>
+                        <outlet property="menuBtn" destination="Vqi-A4-7ft" id="yQO-jz-3ck"/>
+                        <outlet property="nameTxtField" destination="Gnp-tE-LKf" id="JHy-KF-Yey"/>
+                        <outlet property="plateTxtField" destination="bXZ-ma-ht0" id="mr7-nf-cRc"/>
                         <segue destination="bYE-Ej-ZQ0" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="zLJ-bp-hgw"/>
                         <segue destination="ahY-G3-r6q" kind="presentation" identifier="viewAccessLog" id="TjN-te-NKU"/>
                     </connections>
@@ -1464,8 +1567,11 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Reporte de Accesos" id="fzZ-w3-YY4">
-                                        <barButtonItem key="leftBarButtonItem" title="MENU" id="CN6-9X-YUP">
+                                        <barButtonItem key="leftBarButtonItem" title="ATRAS" id="CN6-9X-YUP">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="backBtnPressed:" destination="ahY-G3-r6q" id="zBO-ou-p9f"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -5653,8 +5759,8 @@
         <segue reference="nA5-6a-jLN"/>
         <segue reference="BPJ-Aq-SZY"/>
         <segue reference="Ls0-XT-tn2"/>
+        <segue reference="SWb-oU-p2b"/>
         <segue reference="3RM-9M-m1p"/>
         <segue reference="PK2-6l-WOB"/>
-        <segue reference="SWb-oU-p2b"/>
     </inferredMetricsTieBreakers>
 </document>

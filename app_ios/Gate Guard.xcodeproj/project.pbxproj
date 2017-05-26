@@ -48,6 +48,8 @@
 		215ADBB41ED5F8C700785170 /* NearestBeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBAC1ED5F8C600785170 /* NearestBeaconManager.swift */; };
 		215ADBB51ED5F8C700785170 /* ProximityContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBAD1ED5F8C600785170 /* ProximityContentManager.swift */; };
 		215ADBB71ED7416E00785170 /* visitorsRecordsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBB61ED7416E00785170 /* visitorsRecordsVC.swift */; };
+		215ADBBA1ED88A3800785170 /* KeyboardAvoiding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBB81ED88A3800785170 /* KeyboardAvoiding.swift */; };
+		215ADBBB1ED88A3800785170 /* KeyboardDismissingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBB91ED88A3800785170 /* KeyboardDismissingView.swift */; };
 		2164C1E71EB8D8EE005B9F21 /* Alertas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2164C1E61EB8D8EE005B9F21 /* Alertas.swift */; };
 		2192A5851E70807700D53957 /* DS-DIGI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 21E4254C1E70742600DB13E4 /* DS-DIGI.TTF */; };
 		2192A5871E70841400D53957 /* telemetryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192A5861E70841400D53957 /* telemetryListVC.swift */; };
@@ -200,6 +202,8 @@
 		215ADBAC1ED5F8C600785170 /* NearestBeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NearestBeaconManager.swift; path = "Gate Guard/Estimote/NearestBeaconManager.swift"; sourceTree = "<group>"; };
 		215ADBAD1ED5F8C600785170 /* ProximityContentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProximityContentManager.swift; path = "Gate Guard/Estimote/ProximityContentManager.swift"; sourceTree = "<group>"; };
 		215ADBB61ED7416E00785170 /* visitorsRecordsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = visitorsRecordsVC.swift; sourceTree = "<group>"; };
+		215ADBB81ED88A3800785170 /* KeyboardAvoiding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAvoiding.swift; sourceTree = "<group>"; };
+		215ADBB91ED88A3800785170 /* KeyboardDismissingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardDismissingView.swift; sourceTree = "<group>"; };
 		2164C1E61EB8D8EE005B9F21 /* Alertas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alertas.swift; sourceTree = "<group>"; };
 		2192A5861E70841400D53957 /* telemetryListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = telemetryListVC.swift; sourceTree = "<group>"; };
 		2192A58A1E70A1D200D53957 /* Rooms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
@@ -345,6 +349,8 @@
 				210ACA941E5F53510097A652 /* roundedImages.swift */,
 				210ACA921E5F4FF60097A652 /* topView.swift */,
 				210ACA9C1E5F676A0097A652 /* SegueFromLeft.swift */,
+				215ADBB81ED88A3800785170 /* KeyboardAvoiding.swift */,
+				215ADBB91ED88A3800785170 /* KeyboardDismissingView.swift */,
 				210FC7811E8B18C10096490D /* loading.gif */,
 				2192A5B91E7350B300D53957 /* security.png */,
 				210ACA961E5F53E00097A652 /* rafa.png */,
@@ -683,6 +689,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				215ADBAE1ED5F8C600785170 /* BeaconContentFactory.swift in Sources */,
+				215ADBBA1ED88A3800785170 /* KeyboardAvoiding.swift in Sources */,
 				215ADBAF1ED5F8C600785170 /* BeaconDetails.swift in Sources */,
 				215ADBB01ED5F8C600785170 /* BeaconDetailsCloudFactory.swift in Sources */,
 				215ADBB11ED5F8C600785170 /* BeaconDetailsStaticFactory.swift in Sources */,
@@ -746,6 +753,7 @@
 				21C044BA1EC9ECA000C9BFE2 /* settingsVC.swift in Sources */,
 				2119A06B1E6F215F0000ED19 /* blocksListVC.swift in Sources */,
 				21B0EE061EA9241100CEDF73 /* AccessReportVC.swift in Sources */,
+				215ADBBB1ED88A3800785170 /* KeyboardDismissingView.swift in Sources */,
 				21F9CA741EA5062F00E5C02A /* AlarmEvents.swift in Sources */,
 				21AB1BBA1E9EBFA400E1B47D /* customCell.swift in Sources */,
 				2192A5AA1E72079200D53957 /* BlockCell.swift in Sources */,

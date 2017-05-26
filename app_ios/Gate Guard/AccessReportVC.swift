@@ -68,4 +68,9 @@ class AccessReportVC: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
     }
+    
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

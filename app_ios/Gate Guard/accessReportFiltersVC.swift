@@ -13,22 +13,28 @@ import Alamofire
 
 class accessReportFiltersVC: UIViewController {
     
+    @IBOutlet weak var menuBtn: UIBarButtonItem!
     @IBOutlet weak var dateFromPicker: UIDatePicker!
     @IBOutlet weak var dateToPicker: UIDatePicker!
     @IBOutlet weak var plateTxtField: UITextField!
     @IBOutlet weak var nameTxtField: UITextField!
-    
+    @IBOutlet weak var avoidingView: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        menuBtn.target = SWRevealViewController()
+        
+        menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
+        
+        KeyboardAvoiding.avoidingView = self.avoidingView
+        
     }
     
     @IBAction func getListBtnPressed(_ sender: Any) {
         
-        performSegue(withIdentifier: "", sender: nil)
+        performSegue(withIdentifier: "viewAccessLog", sender: nil)
         
     }
     
@@ -36,4 +42,21 @@ class accessReportFiltersVC: UIViewController {
         
     }
 
+    
+    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == self.nameTxtField {
+            KeyboardAvoiding.padding = 20
+            KeyboardAvoiding.avoidingView = textField
+            KeyboardAvoiding.padding = 0
+        }
+        return true
+    }
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.nameTxtField {
+            
+            textField.resignFirstResponder()
+        }
+        return true
+    }
 }
