@@ -15,7 +15,8 @@ target 'Gate Guard' do
   pod 'SwiftKeychainWrapper'
   pod 'APScheduledLocationManager'
   pod 'JTAppleCalendar', '~> 7.0'
- 
+  pod 'IHKeyboardAvoiding'
+
   #End of Dependencies
 end
 

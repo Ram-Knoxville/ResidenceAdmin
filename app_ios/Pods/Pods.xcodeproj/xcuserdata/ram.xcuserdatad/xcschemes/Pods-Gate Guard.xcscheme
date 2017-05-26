@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B0236362A73E7085F50CACA89F7710FC"
+               BlueprintIdentifier = "C9FB1F709991302E9BB00FFF45F368E2"
                BuildableName = "Pods_Gate_Guard.framework"
                BlueprintName = "Pods-Gate Guard"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B0236362A73E7085F50CACA89F7710FC"
+            BlueprintIdentifier = "C9FB1F709991302E9BB00FFF45F368E2"
             BuildableName = "Pods_Gate_Guard.framework"
             BlueprintName = "Pods-Gate Guard"
             ReferencedContainer = "container:Pods.xcodeproj">

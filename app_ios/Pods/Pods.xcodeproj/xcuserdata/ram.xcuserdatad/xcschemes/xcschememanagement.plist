@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>IHKeyboardAvoiding.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JTAppleCalendar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,7 +62,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0E05D2883C7DA901EABA216309FEB1E9</key>
+		<key>033B2F5EFC98402794E5FA4A2E42BD9F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,7 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>333F1EC1310D52968BE66D52E8BE3FC9</key>
+		<key>2F0933B753AA56C28B0091E0272730C1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,17 +87,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>825FEF5AB00D18C172B4D7496C08BDD9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B0236362A73E7085F50CACA89F7710FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -103,6 +98,21 @@
 			<true/>
 		</dict>
 		<key>C7506D193EE0DE7D8698F98A27429AB7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9FB1F709991302E9BB00FFF45F368E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D25DB90126C5755FB9E69500F602C4F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E159B10425F2C4274C3C628AC7B8FB29</key>
 		<dict>
 			<key>primary</key>
 			<true/>
