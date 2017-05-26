@@ -13,6 +13,13 @@ import Alamofire
 
 class accessReportFiltersVC: UIViewController {
     
+    @IBOutlet weak var dateFromPicker: UIDatePicker!
+    @IBOutlet weak var dateToPicker: UIDatePicker!
+    @IBOutlet weak var plateTxtField: UITextField!
+    @IBOutlet weak var nameTxtField: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,29 +28,12 @@ class accessReportFiltersVC: UIViewController {
     
     @IBAction func getListBtnPressed(_ sender: Any) {
         
-        let token: String! = UserDefaults.standard.string(forKey: "token")!//KeychainWrapper.standard.string(forKey: "token")
-        let residenceUid: String! = UserDefaults.standard.string(forKey: "ResidenceUid")//KeychainWrapper.standard.string(forKey: "ResidenceUid")
+        performSegue(withIdentifier: "", sender: nil)
         
-        let urlString = "http://api.gateguard.com.mx/api/Access/getAccessToResidenceMobile"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let parameters: Parameters = [
-            "token": token,
-            "residenceUid": residenceUid,
-            "dateFrom": "",
-            "dateTo": "",
-            "plate": "",
-            "name": "",
-            "residentUid": residenceUid
-        ]
-        
-        Alamofire.request(urlString, method: .post, parameters:parameters).responseString { response in
-            
-            if let JSON = response.result.value {
-                print("JSON : \(JSON)")
-            }
-            
-        }
-
     }
 
 }

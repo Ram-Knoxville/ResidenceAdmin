@@ -1102,90 +1102,49 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqh-El-Rsb">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="574" width="375" height="93"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIy-Dc-CF0">
+                                        <rect key="frame" x="16" y="22" width="343" height="48"/>
+                                        <color key="backgroundColor" red="0.1019607857" green="0.27843138579999999" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Consultar Accesos">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="getListBtnPressed:" destination="uZS-AB-Yfu" eventType="touchDown" id="94W-S0-MJb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.36765063650000002" green="0.65829476070000004" blue="0.87585263319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="phx-Sg-Tdb"/>
+                                    <constraint firstAttribute="bottom" secondItem="tIy-Dc-CF0" secondAttribute="bottom" constant="23" id="Ydz-JZ-eWZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="tIy-Dc-CF0" secondAttribute="trailing" constant="16" id="jge-OW-zn8"/>
+                                    <constraint firstItem="tIy-Dc-CF0" firstAttribute="top" secondItem="uqh-El-Rsb" secondAttribute="top" constant="22" id="oxI-Pd-JBp"/>
+                                    <constraint firstAttribute="height" constant="93" id="phx-Sg-Tdb"/>
+                                    <constraint firstItem="tIy-Dc-CF0" firstAttribute="leading" secondItem="uqh-El-Rsb" secondAttribute="leading" constant="16" id="rrG-Id-hEH"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5wp-zS-zbC">
-                                <rect key="frame" x="0.0" y="71" width="375" height="474"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desde:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bad-7K-mfv">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bf4-EB-YcC">
-                                        <rect key="frame" x="0.0" y="67.5" width="375" height="68"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="514412389.12043798">
-                                            <!--2017-04-20 20:19:49 +0000-->
-                                        </date>
-                                    </datePicker>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hasta:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAD-ZE-UCj">
-                                        <rect key="frame" x="0.0" y="135.5" width="375" height="67.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="TFu-z3-qCw">
-                                        <rect key="frame" x="0.0" y="203" width="375" height="68"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="514412389.12043798">
-                                            <!--2017-04-20 20:19:49 +0000-->
-                                        </date>
-                                    </datePicker>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Placa" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bNf-V5-YcV">
-                                        <rect key="frame" x="0.0" y="271" width="375" height="67.5"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gu7-xe-Hch">
-                                        <rect key="frame" x="0.0" y="338.5" width="375" height="68"/>
-                                    </pickerView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PZn-CZ-8SL">
-                                        <rect key="frame" x="0.0" y="406.5" width="375" height="67.5"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIy-Dc-CF0">
-                                <rect key="frame" x="16" y="561" width="343" height="48"/>
-                                <color key="backgroundColor" red="0.1019607857" green="0.27843138579999999" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="GKx-lN-YKm"/>
-                                </constraints>
-                                <state key="normal" title="Consultar Accesos">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="getListBtnPressed:" destination="uZS-AB-Yfu" eventType="touchDown" id="94W-S0-MJb"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufT-If-E12">
+                                <rect key="frame" x="0.0" y="55" width="375" height="519"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bFY-ct-Jte" firstAttribute="top" secondItem="byQ-qZ-MQ7" secondAttribute="top" id="0MV-53-jXT"/>
                             <constraint firstAttribute="trailing" secondItem="uqh-El-Rsb" secondAttribute="trailing" id="3hE-tt-I7q"/>
-                            <constraint firstItem="tIy-Dc-CF0" firstAttribute="leading" secondItem="byQ-qZ-MQ7" secondAttribute="leadingMargin" id="EKi-5h-NM3"/>
-                            <constraint firstItem="tIy-Dc-CF0" firstAttribute="top" secondItem="5wp-zS-zbC" secondAttribute="bottom" constant="16" id="Eae-gx-kNM"/>
-                            <constraint firstItem="tIy-Dc-CF0" firstAttribute="trailing" secondItem="byQ-qZ-MQ7" secondAttribute="trailingMargin" id="Kb4-Ka-zcx"/>
                             <constraint firstItem="uqh-El-Rsb" firstAttribute="leading" secondItem="byQ-qZ-MQ7" secondAttribute="leading" id="OA9-xj-d4r"/>
                             <constraint firstItem="QqF-AI-yn6" firstAttribute="top" secondItem="uqh-El-Rsb" secondAttribute="bottom" id="OML-ds-8id"/>
-                            <constraint firstItem="5wp-zS-zbC" firstAttribute="leading" secondItem="byQ-qZ-MQ7" secondAttribute="leading" id="WYm-Js-hxH"/>
-                            <constraint firstItem="5wp-zS-zbC" firstAttribute="top" secondItem="bFY-ct-Jte" secondAttribute="bottom" constant="16" id="eDU-O3-LUT"/>
-                            <constraint firstItem="uqh-El-Rsb" firstAttribute="top" secondItem="tIy-Dc-CF0" secondAttribute="bottom" constant="8" id="fR6-Uo-CdI"/>
+                            <constraint firstAttribute="trailing" secondItem="ufT-If-E12" secondAttribute="trailing" id="YCg-On-fUa"/>
+                            <constraint firstItem="ufT-If-E12" firstAttribute="leading" secondItem="byQ-qZ-MQ7" secondAttribute="leading" id="kRL-Hu-BxZ"/>
                             <constraint firstItem="bFY-ct-Jte" firstAttribute="leading" secondItem="byQ-qZ-MQ7" secondAttribute="leading" id="mBJ-Yy-c3W"/>
+                            <constraint firstItem="uqh-El-Rsb" firstAttribute="top" secondItem="ufT-If-E12" secondAttribute="bottom" id="nAb-N6-Rbi"/>
                             <constraint firstAttribute="trailing" secondItem="bFY-ct-Jte" secondAttribute="trailing" id="on2-1g-ElH"/>
-                            <constraint firstAttribute="trailing" secondItem="5wp-zS-zbC" secondAttribute="trailing" id="qRm-Qb-UBT"/>
+                            <constraint firstItem="ufT-If-E12" firstAttribute="top" secondItem="bFY-ct-Jte" secondAttribute="bottom" id="xkI-wA-b0h"/>
                         </constraints>
                     </view>
                     <connections>
@@ -5690,7 +5649,7 @@
         <image name="uploadLogo" width="720" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jNu-da-syt"/>
+        <segue reference="zLJ-bp-hgw"/>
         <segue reference="nA5-6a-jLN"/>
         <segue reference="BPJ-Aq-SZY"/>
         <segue reference="Ls0-XT-tn2"/>

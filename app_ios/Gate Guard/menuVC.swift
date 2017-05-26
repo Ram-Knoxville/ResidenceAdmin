@@ -207,7 +207,7 @@ extension menuVC: UITableViewDelegate {
             }else if indexPath.row == 6 {
                 performSegue(withIdentifier: "menuAEventosAlarma", sender: nil)
             }else if indexPath.row == 7 {
-                performSegue(withIdentifier: "menuToVisitorsRecords", sender: nil)
+                performSegue(withIdentifier: "menuToAccessRegistry", sender: nil)
             }else if indexPath.row == 8 {
                 print("do nothing bitch")
             }

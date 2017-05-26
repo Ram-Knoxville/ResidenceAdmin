@@ -22,6 +22,12 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
     
     let locationManager = CLLocationManager()
     
+    
+    
+
+    
+    
+    
     //let region = CLBeaconRegion(proximityUUID: UUID(uuidString: "EB4081C9-EC31-8326-C6E3-6393BA30539E")!, identifier: "Estimotes")
     
     // Note: make sure you replace the keys here with your own beacons' Minor Values
@@ -269,9 +275,6 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
         print(validatorValue)
         
         
-        
-        
-        
         if validatorValue == true {
             
             let knownBeacons = beacons.filter{ $0.proximity != CLProximity.unknown }
@@ -339,6 +342,9 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
         }else if validatorValue == false {
             //print("Ain't nobody gave you permission for that hoe!")
         }
+        
+        beaconRegions.forEach(locationManager.stopRangingBeacons(in:))
+        beaconRegions.forEach(locationManager.startRangingBeacons(in:))
         
     }
     
