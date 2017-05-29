@@ -24,7 +24,7 @@ class AccessReportVC: UIViewController, UITableViewDataSource, UITableViewDelega
         self.accessRegistryTable.delegate = self
         self.accessRegistryTable.dataSource = self
         
-        
+        self.getData(token: token, residenceUid: residenceUid)
         
     }
     
@@ -35,8 +35,8 @@ class AccessReportVC: UIViewController, UITableViewDataSource, UITableViewDelega
         let parameters: Parameters = [
             "token": token,
             "residenceUid": residenceUid,
-            "dateFrom": "2016/12/04",
-            "dateTo": "2017/04/20",
+            "dateFrom": "",
+            "dateTo": "",
             "plate": "",
             "name": ""
         ]
@@ -57,13 +57,13 @@ class AccessReportVC: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         
-        cell.textLabel?.text = "Hola Mundo"
+        cell.textLabel?.text = "No Data"
         
         
         return cell

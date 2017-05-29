@@ -25,7 +25,6 @@ class visitorsRecordsVC: UIViewController {
         self.getData()
     }
     
-    
     func getData(){
         let token: String! = UserDefaults.standard.string(forKey: "token")!
         let residenceUid: String! = UserDefaults.standard.string(forKey: "ResidenceUid")
