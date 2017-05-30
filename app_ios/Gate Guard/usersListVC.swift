@@ -93,11 +93,12 @@ class usersListVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
 
                         for i in dict["data"]!["users"] as! [[String : Any]]{
                             
-                            print(i.count)
                             self.totalUser.append(i)
 
                         }
+                        
                         print("ya la armaste we checa este pedo \(self.totalUser)")
+                        
                         self.dataParser()
                     }
                 }

@@ -61,10 +61,10 @@ class VehiclesLocationVC: UIViewController, MKMapViewDelegate {
                                                                   regionRadius * 2.0, regionRadius * 2.0)
         locationMap.setRegion(coordinateRegion, animated: true)
     }
-    
+    // http://localhost/api/api/gps/getLocationVehiclesMobile
     
     func askForInfo(){
-        let urlString = "http://api.gateguard.com.mx/api/Gps/getUbicationVehicles"
+        let urlString = "http://api.gateguard.com.mx/api/gps/getLocationVehiclesMobile"
         
         let SuburbUid: String! = UserDefaults.standard.string(forKey: "SuburbUid")
         
@@ -93,7 +93,10 @@ class VehiclesLocationVC: UIViewController, MKMapViewDelegate {
             
             if let dict = result.value as? Dictionary<String, AnyObject>{
                 
-                print("Aqui empieza el diccionario \(dict)")
+                for i in dict["data"]!["location"] as! NSDictionary{
+                    
+                    print(i.value)                }
+                
             }
         }
     }
