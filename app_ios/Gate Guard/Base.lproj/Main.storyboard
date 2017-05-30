@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1620,7 +1620,7 @@
         <!--Access ReportVC-->
         <scene sceneID="7uh-N3-1V6">
             <objects>
-                <viewController id="ahY-G3-r6q" customClass="AccessReportVC" customModule="Gate_Guard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccessReportVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ahY-G3-r6q" customClass="AccessReportVC" customModule="Gate_Guard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0RY-zY-6aa"/>
                         <viewControllerLayoutGuide type="bottom" id="hpO-8S-rDM"/>
@@ -1663,13 +1663,42 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.1019607857" green="0.27843138579999999" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="j1M-ks-mmd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="j1M-ks-mmd" customClass="ResidenceAccessLogCell" customModule="Gate_Guard" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j1M-ks-mmd" id="ajE-dM-ezI">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uGh-wE-fjs">
+                                                    <rect key="frame" x="8" y="11" width="359" height="21.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39G-ay-ihC">
+                                                            <rect key="frame" x="0.0" y="0.0" width="179.5" height="21.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6b-p4-2if">
+                                                            <rect key="frame" x="179.5" y="0.0" width="179.5" height="21.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="uGh-wE-fjs" secondAttribute="trailing" id="3tl-N5-z0g"/>
+                                                <constraint firstItem="uGh-wE-fjs" firstAttribute="top" secondItem="ajE-dM-ezI" secondAttribute="topMargin" constant="3" id="ZXl-jr-acN"/>
+                                                <constraint firstItem="uGh-wE-fjs" firstAttribute="leading" secondItem="ajE-dM-ezI" secondAttribute="leadingMargin" id="fbI-5U-mMN"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="uGh-wE-fjs" secondAttribute="bottom" constant="3" id="ibC-nS-iEo"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="date" destination="w6b-p4-2if" id="jTp-LP-BTh"/>
+                                            <outlet property="name" destination="39G-ay-ihC" id="kFI-Tn-6uq"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1694,7 +1723,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HEc-y8-qrl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2865" y="11614"/>
+            <point key="canvasLocation" x="2864.8000000000002" y="11613.643178410795"/>
         </scene>
         <!--Alarm RegistryVC-->
         <scene sceneID="Lij-Z4-wqf">
@@ -5830,12 +5859,12 @@
         <image name="uploadLogo" width="720" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bN4-Sg-Qjf"/>
+        <segue reference="PK2-6l-WOB"/>
+        <segue reference="zLJ-bp-hgw"/>
         <segue reference="nA5-6a-jLN"/>
         <segue reference="BPJ-Aq-SZY"/>
         <segue reference="Ls0-XT-tn2"/>
-        <segue reference="SWb-oU-p2b"/>
         <segue reference="3RM-9M-m1p"/>
-        <segue reference="PK2-6l-WOB"/>
+        <segue reference="SWb-oU-p2b"/>
     </inferredMetricsTieBreakers>
 </document>

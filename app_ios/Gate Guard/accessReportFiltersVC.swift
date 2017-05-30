@@ -20,6 +20,12 @@ class accessReportFiltersVC: UIViewController {
     @IBOutlet weak var nameTxtField: UITextField!
     @IBOutlet weak var avoidingView: UIView!
     
+    var fromDate: Date!
+    var toDate: Date!
+    var plate: String!
+    var name: String!
+    
+    var dataArray = [Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +40,24 @@ class accessReportFiltersVC: UIViewController {
     
     @IBAction func getListBtnPressed(_ sender: Any) {
         
-        performSegue(withIdentifier: "viewAccessLog", sender: nil)
+        fromDate = self.dateFromPicker.date
+        toDate = self.dateToPicker.date
+        plate = self.plateTxtField.text
+        name = self.nameTxtField.text
+        
+        dataArray = [fromDate, toDate, plate, name] as [Any]
+        
+        performSegue(withIdentifier: "viewAccessLog", sender: dataArray)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "viewAccessLog" {
+            if let accessReportVC = segue.destination as? AccessReportVC {
+                accessReportVC.feedMeArray = self.dataArray
+            }
+        }
         
     }
 

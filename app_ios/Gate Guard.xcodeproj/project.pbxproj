@@ -104,6 +104,8 @@
 		21D11AA61ED33D0000E18BEC /* ManualGateAccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D11AA51ED33D0000E18BEC /* ManualGateAccessVC.swift */; };
 		21D11AA81ED3531A00E18BEC /* DoorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D11AA71ED3531A00E18BEC /* DoorCell.swift */; };
 		21D11AAA1ED353B700E18BEC /* Doors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D11AA91ED353B700E18BEC /* Doors.swift */; };
+		21D4E54E1EDCB532004DDB33 /* residenceAccessLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4E54D1EDCB532004DDB33 /* residenceAccessLog.swift */; };
+		21D4E5501EDCBF06004DDB33 /* ResidenceAccessLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4E54F1EDCBF06004DDB33 /* ResidenceAccessLogCell.swift */; };
 		21E4254B1E6F67B100DB13E4 /* alarmPanelsPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4254A1E6F67B100DB13E4 /* alarmPanelsPickerVC.swift */; };
 		21E425511E7077CD00DB13E4 /* telemetryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E425501E7077CD00DB13E4 /* telemetryVC.swift */; };
 		21E425521E707B5600DB13E4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 210ACA7E1E5F3FDC0097A652 /* Info.plist */; };
@@ -256,6 +258,8 @@
 		21D11AA51ED33D0000E18BEC /* ManualGateAccessVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualGateAccessVC.swift; sourceTree = "<group>"; };
 		21D11AA71ED3531A00E18BEC /* DoorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorCell.swift; sourceTree = "<group>"; };
 		21D11AA91ED353B700E18BEC /* Doors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Doors.swift; sourceTree = "<group>"; };
+		21D4E54D1EDCB532004DDB33 /* residenceAccessLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = residenceAccessLog.swift; sourceTree = "<group>"; };
+		21D4E54F1EDCBF06004DDB33 /* ResidenceAccessLogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResidenceAccessLogCell.swift; sourceTree = "<group>"; };
 		21E4254A1E6F67B100DB13E4 /* alarmPanelsPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alarmPanelsPickerVC.swift; sourceTree = "<group>"; };
 		21E4254C1E70742600DB13E4 /* DS-DIGI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGI.TTF"; sourceTree = "<group>"; };
 		21E425501E7077CD00DB13E4 /* telemetryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = telemetryVC.swift; sourceTree = "<group>"; };
@@ -399,6 +403,7 @@
 				21F9CA6F1EA02CB500E5C02A /* Invitations.swift */,
 				21F9CA731EA5062F00E5C02A /* AlarmEvents.swift */,
 				21D11AA91ED353B700E18BEC /* Doors.swift */,
+				21D4E54D1EDCB532004DDB33 /* residenceAccessLog.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 				21B0EE011EA7EFA900CEDF73 /* AlarmRegistryCell.swift */,
 				2164C1E61EB8D8EE005B9F21 /* Alertas.swift */,
 				21D11AA71ED3531A00E18BEC /* DoorCell.swift */,
+				21D4E54F1EDCBF06004DDB33 /* ResidenceAccessLogCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -717,6 +723,7 @@
 				210ACAAA1E620A2D0097A652 /* menuVC.swift in Sources */,
 				21B0EE021EA7EFA900CEDF73 /* AlarmRegistryCell.swift in Sources */,
 				2192A5A41E72018F00D53957 /* AutomationDevices.swift in Sources */,
+				21D4E5501EDCBF06004DDB33 /* ResidenceAccessLogCell.swift in Sources */,
 				2192A5B01E7213F000D53957 /* ServiceCell.swift in Sources */,
 				2192A5941E71F26300D53957 /* Guards.swift in Sources */,
 				2192A5B41E72147400D53957 /* BrandCell.swift in Sources */,
@@ -742,6 +749,7 @@
 				2192A5BC1E73738000D53957 /* Constants.swift in Sources */,
 				21AB1BB21E9BEEC600E1B47D /* GuestsVC.swift in Sources */,
 				2192A5C01E74710C00D53957 /* guardDetailVC.swift in Sources */,
+				21D4E54E1EDCB532004DDB33 /* residenceAccessLog.swift in Sources */,
 				2192A5A81E72062100D53957 /* UserCell.swift in Sources */,
 				210FC7841E8D6A180096490D /* noAccessVC.swift in Sources */,
 				2119A06D1E6F218D0000ED19 /* newBlockVC.swift in Sources */,
