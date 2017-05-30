@@ -105,7 +105,7 @@ class InvitationsCell: UICollectionViewCell {
     
     @IBAction func editBtnPressed(_ sender: Any) {
         
-        
+        UserDefaults.standard.setValue(invitation.invitationUid, forKey: "invitationId")
         
     }
     

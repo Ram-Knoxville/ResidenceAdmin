@@ -64,14 +64,6 @@ class InvitationsListVC: UIViewController, UICollectionViewDelegate, UICollectio
                 print("Este es el diciconario \(dict)")
                 
                 if dict["err"] as? String == nil {
-                    if dict["data"]!["guestConfirmaion"] as? [[String : Any]] == nil {
-                        
-                        print("Llego nulo este pedo")
-                        
-                        let alerta = Alertas()
-                        alerta.showAlertMessage(vc: self, titleStr: "Mensaje", messageStr: "No existen registros de invitaciones")
-                        
-                    }else {
                         for i in dict["data"]!["guestConfirmation"] as! [[String : Any]]{
                             
                             print(i.count)
@@ -82,18 +74,12 @@ class InvitationsListVC: UIViewController, UICollectionViewDelegate, UICollectio
                         self.dataParser()
                         
                         print("ya la armaste we checa este pedo \(self.totalInvitations)")
-                    }
+                    
                     
                 }else if dict["err"] as? String != nil {
                     
-                    for i in dict["data"]!["guestConfirmation"] as! [[String : Any]]{
-                        
-                        print(i.count)
-                        self.totalInvitations.append(i)
-                        
-                    }
-                    
-                    self.dataParser()
+                    let alerta = Alertas()
+                    alerta.showAlertMessage(vc: self, titleStr: "Mensaje", messageStr: "No existen registros de invitaciones")
                 }
             }
         }
@@ -220,18 +206,9 @@ class InvitationsListVC: UIViewController, UICollectionViewDelegate, UICollectio
     }
     
     @IBAction func editBtnPressed(_ sender: Any) {
-        
+
         performSegue(withIdentifier: "editInvitation", sender: nil)
         
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "editInvitation" {
-            if let detailVC = segue.destination as? sendInviteVC {
-                let invitation: String! = UserDefaults.standard.string(forKey: "invitationId")!//KeychainWrapper.standard.string(forKey: "invitationId")
-                detailVC.invitation = invitation
-            }
-        }
     }
     
     func reloadData(){

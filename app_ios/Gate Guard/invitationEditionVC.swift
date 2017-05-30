@@ -7,36 +7,19 @@
 //
 
 import UIKit
-import SwiftKeychainWrapper
 import Alamofire
 
 class invitationEditionVC: UIViewController {
     
-    @IBOutlet weak var timePicker1: UIDatePicker!
-    @IBOutlet weak var timePicker2: UIDatePicker!
+    @IBOutlet weak var dateFrom: UIDatePicker!
+    @IBOutlet weak var dateTo: UIDatePicker!
     
-    @IBOutlet weak var datePicker1: UIDatePicker!
-    @IBOutlet weak var datePicker2: UIDatePicker!
+    @IBOutlet weak var timeFrom: UIDatePicker!
+    @IBOutlet weak var timeTo: UIDatePicker!
     
     @IBOutlet weak var allDaySwitch: UISwitch!
     
     @IBOutlet weak var menuBtn: UIBarButtonItem!
-    
-    let formatter = DateFormatter()
-    var startTime: String!
-    var endTime: String!
-    var allDayValue: String!
-    
-    var firstName: String!
-    var lastName: String!
-    var email: String!
-    var guestId: String!
-    
-    var guest: Guests!
-    
-    var invitation: String!
-    
-    var invitationId: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,125 +28,40 @@ class invitationEditionVC: UIViewController {
         
         menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
 
-        
-        self.timePicker1.locale = NSLocale(localeIdentifier: "en_GB") as Locale
-        self.timePicker2.locale = NSLocale(localeIdentifier: "en_GB") as Locale
-        
-        self.changeDateTitles()
-        
-        checkGuestValues()
     }
     
-    func checkGuestValues(){
-        if guest != nil {
-            if String(describing: guest.firstNames) != "" {
-                self.firstName = guest.firstNames
-            }
-            
-            if String(describing: guest.lastNames) != "" {
-                self.lastName = guest.lastNames
-            }
-            
-            if String(describing: guest.email) != "" {
-                self.email = guest.email
-            }
-            
-            if String(describing: guest.id) != "" {
-                self.guestId = guest.id
-            }else {
-                self.guestId = ""
-            }
-        }else {
-            firstName = ""
-            lastName = ""
-            email = ""
-            guestId = ""
-        }
-        
-        if invitation != nil {
-            invitationId = invitation
-        }else {
-            invitationId = ""
-        }
-    }
-    
-    func changeDateTitles() {
-//        KeychainWrapper.standard.string(forKey: "startDate")
-        if UserDefaults.standard.string(forKey: "startDate") != nil {
-            
-        }else{
-            let date = Date()
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd"
-//            let startDate = formatter.string(from: date)
-        }
-//        KeychainWrapper.standard.string(forKey: "endDate")
-        if UserDefaults.standard.string(forKey: "endDate") != nil {
-            
-        }else{
-            
-        }
-    }
-    
-    @IBAction func backBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "goBackSegue", sender: nil)
-    }
-    
-    @IBAction func dateConfig1Pressed(_ sender: Any) {
-        performSegue(withIdentifier: "calendarView", sender: nil)
-        
-    }
-    
-    @IBAction func dateConfig2Pressed(_ sender: Any) {
-        performSegue(withIdentifier: "calendarView2", sender: nil)
-    }
-    
-    
-    @IBAction func startTimePressed(_ sender: Any) {
-        self.startTime = self.formatter.string(from: self.timePicker1.date)
-        print("Esta es la hora de entrada: \(startTime)")
-    }
-    
-    @IBAction func endTimePressed(_ sender: Any) {
-        self.endTime = self.formatter.string(from: self.timePicker2.date)
-        print("Esta es la hora de salida : \(endTime)")
-    }
-    
-    @IBAction func startDatePressed(_ sender: Any) {
-        self.startTime = self.formatter.string(from: self.datePicker1.date)
-        print("Esta es la fecha de inicio : \(startTime)")
-    }
-    
-    @IBAction func endDatePressed(_ sender: Any) {
-        self.endTime = self.formatter.string(from: self.datePicker2.date)
-        print("Esta es la fecha de salida : \(endTime)")
-    }
     
     @IBAction func sendInvitation(sender: AnyObject) {
         
-        if allDaySwitch.isOn {
-            allDayValue = "1"
-        } else {
-            allDayValue = "0"
-        }
+        let token: String! = UserDefaults.standard.string(forKey: "token")
         
+        let suburbUid: String! = UserDefaults.standard.string(forKey: "SuburbUid")
+        let residenceUid: String! = UserDefaults.standard.string(forKey: "ResidenceUid")
         
-        if invitationId != nil {
-            //Send request to server
-            
-            let token: String! = UserDefaults.standard.string(forKey: "token")//KeychainWrapper.standard.string(forKey: "token")!
-            
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        let dateFromString = formatter.string(from: self.dateFrom.date)
+        let dateToString = formatter.string(from: self.dateTo.date)
+        let timeFromString = formatter.string(from: self.timeFrom.date)
+        let timeToString = formatter.string(from: self.timeTo.date)
+        
+        let invitationId: String! = UserDefaults.standard.string(forKey: "invitationId")
+        
+        if self.allDaySwitch.isOn {
             
             let urlString = "http://api.gateguard.com.mx/api/myGuests/sendInvitation"
             
             let parameters: Parameters = [
                 "token": token,
+                "guestUid": "0",
+                "suburbUid": suburbUid,
+                "residenceUid": residenceUid,
                 "invitationId": invitationId,
-                "dateStart": "20170420",
-                "dateEnd": "20170425",
+                "dateStart": dateFromString,
+                "dateEnd": dateToString,
                 "hourStart": "",
                 "hourEnd": "",
-                "allDay": allDayValue
+                "allDay": "1"
             ]
             
             Alamofire.request(urlString, method: .post, parameters:parameters).responseJSON { response in
@@ -173,44 +71,22 @@ class invitationEditionVC: UIViewController {
                 }
                 
             }
-            
-            
-            
-            UserDefaults.standard.removeObject(forKey: "startDate")
-            UserDefaults.standard.removeObject(forKey: "endDate")
-            
-            
-            performSegue(withIdentifier: "goBackSegue", sender: nil)
             
         }else {
-            //Send request to server
-            
-            let token: String! = UserDefaults.standard.string(forKey: "token")!//KeychainWrapper.standard.string(forKey: "token")!
-            let suburbUid: String! = UserDefaults.standard.string(forKey: "SuburbUid")!//KeychainWrapper.standard.string(forKey: "SuburbUid")!
-            let residenceUid: String! = UserDefaults.standard.string(forKey: "ResidenceUid")!//KeychainWrapper.standard.string(forKey: "ResidenceUid")!
-            var myGuest = ["id": "", "firstNames": "", "lastNames": "", "eMail": ""]
-            print("Valores")
-            print(self.guestId)
-            print(firstName)
-            print(lastName)
-            print(email)
-            myGuest["id"] = self.guestId
-            myGuest["firstNames"] = self.firstName
-            myGuest["lastNames"] = self.lastName
-            myGuest["eMail"] = self.email
             
             let urlString = "http://api.gateguard.com.mx/api/myGuests/sendInvitation"
             
             let parameters: Parameters = [
                 "token": token,
-                "guest": myGuest,
-                "dateStart": "",
-                "dateEnd": "",
-                "hourStart": "",
-                "hourEnd": "",
-                "allDay": allDayValue,
+                "guestUid": "0",
                 "suburbUid": suburbUid,
-                "residenceUid": residenceUid
+                "residenceUid": residenceUid,
+                "invitationId": invitationId,
+                "dateStart": dateFromString,
+                "dateEnd": dateToString,
+                "hourStart": timeFromString,
+                "hourEnd": timeToString,
+                "allDay": "0"
             ]
             
             Alamofire.request(urlString, method: .post, parameters:parameters).responseJSON { response in
@@ -218,14 +94,9 @@ class invitationEditionVC: UIViewController {
                 if let JSON = response.result.value {
                     print("JSON : \(JSON)")
                 }
-                
             }
-            
-            UserDefaults.standard.removeObject(forKey: "startDate")
-            UserDefaults.standard.removeObject(forKey: "endDate")
-            performSegue(withIdentifier: "goBackSegue", sender: nil)
         }
-        
+        performSegue(withIdentifier: "goBackSegue", sender: nil)
     }
 
 }
