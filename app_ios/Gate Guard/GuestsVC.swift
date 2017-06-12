@@ -68,7 +68,7 @@ class GuestsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 if dict["status"] as? String != "OK"{
                     
                 }else if dict["status"] as? String == "OK"{
-                    if dict["data"]!["guest"] as! [[String: Any]] != nil {
+                    if dict["data"]!["guest"] as? [[String: Any]] != nil {
                         for i in dict["data"]!["guest"] as! [[String : Any]]{
                             
                             print("Contador: \(i.count)")

@@ -480,7 +480,7 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
         let parameters: Parameters = [
             "token": token,
             "userUid": userUid,
-            "accountId": "1",
+            "accountId": accountId,
             "deviceToken": deviceToken,
             "deviceModel": deviceModel,
             "identification": identification,

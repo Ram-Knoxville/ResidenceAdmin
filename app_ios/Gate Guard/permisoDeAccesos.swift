@@ -40,11 +40,13 @@ class permisoDeAccesos: UIViewController {
             "token": token
         ]
         
-        Alamofire.request(urlString, method: .post, parameters:parameters).responseJSON { response in
+        Alamofire.request(urlString, method: .post, parameters:parameters).responseString { response in
             
-            if let JSON = response.result.value {
+            print(response.result.value!)
+            
+            /*if let JSON = response.result.value {
                 print("JSON: \(JSON)")
-            }
+            }*/
             
             
         }

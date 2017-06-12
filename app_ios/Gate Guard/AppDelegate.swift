@@ -282,6 +282,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
             }
             
         }
+        
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -316,13 +317,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
             
             print("Esta es la llave:  \(i.key)")
             print("Este es el valor: \(i.value)")
+            
+            if i.key == "id" {
+                idToAuth = String(describing:i.value)
+                
+                self.defaults.set(idToAuth, forKey: "idToAuth")
+            }
+            
             if i.key == "link_url" {
-                if i.value as? Int == 23 {
-                    idToAuth = String(describing:i.value)
-                    
-                    self.defaults.set(idToAuth, forKey: "idToAuth")
-//                    KeychainWrapper.standard.set(idToAuth, forKey: "idToAuth")
-                    
+                
+                if i.value as? String == "OK" {
                     
                     print("checate este mugrero : \(idToAuth)")
                     let sb = UIStoryboard(name: "Main", bundle: nil)

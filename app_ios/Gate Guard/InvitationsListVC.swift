@@ -70,7 +70,7 @@ class InvitationsListVC: UIViewController, UICollectionViewDelegate, UICollectio
                             self.totalInvitations.append(i)
                             
                         }
-                        
+                    
                         self.dataParser()
                         
                         print("ya la armaste we checa este pedo \(self.totalInvitations)")
