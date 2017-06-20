@@ -18,11 +18,11 @@ class menuVC: UIViewController, UITableViewDataSource {
     var row1 = ["Home"]
     var row2 = ["Usuarios", "Colonias", "Guardias", "Perfiles", "Servicios"]
     var row3 = ["Ingresos", "Gastos", "Facturas", "Encuestas y Votaciones", "Notificaciones", "Configuración", "Quejas y Sugerencias", "Monitoreo Paneles de Alarma"]
-    var row4  = [/*"Streaming", "AR","Ubicación"*/"Invitados","Invitaciones", "Paneles de Alarma", /*"Servidores de Video",*/ "Usuarios de Residencia", "Mis Vehículos", "Telemetría", "Eventos de Alarma", "Registro de Visitantes"/*, "Registro de Accesos"*/]
+    var row4  = [/*"Streaming", "AR","Ubicación"*/"Invitados","Invitaciones", "Paneles de Alarma", /*"Servidores de Video",*/ "Usuarios de Residencia", "Mis Vehículos", "Telemetría", "Eventos de Alarma", "Registro de Visitantes", "Peticiones de Acceso"]
     var row5  = ["Monitor de Acceso", "Registro de Visitas (Vehiculos)", "Registro de Visitas (Peatones)"]
     var row6  = ["Reporte de Accesos"]
     var row7  = ["Residencias", "Grupo de Residencias", "Usuarios del Sistema", "Control de Asistencia"]
-    
+    var settingsOptions = ["Configuración General", "Eventos no Acontecidos"]
     
     
     override func viewDidLoad() {
@@ -127,7 +127,7 @@ extension menuVC: UITableViewDelegate {
             case 1:
                 return row4.count
             case 2:
-                return 1
+                return settingsOptions.count
             case 3:
                 return 1
             /*case 2:
@@ -158,7 +158,7 @@ extension menuVC: UITableViewDelegate {
         case 1:
             cell?.textLabel?.text = row4[indexPath.row]
         case 2:
-            cell?.textLabel?.text = "Configuración General"
+            cell?.textLabel?.text = settingsOptions[indexPath.row]
         case 3:
             cell?.textLabel?.text = "Apertura de Puertas"
         /*case 2:
@@ -209,10 +209,15 @@ extension menuVC: UITableViewDelegate {
             }else if indexPath.row == 7 {
                 performSegue(withIdentifier: "menuToAccessRegistry", sender: nil)
             }else if indexPath.row == 8 {
-                print("do nothing bitch")
+                performSegue(withIdentifier: "menuToAccessRequest", sender: nil)
             }
         case 2:
-            performSegue(withIdentifier: "menuToSettings", sender: self)
+            if indexPath.row == 0 {
+                performSegue(withIdentifier: "menuToSettings", sender: self)
+            }else if indexPath.row == 1 {
+                performSegue(withIdentifier: "menuToEvents", sender: self)
+            }
+            
         case 3:
             if indexPath.row == 0 {
                 performSegue(withIdentifier: "menuToGateAccess", sender: nil)

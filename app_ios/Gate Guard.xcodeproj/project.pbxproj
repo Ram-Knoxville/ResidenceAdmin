@@ -38,6 +38,7 @@
 		211E4D7A1E86CA7400CAC7AD /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211E4D791E86CA7400CAC7AD /* ARVC.swift */; };
 		213D10F91EAFE7E500BAFE36 /* OpenGateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213D10F81EAFE7E500BAFE36 /* OpenGateVC.swift */; };
 		215AC1881EEC5639003B5778 /* BeaconID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215AC1871EEC5639003B5778 /* BeaconID.swift */; };
+		215AC18A1EF1F551003B5778 /* waitingVisitorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215AC1891EF1F550003B5778 /* waitingVisitorsVC.swift */; };
 		215ADBA01ED5EFFF00785170 /* Estimote in Resources */ = {isa = PBXBuildFile; fileRef = 215ADB9F1ED5EFFF00785170 /* Estimote */; };
 		215ADBA41ED5F3F600785170 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215ADBA31ED5F3F600785170 /* EstimoteSDK.framework */; };
 		215ADBAE1ED5F8C600785170 /* BeaconContentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBA61ED5F8C600785170 /* BeaconContentFactory.swift */; };
@@ -101,6 +102,13 @@
 		21B0EE081EA95AA900CEDF73 /* accessReportFiltersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B0EE071EA95AA900CEDF73 /* accessReportFiltersVC.swift */; };
 		21C044BA1EC9ECA000C9BFE2 /* settingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C044B91EC9ECA000C9BFE2 /* settingsVC.swift */; };
 		21C044BC1ECA450000C9BFE2 /* VehiclesLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C044BB1ECA450000C9BFE2 /* VehiclesLocationVC.swift */; };
+		21CDFC3F1EF2D82A00F02BC3 /* AccessRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CDFC3E1EF2D82A00F02BC3 /* AccessRequest.swift */; };
+		21CDFC411EF2DAAC00F02BC3 /* AccessRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CDFC401EF2DAAC00F02BC3 /* AccessRequestCell.swift */; };
+		21CDFC481EF8739D00F02BC3 /* alarmEventsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CDFC471EF8739C00F02BC3 /* alarmEventsListVC.swift */; };
+		21CDFC4A1EF873BD00F02BC3 /* newEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CDFC491EF873BD00F02BC3 /* newEventVC.swift */; };
+		21CDFC4C1EF87AA800F02BC3 /* weekDaysVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CDFC4B1EF87AA800F02BC3 /* weekDaysVC.swift */; };
+		21CDFC4E1EF88B5200F02BC3 /* carPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CDFC4D1EF88B5200F02BC3 /* carPickerVC.swift */; };
+		21CDFC501EF88B7100F02BC3 /* eventNameSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CDFC4F1EF88B7100F02BC3 /* eventNameSelectorVC.swift */; };
 		21D11AA61ED33D0000E18BEC /* ManualGateAccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D11AA51ED33D0000E18BEC /* ManualGateAccessVC.swift */; };
 		21D11AA81ED3531A00E18BEC /* DoorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D11AA71ED3531A00E18BEC /* DoorCell.swift */; };
 		21D11AAA1ED353B700E18BEC /* Doors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D11AA91ED353B700E18BEC /* Doors.swift */; };
@@ -193,6 +201,7 @@
 		21440E7A1E68D64C006BA19F /* Gate Guard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Gate Guard.entitlements"; sourceTree = "<group>"; };
 		21440E7B1E68D65F006BA19F /* myLocation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = myLocation.entitlements; sourceTree = "<group>"; };
 		215AC1871EEC5639003B5778 /* BeaconID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconID.swift; sourceTree = "<group>"; };
+		215AC1891EF1F550003B5778 /* waitingVisitorsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = waitingVisitorsVC.swift; sourceTree = "<group>"; };
 		215ADB9A1ED5EDED00785170 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EstimoteSDK.framework; path = "../../../iOS-SDK-master/EstimoteSDK/EstimoteSDK.framework"; sourceTree = "<group>"; };
 		215ADB9F1ED5EFFF00785170 /* Estimote */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Estimote; sourceTree = "<group>"; };
 		215ADBA31ED5F3F600785170 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EstimoteSDK.framework; path = "Gate Guard/Estimote/EstimoteSDK.framework"; sourceTree = "<group>"; };
@@ -255,6 +264,13 @@
 		21B0EE071EA95AA900CEDF73 /* accessReportFiltersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accessReportFiltersVC.swift; sourceTree = "<group>"; };
 		21C044B91EC9ECA000C9BFE2 /* settingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsVC.swift; sourceTree = "<group>"; };
 		21C044BB1ECA450000C9BFE2 /* VehiclesLocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehiclesLocationVC.swift; sourceTree = "<group>"; };
+		21CDFC3E1EF2D82A00F02BC3 /* AccessRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessRequest.swift; sourceTree = "<group>"; };
+		21CDFC401EF2DAAC00F02BC3 /* AccessRequestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessRequestCell.swift; sourceTree = "<group>"; };
+		21CDFC471EF8739C00F02BC3 /* alarmEventsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alarmEventsListVC.swift; sourceTree = "<group>"; };
+		21CDFC491EF873BD00F02BC3 /* newEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newEventVC.swift; sourceTree = "<group>"; };
+		21CDFC4B1EF87AA800F02BC3 /* weekDaysVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weekDaysVC.swift; sourceTree = "<group>"; };
+		21CDFC4D1EF88B5200F02BC3 /* carPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = carPickerVC.swift; sourceTree = "<group>"; };
+		21CDFC4F1EF88B7100F02BC3 /* eventNameSelectorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventNameSelectorVC.swift; sourceTree = "<group>"; };
 		21D11AA51ED33D0000E18BEC /* ManualGateAccessVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualGateAccessVC.swift; sourceTree = "<group>"; };
 		21D11AA71ED3531A00E18BEC /* DoorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorCell.swift; sourceTree = "<group>"; };
 		21D11AA91ED353B700E18BEC /* Doors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Doors.swift; sourceTree = "<group>"; };
@@ -404,6 +420,7 @@
 				21F9CA731EA5062F00E5C02A /* AlarmEvents.swift */,
 				21D11AA91ED353B700E18BEC /* Doors.swift */,
 				21D4E54D1EDCB532004DDB33 /* residenceAccessLog.swift */,
+				21CDFC3E1EF2D82A00F02BC3 /* AccessRequest.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -457,6 +474,12 @@
 				21C044BB1ECA450000C9BFE2 /* VehiclesLocationVC.swift */,
 				21D11AA51ED33D0000E18BEC /* ManualGateAccessVC.swift */,
 				215ADBB61ED7416E00785170 /* visitorsRecordsVC.swift */,
+				215AC1891EF1F550003B5778 /* waitingVisitorsVC.swift */,
+				21CDFC471EF8739C00F02BC3 /* alarmEventsListVC.swift */,
+				21CDFC491EF873BD00F02BC3 /* newEventVC.swift */,
+				21CDFC4B1EF87AA800F02BC3 /* weekDaysVC.swift */,
+				21CDFC4D1EF88B5200F02BC3 /* carPickerVC.swift */,
+				21CDFC4F1EF88B7100F02BC3 /* eventNameSelectorVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -479,6 +502,7 @@
 				2164C1E61EB8D8EE005B9F21 /* Alertas.swift */,
 				21D11AA71ED3531A00E18BEC /* DoorCell.swift */,
 				21D4E54F1EDCBF06004DDB33 /* ResidenceAccessLogCell.swift */,
+				21CDFC401EF2DAAC00F02BC3 /* AccessRequestCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -705,8 +729,10 @@
 				21FA73561E9FC16B0050B507 /* secondCalendarVC.swift in Sources */,
 				2192A59C1E71F66500D53957 /* Brands.swift in Sources */,
 				21F9CA761EA5073500E5C02A /* alarmEventsVC.swift in Sources */,
+				21CDFC4A1EF873BD00F02BC3 /* newEventVC.swift in Sources */,
 				211E4D7A1E86CA7400CAC7AD /* ARVC.swift in Sources */,
 				2192A5871E70841400D53957 /* telemetryListVC.swift in Sources */,
+				21CDFC4E1EF88B5200F02BC3 /* carPickerVC.swift in Sources */,
 				21F98A961E6F5FED00F36B95 /* newServiceVC.swift in Sources */,
 				21F98A921E6F5FC000F36B95 /* servicesListVC.swift in Sources */,
 				2104041F1E98318900BBF232 /* vehiclesListVC.swift in Sources */,
@@ -718,6 +744,7 @@
 				21AB1BB41E9C193400E1B47D /* guestDetail.swift in Sources */,
 				210ACA951E5F53510097A652 /* roundedImages.swift in Sources */,
 				21ABB7031E6B10FC00106238 /* newUserVC.swift in Sources */,
+				215AC18A1EF1F551003B5778 /* waitingVisitorsVC.swift in Sources */,
 				2192A5B81E72EF8700D53957 /* SWRevealViewController.m in Sources */,
 				210ACAAA1E620A2D0097A652 /* menuVC.swift in Sources */,
 				215AC1881EEC5639003B5778 /* BeaconID.swift in Sources */,
@@ -733,6 +760,7 @@
 				2192A58E1E70A4C500D53957 /* RoomCell.swift in Sources */,
 				211E4D781E85C44700CAC7AD /* streammingVC.swift in Sources */,
 				2192A5BE1E746A0E00D53957 /* userDetailVC.swift in Sources */,
+				21CDFC411EF2DAAC00F02BC3 /* AccessRequestCell.swift in Sources */,
 				2164C1E71EB8D8EE005B9F21 /* Alertas.swift in Sources */,
 				210404171E96EC1E00BBF232 /* LocationManagerVC.swift in Sources */,
 				2192A5981E71F51D00D53957 /* Services.swift in Sources */,
@@ -755,13 +783,16 @@
 				2119A06D1E6F218D0000ED19 /* newBlockVC.swift in Sources */,
 				2192A5A21E71FFA800D53957 /* VideoServers.swift in Sources */,
 				2192A5A01E71FAAB00D53957 /* AlarmPanels.swift in Sources */,
+				21CDFC501EF88B7100F02BC3 /* eventNameSelectorVC.swift in Sources */,
 				2192A5AE1E7213BC00D53957 /* ProfileCell.swift in Sources */,
 				210ACAA41E62036A0097A652 /* LandingVC.swift in Sources */,
 				21E425511E7077CD00DB13E4 /* telemetryVC.swift in Sources */,
 				21C044BA1EC9ECA000C9BFE2 /* settingsVC.swift in Sources */,
 				2119A06B1E6F215F0000ED19 /* blocksListVC.swift in Sources */,
 				21B0EE061EA9241100CEDF73 /* AccessReportVC.swift in Sources */,
+				21CDFC481EF8739D00F02BC3 /* alarmEventsListVC.swift in Sources */,
 				215ADBBB1ED88A3800785170 /* KeyboardDismissingView.swift in Sources */,
+				21CDFC3F1EF2D82A00F02BC3 /* AccessRequest.swift in Sources */,
 				21F9CA741EA5062F00E5C02A /* AlarmEvents.swift in Sources */,
 				21AB1BBA1E9EBFA400E1B47D /* customCell.swift in Sources */,
 				2192A5AA1E72079200D53957 /* BlockCell.swift in Sources */,
@@ -788,6 +819,7 @@
 				21AB1BBC1E9EC16400E1B47D /* calendarVC.swift in Sources */,
 				215ADBB71ED7416E00785170 /* visitorsRecordsVC.swift in Sources */,
 				21F98A981E6F5FFE00F36B95 /* newCategoryVC.swift in Sources */,
+				21CDFC4C1EF87AA800F02BC3 /* weekDaysVC.swift in Sources */,
 				21D11AA61ED33D0000E18BEC /* ManualGateAccessVC.swift in Sources */,
 				21B0EE001EA7DBEC00CEDF73 /* alarmRegistryVC.swift in Sources */,
 			);

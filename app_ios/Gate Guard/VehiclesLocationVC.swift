@@ -21,6 +21,8 @@ class VehiclesLocationVC: UIViewController, MKMapViewDelegate {
     
     var vehicleUid: String!
     
+    var serverTime: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,20 +38,6 @@ class VehiclesLocationVC: UIViewController, MKMapViewDelegate {
         locationMap.delegate = self
         
         locationMap.accessibilityNavigationStyle = UIAccessibilityNavigationStyle.combined
-        
-        let newYorkLocation = CLLocation(latitude: 40.730872, longitude: -74.003066) //
-        centerMapOnLocation(location: newYorkLocation)
-        // Drop a pin
-        let newYorkLocationPin = CLLocationCoordinate2DMake(40.730872, -74.003066)
-        let dropPin = MKPointAnnotation()
-        dropPin.coordinate = newYorkLocationPin
-        dropPin.title = " "
-        
-        locationMap.addAnnotation(dropPin)
-        
-        // set initial location in last vehicle's location
-        //let initialLocation = CLLocation(latitude: 25.666661, longitude: -100.308198)
-        //centerMapOnLocation(location: initialLocation)
         
         self.askForInfo()
         
@@ -75,7 +63,6 @@ class VehiclesLocationVC: UIViewController, MKMapViewDelegate {
         let uidFromVehicle: String! = vehicleUid
         
         
-        
         let parameters: Parameters = [
             "suburbUid": SuburbUid,
             "residenceUid": residenceUid,
@@ -93,9 +80,26 @@ class VehiclesLocationVC: UIViewController, MKMapViewDelegate {
             
             if let dict = result.value as? Dictionary<String, AnyObject>{
                 
-                for i in dict["data"]!["location"] as! NSDictionary{
-                    
-                    print(i.value)                }
+                var latitude: String!
+                var longitude: String!
+                
+                
+                for i in dict["data"]!["location"] as! [[String:Any]]{
+                    latitude = i["latitude"] as! String
+                    longitude = i["longitude"] as! String
+                    self.serverTime = i["servertime"] as! String
+                }
+                //let newYorkLocation = CLLocation(latitude: 40.730872, longitude: -74.003066)
+                //let newYorkLocationPin = CLLocationCoordinate2DMake(40.730872, -74.003066)
+                let vehicleLocationPin = CLLocationCoordinate2DMake(Double(latitude)!, Double(longitude)!)
+                let vehicleLocation = CLLocation(latitude: Double(latitude)!, longitude: Double(longitude)!)
+                self.centerMapOnLocation(location: vehicleLocation)
+                
+                let dropPin = MKPointAnnotation()
+                dropPin.coordinate = vehicleLocationPin
+                dropPin.title = " "
+                
+                self.locationMap.addAnnotation(dropPin)
                 
             }
         }
@@ -116,7 +120,8 @@ class VehiclesLocationVC: UIViewController, MKMapViewDelegate {
         else {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
             annotationView?.rightCalloutAccessoryView = UIButton(type: .system)
-            annotationView?.detailCalloutAccessoryView = UIImageView(image: #imageLiteral(resourceName: "customPinVehicles"))
+            //annotationView?.detailCalloutAccessoryView = UIImageView(image: #imageLiteral(resourceName: "customPinVehicles"))
+            
             
         }
         

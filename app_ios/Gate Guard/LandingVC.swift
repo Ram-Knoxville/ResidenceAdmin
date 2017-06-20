@@ -296,8 +296,6 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
                     
                 }
                 
-                
-
                 let beaconsUuid: String! = closestBeacon.proximityUUID.uuidString
                 
                 
@@ -519,6 +517,15 @@ class LandingVC: UIViewController, APScheduledLocationManagerDelegate, CLLocatio
         let refreshAlert = UIAlertController(title: "Alerta", message: "¿Seguro desea Cerrrar Sesión?", preferredStyle: UIAlertControllerStyle.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            
+            let defaults = UserDefaults.standard
+            defaults.removeObject(forKey: "username")
+            defaults.removeObject(forKey: "password")
+            defaults.removeObject(forKey: "token")
+            defaults.removeObject(forKey: "selectedProfile")
+            defaults.removeObject(forKey: "profileSelected")
+            defaults.synchronize()
+            
             self.goBackToLogin()
         }))
         

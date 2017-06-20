@@ -30,7 +30,7 @@ class permisoDeAccesos: UIViewController {
         
         let urlString = "http://api.gateguard.com.mx/api/visitors/updateVisitorAccessMobile"
         
-        let accountId: String! = UserDefaults.standard.string(forKey: "userId")!
+        let accountId: String! = UserDefaults.standard.string(forKey: "userUid")!
         let token: String! = UserDefaults.standard.string(forKey: "token")!
         
         let parameters: Parameters = [
@@ -58,7 +58,7 @@ class permisoDeAccesos: UIViewController {
         
         let urlString = "http://api.gateguard.com.mx/api/visitors/updateVisitorAccessMobile"
         
-        let accountId: String! = UserDefaults.standard.string(forKey: "userId")!
+        let accountId: String! = UserDefaults.standard.string(forKey: "userUid")!
         let token: String! = UserDefaults.standard.string(forKey: "token")!
         
         let parameters: Parameters = [
