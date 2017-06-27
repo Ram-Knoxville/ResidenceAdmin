@@ -91,15 +91,27 @@ class usersListVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                         
                     }else if dict["status"] as? String  == "OK"{
 
-                        for i in dict["data"]!["users"] as! [[String : Any]]{
+                        if let resultado = dict["data"]!["users"] as? [[String : Any]] {
                             
-                            self.totalUser.append(i)
-
+                            for i in resultado {
+                                
+                                self.totalUser.append(i)
+                                
+                            }
+                            
+                            print("ya la armaste we checa este pedo \(self.totalUser)")
+                            
+                            self.dataParser()
+                            
+                        }else {
+                            
+                            let alert = UIAlertController(title: "Mensaje", message: "No hay registros de usuarios por el momento.", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                            
                         }
                         
-                        print("ya la armaste we checa este pedo \(self.totalUser)")
                         
-                        self.dataParser()
                     }
                 }
                 

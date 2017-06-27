@@ -57,12 +57,22 @@ class ManualGateAccessVC: UIViewController, UICollectionViewDelegate, UICollecti
             if let dict = result.value as? Dictionary<String, AnyObject>{
                 print("Aqui empieza el diccionario \(dict)")
                 
-                for i in dict["data"]!["puertas"] as! [[String : Any]]{
-                    print("Valor de i = \(i)")
-                    self.totalDoors.append(i)
+                
+                if let resultado = dict["data"]!["puertas"] as? [[String : Any]] {
+                    
+                    for i in resultado {
+                        print("Valor de i = \(i)")
+                        self.totalDoors.append(i)
+                    }
+                    
+                    self.dataParser()
+                    
+                }else {
+                    let alerta = Alertas()
+                    alerta.showAlertMessage(vc: self, titleStr: "Mensaje", messageStr: "No existen registros de puertas de acceso en este suburbio")
                 }
                 
-                self.dataParser()
+                
                 
             }
             

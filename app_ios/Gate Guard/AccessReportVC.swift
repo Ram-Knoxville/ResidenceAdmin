@@ -75,10 +75,20 @@ class AccessReportVC: UIViewController, UITableViewDataSource, UITableViewDelega
             print(response.result.value!)
             
             if let dict = result.value as? Dictionary<String, AnyObject>{
-                for i in dict["data"]!["records"] as! [[String : AnyObject]]{
-                    self.registry.append(i)
+                
+                if let resultado = dict["data"]!["records"] as? [[String : AnyObject]] {
+                    
+                    for i in resultado{
+                        self.registry.append(i)
+                    }
+                    self.dataParser()
+                    
+                }else {
+                    let alerta = Alertas()
+                    alerta.showAlertMessage(vc: self, titleStr: "Mensaje", messageStr: "No existen registros de Acceso")
                 }
-                self.dataParser()
+                
+                
             }
             
         }

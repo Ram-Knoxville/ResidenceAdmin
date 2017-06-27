@@ -68,12 +68,21 @@ class alarmRegistryVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 
                 if let dict = JSON as? Dictionary<String, AnyObject>{
                     
-                    for i in dict["records"] as! [[String : Any]]{
-
-                        self.totalAlarms.append(i)
+                    if let resultado = dict["records"] as? [[String : Any]] {
                         
+                        for i in resultado {
+                            
+                            self.totalAlarms.append(i)
+                            
+                        }
+                        self.dataParser()
+                        
+                    }else {
+                        let alerta = Alertas()
+                        alerta.showAlertMessage(vc: self, titleStr: "Mensaje", messageStr: "No existen registros de alarmas")
                     }
-                    self.dataParser()
+                    
+                    
                 }
             }
             

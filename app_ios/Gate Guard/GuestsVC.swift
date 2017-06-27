@@ -68,8 +68,10 @@ class GuestsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 if dict["status"] as? String != "OK"{
                     
                 }else if dict["status"] as? String == "OK"{
-                    if dict["data"]!["guest"] as? [[String: Any]] != nil {
-                        for i in dict["data"]!["guest"] as! [[String : Any]]{
+                    
+                    if let resultado = dict["data"]!["guest"] as? [[String : Any]] {
+                        
+                        for i in resultado {
                             
                             print("Contador: \(i.count)")
                             self.apiResult.append(i)
@@ -77,9 +79,13 @@ class GuestsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         }
                         
                         self.dataParser()
+                        
                     }else {
-                        let alert = Alertas()
-                        alert.showAlertMessage(vc: self, titleStr: "Mensaje", messageStr: "No cuenta con invitados registrados")
+                        
+                        let alert = UIAlertController(title: "Mensaje", message: "No hay registros de usuarios por el momento.", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        
                     }
                     
                 }

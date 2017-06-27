@@ -84,22 +84,31 @@ class VehiclesLocationVC: UIViewController, MKMapViewDelegate {
                 var longitude: String!
                 
                 
-                for i in dict["data"]!["location"] as! [[String:Any]]{
-                    latitude = i["latitude"] as! String
-                    longitude = i["longitude"] as! String
-                    self.serverTime = i["servertime"] as! String
+                if let resultado = dict["data"]!["location"] as? [[String:Any]] {
+                    
+                    for i in resultado {
+                        latitude = i["latitude"] as! String
+                        longitude = i["longitude"] as! String
+                        self.serverTime = i["servertime"] as! String
+                    }
+                    //let newYorkLocation = CLLocation(latitude: 40.730872, longitude: -74.003066)
+                    //let newYorkLocationPin = CLLocationCoordinate2DMake(40.730872, -74.003066)
+                    let vehicleLocationPin = CLLocationCoordinate2DMake(Double(latitude)!, Double(longitude)!)
+                    let vehicleLocation = CLLocation(latitude: Double(latitude)!, longitude: Double(longitude)!)
+                    self.centerMapOnLocation(location: vehicleLocation)
+                    
+                    let dropPin = MKPointAnnotation()
+                    dropPin.coordinate = vehicleLocationPin
+                    dropPin.title = " "
+                    
+                    self.locationMap.addAnnotation(dropPin)
+                    
+                }else {
+                    let alerta = Alertas()
+                    alerta.showAlertMessage(vc: self, titleStr: "Mensaje", messageStr: "No existen registros de Ubicación para este vehículo")
                 }
-                //let newYorkLocation = CLLocation(latitude: 40.730872, longitude: -74.003066)
-                //let newYorkLocationPin = CLLocationCoordinate2DMake(40.730872, -74.003066)
-                let vehicleLocationPin = CLLocationCoordinate2DMake(Double(latitude)!, Double(longitude)!)
-                let vehicleLocation = CLLocation(latitude: Double(latitude)!, longitude: Double(longitude)!)
-                self.centerMapOnLocation(location: vehicleLocation)
                 
-                let dropPin = MKPointAnnotation()
-                dropPin.coordinate = vehicleLocationPin
-                dropPin.title = " "
                 
-                self.locationMap.addAnnotation(dropPin)
                 
             }
         }

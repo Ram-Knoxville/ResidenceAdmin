@@ -194,12 +194,20 @@ class alarmEventsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             self.fullEvents = [[String : Any]]()
             
             if let dict = result.value as? Dictionary<String, AnyObject>{
-                for i in dict["events"] as! [[String : Any]]{
+                
+                if let resultado = dict["events"] as? [[String : Any]] {
+                    for i in resultado {
+                        
+                        self.fullEvents.append(i)
+                    }
                     
-                    self.fullEvents.append(i)
+                    self.manageEvents()
+                    
+                }else {
+                    let alerta = Alertas()
+                    alerta.showAlertMessage(vc: self, titleStr: "Mensaje", messageStr: "No existen registros de alarmas")
                 }
                 
-                self.manageEvents()
             }
 
             

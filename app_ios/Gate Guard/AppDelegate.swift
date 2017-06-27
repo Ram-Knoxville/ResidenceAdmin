@@ -51,15 +51,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         
         defaults.set(deviceModel, forKey: "deviceModel")
         defaults.set(deviceName, forKey: "deviceName")
-//        KeychainWrapper.standard.set(deviceModel, forKey: "deviceModel")
-        
-//        KeychainWrapper.standard.set(deviceName, forKey: "deviceName")
         
         
         if UserDefaults.standard.string(forKey: "username") != nil, UserDefaults.standard.string(forKey: "password") != nil {
 
-            let username = UserDefaults.standard.string(forKey: "username")!//KeychainWrapper.standard.string(forKey: "username")!
-            let password = UserDefaults.standard.string(forKey: "password")!//KeychainWrapper.standard.string(forKey: "password")!
+            let username = UserDefaults.standard.string(forKey: "username")!
+            let password = UserDefaults.standard.string(forKey: "password")!
             self.autoLoginOne(username: username, password: password)
         }else{
             let storyboard = UIStoryboard(name: "Main", bundle: nil);
@@ -111,7 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
                     
                     // Then push that view controller onto the navigation stack
                     let rootViewController = self.window!.rootViewController as! UIViewController;
-                    //                    rootViewController.pushViewController(viewController, animated: true);
+                    // rootViewController.pushViewController(viewController, animated: true);
                     rootViewController.show(viewController, sender: self)
                     
                 }else if dict["status"] as? String == "OK"{

@@ -64,17 +64,24 @@ class InvitationsListVC: UIViewController, UICollectionViewDelegate, UICollectio
                 print("Este es el diciconario \(dict)")
                 
                 if dict["err"] as? String == nil {
-                        for i in dict["data"]!["guestConfirmation"] as! [[String : Any]]{
+                    
+                    
+                    if let resultado = dict["data"]!["guestConfirmation"] as? [[String : Any]] {
+                        
+                        
+                        for i in resultado{
                             
                             print(i.count)
                             self.totalInvitations.append(i)
                             
                         }
-                    
+                        
                         self.dataParser()
                         
-                        print("ya la armaste we checa este pedo \(self.totalInvitations)")
-                    
+                    }else {
+                        let alerta = Alertas()
+                        alerta.showAlertMessage(vc: self, titleStr: "Mensaje", messageStr: "No existen registros de invitaciones")
+                    }
                     
                 }else if dict["err"] as? String != nil {
                     

@@ -13,6 +13,8 @@
 		2104041B1E96F8E700BBF232 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2104041A1E96F8E700BBF232 /* MapKit.framework */; };
 		2104041D1E96F9EA00BBF232 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2104041C1E96F9EA00BBF232 /* CoreLocation.framework */; };
 		2104041F1E98318900BBF232 /* vehiclesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2104041E1E98318900BBF232 /* vehiclesListVC.swift */; };
+		2106A6B11EFEDC0C00F42046 /* imagesDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2106A6B01EFEDC0C00F42046 /* imagesDetailVC.swift */; };
+		2106A6B31F01806600F42046 /* accessRegistryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2106A6B21F01806600F42046 /* accessRegistryVC.swift */; };
 		210ACA731E5F3FDC0097A652 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ACA721E5F3FDC0097A652 /* AppDelegate.swift */; };
 		210ACA7D1E5F3FDC0097A652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210ACA7B1E5F3FDC0097A652 /* LaunchScreen.storyboard */; };
 		210ACA851E5F42900097A652 /* logoGateguard.png in Resources */ = {isa = PBXBuildFile; fileRef = 210ACA841E5F42900097A652 /* logoGateguard.png */; };
@@ -38,7 +40,6 @@
 		211E4D7A1E86CA7400CAC7AD /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211E4D791E86CA7400CAC7AD /* ARVC.swift */; };
 		213D10F91EAFE7E500BAFE36 /* OpenGateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213D10F81EAFE7E500BAFE36 /* OpenGateVC.swift */; };
 		215AC1881EEC5639003B5778 /* BeaconID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215AC1871EEC5639003B5778 /* BeaconID.swift */; };
-		215AC18A1EF1F551003B5778 /* waitingVisitorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215AC1891EF1F550003B5778 /* waitingVisitorsVC.swift */; };
 		215ADBA01ED5EFFF00785170 /* Estimote in Resources */ = {isa = PBXBuildFile; fileRef = 215ADB9F1ED5EFFF00785170 /* Estimote */; };
 		215ADBA41ED5F3F600785170 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215ADBA31ED5F3F600785170 /* EstimoteSDK.framework */; };
 		215ADBAE1ED5F8C600785170 /* BeaconContentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215ADBA61ED5F8C600785170 /* BeaconContentFactory.swift */; };
@@ -165,6 +166,8 @@
 		2104041A1E96F8E700BBF232 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2104041C1E96F9EA00BBF232 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2104041E1E98318900BBF232 /* vehiclesListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = vehiclesListVC.swift; sourceTree = "<group>"; };
+		2106A6B01EFEDC0C00F42046 /* imagesDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imagesDetailVC.swift; sourceTree = "<group>"; };
+		2106A6B21F01806600F42046 /* accessRegistryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accessRegistryVC.swift; sourceTree = "<group>"; };
 		210ACA6F1E5F3FDC0097A652 /* Gate Guard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gate Guard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		210ACA721E5F3FDC0097A652 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		210ACA741E5F3FDC0097A652 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -201,7 +204,6 @@
 		21440E7A1E68D64C006BA19F /* Gate Guard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Gate Guard.entitlements"; sourceTree = "<group>"; };
 		21440E7B1E68D65F006BA19F /* myLocation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = myLocation.entitlements; sourceTree = "<group>"; };
 		215AC1871EEC5639003B5778 /* BeaconID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconID.swift; sourceTree = "<group>"; };
-		215AC1891EF1F550003B5778 /* waitingVisitorsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = waitingVisitorsVC.swift; sourceTree = "<group>"; };
 		215ADB9A1ED5EDED00785170 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EstimoteSDK.framework; path = "../../../iOS-SDK-master/EstimoteSDK/EstimoteSDK.framework"; sourceTree = "<group>"; };
 		215ADB9F1ED5EFFF00785170 /* Estimote */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Estimote; sourceTree = "<group>"; };
 		215ADBA31ED5F3F600785170 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EstimoteSDK.framework; path = "Gate Guard/Estimote/EstimoteSDK.framework"; sourceTree = "<group>"; };
@@ -474,12 +476,13 @@
 				21C044BB1ECA450000C9BFE2 /* VehiclesLocationVC.swift */,
 				21D11AA51ED33D0000E18BEC /* ManualGateAccessVC.swift */,
 				215ADBB61ED7416E00785170 /* visitorsRecordsVC.swift */,
-				215AC1891EF1F550003B5778 /* waitingVisitorsVC.swift */,
 				21CDFC471EF8739C00F02BC3 /* alarmEventsListVC.swift */,
 				21CDFC491EF873BD00F02BC3 /* newEventVC.swift */,
 				21CDFC4B1EF87AA800F02BC3 /* weekDaysVC.swift */,
 				21CDFC4D1EF88B5200F02BC3 /* carPickerVC.swift */,
 				21CDFC4F1EF88B7100F02BC3 /* eventNameSelectorVC.swift */,
+				2106A6B01EFEDC0C00F42046 /* imagesDetailVC.swift */,
+				2106A6B21F01806600F42046 /* accessRegistryVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -741,10 +744,10 @@
 				210ACA931E5F4FF60097A652 /* topView.swift in Sources */,
 				21F98A901E6F4C6300F36B95 /* newProfileVC.swift in Sources */,
 				21ABB6FF1E6A38A000106238 /* usersListVC.swift in Sources */,
+				2106A6B31F01806600F42046 /* accessRegistryVC.swift in Sources */,
 				21AB1BB41E9C193400E1B47D /* guestDetail.swift in Sources */,
 				210ACA951E5F53510097A652 /* roundedImages.swift in Sources */,
 				21ABB7031E6B10FC00106238 /* newUserVC.swift in Sources */,
-				215AC18A1EF1F551003B5778 /* waitingVisitorsVC.swift in Sources */,
 				2192A5B81E72EF8700D53957 /* SWRevealViewController.m in Sources */,
 				210ACAAA1E620A2D0097A652 /* menuVC.swift in Sources */,
 				215AC1881EEC5639003B5778 /* BeaconID.swift in Sources */,
@@ -763,6 +766,7 @@
 				21CDFC411EF2DAAC00F02BC3 /* AccessRequestCell.swift in Sources */,
 				2164C1E71EB8D8EE005B9F21 /* Alertas.swift in Sources */,
 				210404171E96EC1E00BBF232 /* LocationManagerVC.swift in Sources */,
+				2106A6B11EFEDC0C00F42046 /* imagesDetailVC.swift in Sources */,
 				2192A5981E71F51D00D53957 /* Services.swift in Sources */,
 				211E4D761E85964D00CAC7AD /* serverRequests.swift in Sources */,
 				2192A5B21E72144A00D53957 /* CategoryCell.swift in Sources */,
