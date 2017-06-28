@@ -13,7 +13,6 @@ class AccessRequestCell: UITableViewCell {
     
     
     @IBOutlet weak var driverName: UILabel!
-    @IBOutlet weak var platesNumber: UILabel!
     @IBOutlet weak var tiempoEspera: UILabel!
     
     var acceso: AccessRequest!
@@ -24,7 +23,8 @@ class AccessRequestCell: UITableViewCell {
 
         
         self.driverName.text = acceso.driver
-        self.tiempoEspera.text = acceso.time
+        
+        self.tiempoEspera.text = "88:88:8888"
 
     }
     

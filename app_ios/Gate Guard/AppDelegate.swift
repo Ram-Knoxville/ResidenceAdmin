@@ -289,7 +289,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         
         let deviceToken2: String = deviceTokenString as String!
             defaults.set(deviceToken2, forKey: "deviceToken")
-//            KeychainWrapper.standard.set(deviceToken2, forKey: "deviceToken")
+        
         
         self.validateAccess(deviceToken: deviceToken2)
     }

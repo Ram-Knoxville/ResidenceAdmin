@@ -27,9 +27,10 @@ class accessRegistryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         self.registryTable.delegate = self
         self.registryTable.dataSource = self
-        
+        self.registryTable.tableFooterView = UIView(frame: .zero)
         
         self.getData()
+        
     }
 
     func getData() {
@@ -94,7 +95,6 @@ class accessRegistryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             let requestss = AccessRequest(access: access, address: address, contextImg: contextImg, date: date, driver: driver, plateImg: plateImg, time: time, uid: uid, wait: wait)
             
-            
             self.requests.append(requestss)
             
             self.registryTable.reloadData()
@@ -102,7 +102,7 @@ class accessRegistryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
         self.registryTable.reloadData()
     }
-
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -129,7 +129,7 @@ class accessRegistryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        print("No me presiones weee ! hahahha Sueltame alv !")
     }
 
 }
